@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://df5ordtyx1y8j"]
+
+[ext_resource type="Script" uid="uid://blg44l6868qoy" path="res://scenes/default.gd" id="1_7vjpr"]
+[ext_resource type="PackedScene" uid="uid://cjstv5da8jqnl" path="res://scenes/main_menu.tscn" id="2_nvwnn"]
+[ext_resource type="PackedScene" uid="uid://b3fyb5ulkgpmq" path="res://scenes/transition_controller.tscn" id="2_ya6ni"]
+
+[node name="Default" type="Node"]
+script = ExtResource("1_7vjpr")
+
+[node name="TransitionController" parent="." instance=ExtResource("2_ya6ni")]
+unique_name_in_owner = true
+
+[node name="MainMenu" parent="." instance=ExtResource("2_nvwnn")]
+
+[connection signal="change_scene" from="MainMenu" to="TransitionController" method="change_scene"]
