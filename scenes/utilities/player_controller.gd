@@ -15,10 +15,19 @@ var t_bob = 0.0
 const BASE_FOV = 75.0
 const CHANGE_FOV = 1.5
 
+# stairs
+const MAX_STEP_HEIGHT = 0.75
+var _snapped_to_stairs_last_frame := false
+var _last_frame_was_on_floor = -INF
+
 @onready var head: Node3D = $head
 @onready var camera: Camera3D = $head/Camera3D
 @onready var spotlight_front: SpotLight3D = $head/Camera3D/front_spotlight
 @onready var spotlight_back: SpotLight3D = $head/equipment/move_cam2/back_spotlight
+
+@onready var top_ray_cast: RayCast3D = $TopRayCast
+@onready var bottom_ray_cast: RayCast3D = $BottomRayCast
+
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -51,7 +60,8 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if is_on_floor():
+	if is_on_floor() or _snapped_to_stairs_last_frame:
+		_last_frame_was_on_floor = Engine.get_physics_frames()
 		if direction:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
@@ -73,8 +83,48 @@ func _physics_process(delta: float) -> void:
 	var target_fov = BASE_FOV + CHANGE_FOV * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
-	move_and_slide()
+	if !_snap_up_to_stairs_check(delta):
+		move_and_slide()
+		_snap_down_to_stairs_check()
 
+func is_surface_too_steep(normal: Vector3) -> bool:
+	return normal.angle_to(Vector3.UP) > floor_max_angle
+
+func _snap_up_to_stairs_check(delta) -> bool:
+	if !is_on_floor() and !_snapped_to_stairs_last_frame:
+		return false
+	var expected_move_motion = velocity * Vector3(1, 0, 1) * delta
+	var step_pos_with_clearance = global_transform.translated(expected_move_motion + Vector3(0, MAX_STEP_HEIGHT * 2, 0))
+	
+	var down_check_result = KinematicCollision3D.new()
+	if (test_move(step_pos_with_clearance, Vector3(0, -MAX_STEP_HEIGHT * 2, 0), down_check_result)
+	and (down_check_result.get_collider().is_class("StaticBody3D") or down_check_result.get_collider().is_class("CSGShape3D"))):
+		var step_height = ((step_pos_with_clearance.origin + down_check_result.get_travel()) - global_position).y
+		if step_height > MAX_STEP_HEIGHT or step_height <= 0.01 or (down_check_result.get_position() - global_position).y > MAX_STEP_HEIGHT: 
+			return false
+		top_ray_cast.global_position = down_check_result.get_position() + Vector3(0, MAX_STEP_HEIGHT, 0) + expected_move_motion.normalized() * 0.1
+		top_ray_cast.force_raycast_update()
+		if top_ray_cast.is_colliding() and !is_surface_too_steep(top_ray_cast.get_collision_normal()):
+			global_position = step_pos_with_clearance.origin + down_check_result.get_travel()
+			apply_floor_snap()
+			_snapped_to_stairs_last_frame = true
+			return true
+	return false
+
+func _snap_down_to_stairs_check() -> void:
+	var did_snap := false
+	
+	bottom_ray_cast.force_raycast_update()
+	var floor_below : bool = bottom_ray_cast.is_colliding() and !is_surface_too_steep(bottom_ray_cast.get_collision_normal())
+	var was_on_floor_last_frame = Engine.get_physics_frames() == _last_frame_was_on_floor
+	if !is_on_floor() and velocity.y <= 0 and (was_on_floor_last_frame or _snapped_to_stairs_last_frame) and floor_below:
+		var body_test_result = KinematicCollision3D.new()
+		if test_move(transform, Vector3(0, -MAX_STEP_HEIGHT, 0), body_test_result):
+			var translate_y = body_test_result.get_travel().y 
+			position.y += translate_y
+			apply_floor_snap()
+			did_snap = true
+	_snapped_to_stairs_last_frame = did_snap
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO

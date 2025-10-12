@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_play_button_button_up() -> void:
-	emit_signal("change_scene", get_node("."), "res://scenes/levels/test_level.tscn")
+	emit_signal("change_scene", get_node("."), "res://scenes/levels/fabric-blockout.tscn")
 
 func _on_exit_button_button_up() -> void:
 	emit_signal("change_scene", get_node("."), "res://scenes/quit_scene.tscn")

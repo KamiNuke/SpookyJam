@@ -98,3 +98,11 @@ size = Vector2i(384, 216)
 
 [node name="back_cam" type="Camera3D" parent="head/equipment/cam2"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.1, 0.11212847)
+
+[node name="TopRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.051756352, 0)
+target_position = Vector3(0, -0.55, 0)
+
+[node name="BottomRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.243, 0)
+target_position = Vector3(0, -0.75, 0)
