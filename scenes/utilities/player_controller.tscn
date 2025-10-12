@@ -33,7 +33,7 @@ shape = SubResource("ConvexPolygonShape3D_ppkod")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.099999994)
 current = true
 
-[node name="SpotLight3D" type="SpotLight3D" parent="head/Camera3D"]
+[node name="front_spotlight" type="SpotLight3D" parent="head/Camera3D"]
 light_color = Color(0.9764706, 0.9411765, 0.87058824, 1)
 light_energy = 0.5
 light_indirect_energy = 0.5
@@ -54,7 +54,7 @@ remote_path = NodePath("../cam1/front_cam")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.1, 0.11212847)
 remote_path = NodePath("../cam2/back_cam")
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="head/equipment/move_cam2"]
+[node name="back_spotlight" type="SpotLight3D" parent="head/equipment/move_cam2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0413324e-09, -0.030992232, -0.02335012)
 light_color = Color(0.9764706, 0.9411765, 0.87058824, 1)
 light_energy = 0.5
