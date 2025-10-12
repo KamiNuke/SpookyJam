@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://dqd525s6yuof6"]
-
-[node name="Level1" type="Node"]
-
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "pizza da journey"
