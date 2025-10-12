@@ -1,6 +1,8 @@
-[gd_scene load_steps=32 format=4 uid="uid://cqttd845lqbw2"]
+[gd_scene load_steps=34 format=4 uid="uid://cqttd845lqbw2"]
 
 [ext_resource type="Texture2D" uid="uid://kmt4pecauj55" path="res://assets/dev/raw-textures/refs/1-segment.png" id="1_6nik8"]
+[ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="2_k3gsl"]
+[ext_resource type="PackedScene" uid="uid://bak8ltrhbmlv5" path="res://scenes/utilities/CSGStairMaker3D.tscn" id="3_r67dc"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k3gsl"]
 size = Vector2(60, 60)
@@ -834,3 +836,12 @@ size = Vector3(9.683049, 3.1403809, 27.356567)
 [node name="CSGBox3D4" type="CSGBox3D" parent="1st_segment/Back_building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.569639, 11.269525, -22.664265)
 size = Vector3(12.648926, 25.071823, 14.512085)
+
+[node name="PlayerController" parent="." instance=ExtResource("2_k3gsl")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -15.680571, 2.2715898, -11.559843)
+
+[node name="CSGStairMaker3D" parent="." instance=ExtResource("3_r67dc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.60129, 0.46091217, -11.927134)
+use_collision = true
+size = Vector3(1.4711914, 1, 1)
+num_stairs = 16

@@ -111,6 +111,8 @@ func _snap_up_to_stairs_check(delta) -> bool:
 			return true
 	return false
 
+
+
 func _snap_down_to_stairs_check() -> void:
 	var did_snap := false
 	
