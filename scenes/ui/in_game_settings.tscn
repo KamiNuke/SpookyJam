@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://damcwr5hyrnjv"]
+
+[ext_resource type="Shader" uid="uid://dq7eug5c1e0s4" path="res://shaders/simple_blur.gdshader" id="1_0g6rq"]
+[ext_resource type="Script" uid="uid://bxd7jsg01f1y" path="res://scenes/ui/in_game_settings.gd" id="1_h80le"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h80le"]
+shader = ExtResource("1_0g6rq")
+shader_parameter/lod = 2.50000011875
+
+[node name="InGameSettings" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h80le")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_h80le")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_right = -64.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 22
+
+[node name="MenuTitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Settings"
+
+[node name="SensitivityContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="SensitivityLabel" type="Label" parent="VBoxContainer/SensitivityContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+text = "Sensitivity"
+
+[node name="SensitivitySlider" type="HSlider" parent="VBoxContainer/SensitivityContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.01
+
+[node name="VolumeContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="VolumeLabel" type="Label" parent="VBoxContainer/VolumeContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+text = "Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer/VolumeContainer"]
+layout_mode = 2
+
+[node name="ButtonContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ReturnButton" type="Button" parent="VBoxContainer/ButtonContainer"]
+layout_mode = 2
+text = "Return"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer/ButtonContainer"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="value_changed" from="VBoxContainer/SensitivityContainer/SensitivitySlider" to="." method="_on_sensitivity_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/VolumeContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="button_up" from="VBoxContainer/ButtonContainer/ReturnButton" to="." method="_on_return_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/ButtonContainer/ExitButton" to="." method="_on_exit_button_button_up"]

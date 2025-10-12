@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqd525s6yuof6"]
+[gd_scene load_steps=8 format=3 uid="uid://dqd525s6yuof6"]
 
+[ext_resource type="Script" uid="uid://ctjopuwafsjhx" path="res://scenes/levels/test_level.gd" id="1_fr1um"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="1_jbqir"]
+[ext_resource type="PackedScene" uid="uid://cshkbl1rcpcvp" path="res://scenes/utilities/npc.tscn" id="2_yautc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7u6i3"]
 sky_top_color = Color(0.19777969, 0.1565085, 0.12637022, 1)
@@ -28,6 +30,7 @@ adjustment_brightness = 1.25
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jbqir"]
 
 [node name="TestLevel" type="Node"]
+script = ExtResource("1_fr1um")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6iamk")
@@ -85,3 +88,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.009018, 1.0000002, 0.515907
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.4, -4.1)
 mesh = SubResource("CapsuleMesh_jbqir")
+
+[node name="NPC" parent="." instance=ExtResource("2_yautc")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.2, 0.6, -3.9)

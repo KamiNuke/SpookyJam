@@ -17,7 +17,7 @@ const CHANGE_FOV = 1.5
 
 @onready var head: Node3D = $head
 @onready var camera: Camera3D = $head/Camera3D
-@onready var spotlight_3d: SpotLight3D = $head/Camera3D/Spotlight/SpotLight3D
+@onready var spotlight: SpotLight3D = $head/Camera3D/SpotLight3D
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -29,10 +29,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 	
 	if event.is_action_pressed("flashlight"):
-		if spotlight_3d.visible:
-			spotlight_3d.visible = false
+		if spotlight.visible:
+			spotlight.visible = false
 		else:
-			spotlight_3d.visible = true
+			spotlight.visible = true
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

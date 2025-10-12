@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4g7ogkhq8g0n"]
+
+[ext_resource type="Script" uid="uid://csa8j3gh8ytul" path="res://scenes/settings_menu.gd" id="1_05p07"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_05p07")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_right = -64.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 28
+
+[node name="MenuTitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Settings"
+
+[node name="SensitivityContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="SensitivityLabel" type="Label" parent="VBoxContainer/SensitivityContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+text = "Sensitivity"
+
+[node name="SensitivitySlider" type="HSlider" parent="VBoxContainer/SensitivityContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.01
+
+[node name="VolumeContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="VolumeLabel" type="Label" parent="VBoxContainer/VolumeContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+text = "Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer/VolumeContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Return"
+
+[connection signal="value_changed" from="VBoxContainer/SensitivityContainer/SensitivitySlider" to="." method="_on_sensitivity_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/VolumeContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="button_up" from="VBoxContainer/Button" to="." method="_on_button_button_up"]
