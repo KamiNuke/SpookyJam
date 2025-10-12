@@ -1,15 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://df5ordtyx1y8j"]
+[gd_scene load_steps=6 format=3 uid="uid://df5ordtyx1y8j"]
 
 [ext_resource type="Script" uid="uid://blg44l6868qoy" path="res://scenes/default.gd" id="1_7vjpr"]
+[ext_resource type="Shader" uid="uid://dn7jpb5b01dfm" path="res://shaders/crt.gdshader" id="2_6y2o2"]
 [ext_resource type="PackedScene" uid="uid://cjstv5da8jqnl" path="res://scenes/main_menu.tscn" id="2_nvwnn"]
 [ext_resource type="PackedScene" uid="uid://b3fyb5ulkgpmq" path="res://scenes/transition_controller.tscn" id="2_ya6ni"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ya6ni"]
+shader = ExtResource("2_6y2o2")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(384, 216)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0050000002375
+shader_parameter/aberration = 0.01000004797499998
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
 
 [node name="Default" type="Node"]
 script = ExtResource("1_7vjpr")
 
 [node name="TransitionController" parent="." instance=ExtResource("2_ya6ni")]
 unique_name_in_owner = true
+process_mode = 3
 
 [node name="MainMenu" parent="." instance=ExtResource("2_nvwnn")]
 
-[connection signal="change_scene" from="MainMenu" to="TransitionController" method="change_scene"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 128
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ya6ni")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

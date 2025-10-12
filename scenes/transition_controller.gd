@@ -11,7 +11,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func change_scene(scene: Node, next_scene_path: String):
+func _change_scene(scene: Node, next_scene_path: String):
 	colorRect.mouse_filter = Control.MOUSE_FILTER_STOP
 	animation_player.play("fadeIn")
 	await animation_player.animation_finished
@@ -19,10 +19,9 @@ func change_scene(scene: Node, next_scene_path: String):
 	scene.queue_free()
 	var next_scene = load(next_scene_path).instantiate()
 	get_tree().current_scene.add_child(next_scene)
-
+	
 	animation_player.play("fadeOut")
 	await animation_player.animation_finished
-
 	colorRect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func change_scene_to_node(node):

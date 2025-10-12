@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbck6ynukyxtp"]
+
+[ext_resource type="Script" uid="uid://so7jd85asjig" path="res://scenes/utilities/player_controller.gd" id="1_ppkod"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2codo"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ppkod"]
+points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4760704, 0.49888408, 0.16971254, 0.5591441, 0.46417162, 0.23105091, -0.8035912, 0.32045516, 0.40741014, 0.651043, -0.24352328, -0.4827893, 0.59484255, 0.082213186, -0.3628679, -0.68231165, 0.2896967, 0.46904355, -0.65452886, -0.06627126, -0.12744367, 0.8427015, -0.33810276, -0.39343542, -0.6839421, -0.24471663, 0.43825462, 0.62330925, 0.20084947, 0.0841477, 0.977454, 0.11479468, -0.06820232, -0.9764576, -0.12927033, 0.20054972, -0.56312895, -0.4514544, -0.18552664, 0.59545326, -0.4534751, -0.27336287, 0.59226835, 0.40775412, -0.0069364863, -0.47682306, 0.49966025, 0.37582088, -0.5886136, 0.31695515, 0.111579016, 0.5630594, -0.48117727, -0.41725034, 0.5278656, -0.27049688, -0.48454633, -0.59697217, -0.06650971, -0.27974695, 0.90856135, 0.05333608, -0.25019687, -0.8807117, 0.20531891, 0.263647, -0.90277094, -0.1273943, 0.29336792, 0.8715263, -0.15719566, 0.3734115, -0.5263189, -0.32824618, 0.4996626, 0.47664148, -0.0068885577, 0.053105574, 0.8750009, 0.32470253, -0.15454252, -0.5908538, 0.4658794, -0.09727988, -0.7823577, -0.39818847, -0.3876489, -0.49817133, 0.31564978, -0.30067965, -0.58799505, -0.38890144)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ppkod"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ppkod"]
+viewport_path = NodePath("head/equipment/cam1")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jxyar"]
+viewport_path = NodePath("head/equipment/cam2")
+
+[node name="PlayerController" type="CharacterBody3D"]
+script = ExtResource("1_ppkod")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_2codo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.277, 0, 0, 0, 0.277, 0, 0, 0, 0.277, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_ppkod")
+
+[node name="head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.099999994)
+current = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="head/Camera3D"]
+light_color = Color(0.9764706, 0.9411765, 0.87058824, 1)
+light_energy = 0.5
+light_indirect_energy = 0.5
+light_volumetric_fog_energy = 0.1
+spot_range = 100.0
+spot_attenuation = 2.0
+spot_angle_attenuation = 3.0
+
+[node name="InteractRaycast" type="RayCast3D" parent="head/Camera3D"]
+
+[node name="equipment" type="Node3D" parent="head"]
+
+[node name="move_cam1" type="RemoteTransform3D" parent="head/equipment"]
+transform = Transform3D(0.9674888, 0, -0.25291374, 0, 1, 0, 0.25291374, 0, 0.9674888, -0.204, 0.1, 0)
+remote_path = NodePath("../cam1/front_cam")
+
+[node name="move_cam2" type="RemoteTransform3D" parent="head/equipment"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.1, 0.11212847)
+remote_path = NodePath("../cam2/back_cam")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="head/equipment/move_cam2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0413324e-09, -0.030992232, -0.02335012)
+light_color = Color(0.9764706, 0.9411765, 0.87058824, 1)
+light_energy = 0.5
+light_indirect_energy = 0.5
+light_volumetric_fog_energy = 0.1
+spot_range = 100.0
+spot_attenuation = 2.0
+spot_angle_attenuation = 3.0
+
+[node name="stick" type="MeshInstance3D" parent="head/equipment"]
+transform = Transform3D(0.045000006, 0, 0, 0, 0.050743397, -0.2650656, 0, 0.018469086, 0.7282618, 0.1, -0.2, -0.2)
+mesh = SubResource("BoxMesh_ppkod")
+skeleton = NodePath("")
+
+[node name="monitor_big" type="MeshInstance3D" parent="head/equipment"]
+transform = Transform3D(0.33075002, 0, 0, 0, 0.30574378, 0.002059597, 0, -0.075952806, 0.008290795, 0.1, -0.08257344, -0.3872819)
+mesh = SubResource("BoxMesh_ppkod")
+skeleton = NodePath("")
+
+[node name="big_monitor_sprite" type="Sprite3D" parent="head/equipment/monitor_big"]
+transform = Transform3D(0.12557179, 0, 0, 0, 0.22032656, 0, 0, 0, 0.24262859, 0, -0.0017568469, 0.2607994)
+texture = SubResource("ViewportTexture_ppkod")
+
+[node name="monitor_small" type="MeshInstance3D" parent="head/equipment"]
+transform = Transform3D(0.111599915, 0, 0, 0, 0.10839913, 0.001729352, 0, -0.026928488, 0.0069614113, 0.14882557, 0.020496048, -0.41338903)
+mesh = SubResource("BoxMesh_ppkod")
+skeleton = NodePath("../cam2")
+
+[node name="small_monitor_sprite" type="Sprite3D" parent="head/equipment/monitor_small"]
+transform = Transform3D(0.11645944, 0, 0, 0, 0.21610583, 2.3283064e-10, 0, 5.9604645e-08, 0.24157998, 0, -0.0053147078, 0.3331604)
+texture = SubResource("ViewportTexture_jxyar")
+
+[node name="cam1" type="SubViewport" parent="head/equipment"]
+size = Vector2i(384, 216)
+
+[node name="front_cam" type="Camera3D" parent="head/equipment/cam1"]
+transform = Transform3D(0.9674888, 0, -0.25291374, 0, 1, 0, 0.25291374, 0, 0.9674888, -0.204, 0.1, 0)
+
+[node name="cam2" type="SubViewport" parent="head/equipment"]
+size = Vector2i(384, 216)
+
+[node name="back_cam" type="Camera3D" parent="head/equipment/cam2"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.1, 0.11212847)
