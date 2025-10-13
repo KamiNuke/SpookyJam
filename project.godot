@@ -31,6 +31,10 @@ window/size/viewport_height=216
 window/size/mode=4
 window/stretch/mode="viewport"
 
+[global_group]
+
+Player=""
+
 [input]
 
 left={

@@ -16,4 +16,3 @@ stream = ExtResource("3_qb6qo")
 
 [node name="SFXPlay" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_v5v75")
-volume_db = 3.817
