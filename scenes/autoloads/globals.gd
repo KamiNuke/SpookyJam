@@ -2,6 +2,7 @@ extends Node
 
 #at default resolution use 0.0025
 var sensitivity = 0.008
+var volume_db := 0.0 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

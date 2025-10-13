@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 global="*res://scenes/autoloads/globals.gd"
+AudioManager="*res://scenes/AudioManager.tscn"
 
 [debug]
 
@@ -29,6 +30,10 @@ window/size/viewport_width=384
 window/size/viewport_height=216
 window/size/mode=4
 window/stretch/mode="viewport"
+
+[global_group]
+
+Player=""
 
 [input]
 

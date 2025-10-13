@@ -1,6 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbck6ynukyxtp"]
+[gd_scene load_steps=14 format=3 uid="uid://bbck6ynukyxtp"]
 
 [ext_resource type="Script" uid="uid://so7jd85asjig" path="res://scenes/utilities/player_controller.gd" id="1_ppkod"]
+[ext_resource type="Script" uid="uid://lf8yru736t4v" path="res://scenes/sound/Footsteps.gd" id="2_jxyar"]
+[ext_resource type="AudioStream" uid="uid://csthsgmr3kmw5" path="res://assets/sfx/Footsteps/FootstepsOutside 1-Footsteps, Human, Concrete, Sneakers, Walk, Medium Tempo, Steady 01 SND85820 - Pitch 86_7.mp3" id="3_mybwk"]
+[ext_resource type="AudioStream" uid="uid://ddoofw1eodwd1" path="res://assets/sfx/Footsteps/FootstepsOutside 2-Footsteps, Human, Concrete, Sneakers, Walk, Medium Tempo, Steady 01 SND85820 - Pitch 86_7.mp3" id="4_7ebsd"]
+[ext_resource type="AudioStream" uid="uid://dcgaxartooihm" path="res://assets/sfx/Footsteps/FootstepsOutside 3-Footsteps, Human, Concrete, Sneakers, Walk, Medium Tempo, Steady 01 SND85820 - Pitch 86_7.mp3" id="5_odcas"]
+[ext_resource type="AudioStream" uid="uid://dp0qwlcrue83r" path="res://assets/sfx/Footsteps/FootstepsOutside 4-Footsteps, Human, Concrete, Sneakers, Walk, Medium Tempo, Steady 01 SND85820 - Pitch 86_7.mp3" id="6_rsqqw"]
+[ext_resource type="AudioStream" uid="uid://du5nkscpi3okm" path="res://assets/sfx/Footsteps/FootstepsOutside 5-Footsteps, Human, Concrete, Sneakers, Walk, Medium Tempo, Steady 01 SND85820 - Pitch 86_7.mp3" id="7_6d84g"]
+[ext_resource type="AudioStream" uid="uid://bnwrxrmrqyjgj" path="res://assets/sfx/Footsteps/FootstepsOutside 6-Footsteps, Human, Concrete, Sneakers, Walk, Medium Tempo, Steady 01 SND85820 - Pitch 86_7.mp3" id="8_mnrie"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2codo"]
 
@@ -16,6 +23,7 @@ viewport_path = NodePath("head/equipment/cam1")
 [sub_resource type="ViewportTexture" id="ViewportTexture_jxyar"]
 viewport_path = NodePath("head/equipment/cam2")
 
+[node name="PlayerController" type="CharacterBody3D" groups=["Player"]]
 [sub_resource type="Environment" id="Environment_ppkod"]
 background_mode = 1
 background_color = Color(0, 0.10980392, 0, 1)
@@ -121,3 +129,12 @@ target_position = Vector3(0, -0.85, 0)
 
 [node name="BottomRayCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.243, 0)
+target_position = Vector3(0, -0.75, 0)
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
+attenuation_model = 3
+volume_db = -10.874
+panning_strength = 0.0
+bus = &"SFXReverb"
+script = ExtResource("2_jxyar")
+footstep_sounds = Array[AudioStream]([ExtResource("3_mybwk"), ExtResource("4_7ebsd"), ExtResource("5_odcas"), ExtResource("6_rsqqw"), ExtResource("7_6d84g"), ExtResource("8_mnrie")])
