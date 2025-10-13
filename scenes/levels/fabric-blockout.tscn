@@ -1,5 +1,6 @@
 [gd_scene load_steps=42 format=4 uid="uid://cqttd845lqbw2"]
 
+[ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
 [ext_resource type="Texture2D" uid="uid://kmt4pecauj55" path="res://assets/dev/raw-textures/refs/1-segment.png" id="1_6nik8"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="2_k3gsl"]
 [ext_resource type="PackedScene" uid="uid://bak8ltrhbmlv5" path="res://scenes/utilities/CSGStairMaker3D.tscn" id="3_r67dc"]
@@ -112,8 +113,30 @@ data = PackedVector3Array(-1.3097999, -1.3132, -0.0309, -1.3097999, -1.1769999, 
 size = Vector3(5.6073, 1.2811279, 2.5268555)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_srpf7"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r67dc"]
+sky_top_color = Color(0.19777969, 0.1565085, 0.12637022, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+energy_multiplier = 0.95
+
+[sub_resource type="Sky" id="Sky_ksju7"]
+sky_material = SubResource("ProceduralSkyMaterial_r67dc")
+
+[sub_resource type="Environment" id="Environment_fxuma"]
+background_mode = 2
+sky = SubResource("Sky_ksju7")
+tonemap_mode = 3
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.2662049, 0.26620513, 0.26620498, 1)
+volumetric_fog_emission = Color(0.23054802, 0.06501816, 0.08588783, 1)
+volumetric_fog_emission_energy = 0.1
+volumetric_fog_length = 128.0
+adjustment_enabled = true
+adjustment_brightness = 1.25
 
 [node name="FabricBlockout" type="Node3D"]
+script = ExtResource("1_4d3ts")
 
 [node name="ref" type="StaticBody3D" parent="."]
 visible = false
