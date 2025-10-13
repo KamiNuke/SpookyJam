@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnwrxrmrqyjgj"
+path="res://.godot/imported/FootstepsOutside 6-Footsteps, Human, Concrete, Sneakers, Walk, Medium Tempo, Steady 01 SND85820 - Pitch 86_7.mp3-084cb53160626fc855b401ab58375bcb.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Footsteps/FootstepsOutside 6-Footsteps, Human, Concrete, Sneakers, Walk, Medium Tempo, Steady 01 SND85820 - Pitch 86_7.mp3"
+dest_files=["res://.godot/imported/FootstepsOutside 6-Footsteps, Human, Concrete, Sneakers, Walk, Medium Tempo, Steady 01 SND85820 - Pitch 86_7.mp3-084cb53160626fc855b401ab58375bcb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

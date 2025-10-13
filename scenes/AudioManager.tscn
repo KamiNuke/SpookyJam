@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1ub73qocqhuw"]
+
+[ext_resource type="Script" uid="uid://cqropw4xq5i8q" path="res://scenes/audio_manager.gd" id="1_3dgps"]
+[ext_resource type="AudioStream" uid="uid://dwdmu1774qvue" path="res://assets/music/menuMusic.mp3" id="2_151wy"]
+[ext_resource type="AudioStream" uid="uid://dp6hpfl3mxskc" path="res://assets/sfx/UIButton.mp3" id="3_qb6qo"]
+[ext_resource type="AudioStream" uid="uid://dq14tsvfxhtc1" path="res://assets/sfx/UIPlay.mp3" id="4_v5v75"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_3dgps")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_151wy")
+
+[node name="SFXButton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qb6qo")
+
+[node name="SFXPlay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_v5v75")
