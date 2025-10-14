@@ -1,29 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqd525s6yuof6"]
+[gd_scene load_steps=9 format=3 uid="uid://dqd525s6yuof6"]
 
 [ext_resource type="Script" uid="uid://ctjopuwafsjhx" path="res://scenes/levels/test_level.gd" id="1_fr1um"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="1_jbqir"]
+[ext_resource type="Texture2D" uid="uid://cefn43toaj76l" path="res://assets/textures/skybox/blood_sky.jpg" id="2_v45ci"]
 [ext_resource type="PackedScene" uid="uid://cshkbl1rcpcvp" path="res://scenes/utilities/npc.tscn" id="2_yautc"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7u6i3"]
-sky_top_color = Color(0.19777969, 0.1565085, 0.12637022, 1)
-sky_horizon_color = Color(0, 0, 0, 1)
-ground_bottom_color = Color(0, 0, 0, 1)
-ground_horizon_color = Color(0, 0, 0, 1)
-energy_multiplier = 0.95
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_48ne7"]
+panorama = ExtResource("2_v45ci")
 
 [sub_resource type="Sky" id="Sky_ksju7"]
-sky_material = SubResource("ProceduralSkyMaterial_7u6i3")
+sky_material = SubResource("PanoramaSkyMaterial_48ne7")
+radiance_size = 0
 
 [sub_resource type="Environment" id="Environment_6iamk"]
 background_mode = 2
 sky = SubResource("Sky_ksju7")
 tonemap_mode = 3
-sdfgi_enabled = true
+fog_light_color = Color(0.09797881, 0.06216068, 0.06521444, 1)
+fog_density = 0.05
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.2662049, 0.26620513, 0.26620498, 1)
 volumetric_fog_emission = Color(0.23054802, 0.06501816, 0.08588783, 1)
 volumetric_fog_emission_energy = 0.1
-volumetric_fog_length = 128.0
 adjustment_enabled = true
 adjustment_brightness = 1.25
 
@@ -83,7 +81,7 @@ radius = 0.6
 height = 1.2
 
 [node name="PlayerController" parent="." instance=ExtResource("1_jbqir")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.009018, 1.0000002, 0.51590765)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0206747, 0.7259357, -0.6089051)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.4, -4.1)
