@@ -10,11 +10,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if is_colliding():
-		global.can_interact = true
 		interact_crosshair.visible = true
-		if Input.is_action_just_released("action"):
-			if get_collider().is_in_group("dialog") and !global.dialogue_active:
-				pass
+		if Input.is_action_just_released("action") and !global.is_dialogue_active:
+			if get_collider().is_in_group("dialog"):
+				Dialogic.start(get_collider().dialogue)
 	else:
-		global.can_interact = false
 		interact_crosshair.visible = false

@@ -913,7 +913,8 @@ volume_db = -80.0
 script = ExtResource("7_mqldn")
 
 [node name="NPC" parent="." groups=["dialog"] instance=ExtResource("11_m752w")]
-transform = Transform3D(-0.45568478, 0, 0.8901412, 0, 1, 0, -0.8901412, 0, -0.45568478, -19.76845, 1.1493983, -13.238534)
+transform = Transform3D(0.41380367, 0, 0.9103662, 0, 1, 0, -0.9103662, 0, 0.41380367, -19.76845, 1.1493983, -15.063415)
+dialogue = "alter_1"
 
 [node name="PlayerController" parent="." instance=ExtResource("2_k3gsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.694437, 1.4629215, -12.230957)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.781418, 1.2883838, -12.230957)
