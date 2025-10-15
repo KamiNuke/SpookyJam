@@ -4,8 +4,7 @@ var speed
 const WALK_SPEED = 1.25
 const SPRINT_SPEED = 1.5
 
-const JUMP_VELOCITY = 1.0
-var can_jump : bool = true
+const JUMP_VELOCITY = 2.5
 
 #bob variables
 const BOB_FREQ = 2.4
@@ -29,8 +28,6 @@ var _last_frame_was_on_floor = -INF
 
 @onready var top_ray_cast: RayCast3D = $TopRayCast
 @onready var bottom_ray_cast: RayCast3D = $BottomRayCast
-
-@onready var jump_delay_timer: Timer = $JumpDelay
 
 
 func _ready() -> void:
@@ -69,10 +66,8 @@ func _physics_process(delta: float) -> void:
 	
 	var input_dir := Vector2.ZERO
 	if !global.is_dialogue_active:
-		if Input.is_action_pressed("jump") and can_jump:
+		if Input.is_action_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-			can_jump = false
-			jump_delay_timer.start()
 			
 		input_dir = Input.get_vector("left", "right", "up", "down")
 	
@@ -153,7 +148,3 @@ func _headbob(time) -> Vector3:
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	
 	return pos
-
-
-func _on_jump_delay_timeout() -> void:
-	can_jump = true
