@@ -24,6 +24,8 @@ var _last_frame_was_on_floor = -INF
 @onready var camera: Camera3D = $head/Camera3D
 @onready var spotlight_front: SpotLight3D = $head/Camera3D/front_spotlight
 @onready var spotlight_back: SpotLight3D = $head/equipment/move_cam2/back_spotlight
+@onready var equipment: Node3D = $head/equipment
+
 
 @onready var top_ray_cast: RayCast3D = $TopRayCast
 @onready var bottom_ray_cast: RayCast3D = $BottomRayCast
@@ -37,6 +39,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		head.rotate_y(-event.relative.x * global.sensitivity)
 		camera.rotate_x(-event.relative.y * global.sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		equipment.rotate_x(-event.relative.y * global.sensitivity)
+		equipment.rotation.x = camera.rotation.x
 	
 	if event.is_action_pressed("flashlight"):
 		if spotlight_front.visible:

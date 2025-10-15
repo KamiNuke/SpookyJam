@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://cqttd845lqbw2"]
+[gd_scene load_steps=44 format=4 uid="uid://cqttd845lqbw2"]
 
 [ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
 [ext_resource type="Texture2D" uid="uid://kmt4pecauj55" path="res://assets/dev/raw-textures/refs/1-segment.png" id="1_6nik8"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://sdgnxbg5gmdi" path="res://scenes/sound/EntranceAmbientPlayer.gd" id="7_mqldn"]
 [ext_resource type="AudioStream" uid="uid://bsl6lnd2tpxiu" path="res://assets/sfx/EntranceAmbience.mp3" id="7_mu5rc"]
 [ext_resource type="AudioStream" uid="uid://debqhogdvjkrm" path="res://assets/sfx/Entrance2Ambience.mp3" id="9_c228y"]
+[ext_resource type="PackedScene" uid="uid://cshkbl1rcpcvp" path="res://scenes/utilities/npc.tscn" id="11_m752w"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k3gsl"]
 size = Vector2(60, 60)
@@ -850,9 +851,6 @@ size = Vector3(9.683049, 3.1403809, 27.356567)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.569639, 11.269525, -22.664265)
 size = Vector3(12.648926, 25.071823, 14.512085)
 
-[node name="PlayerController" parent="." instance=ExtResource("2_k3gsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.705608, 1.5227395, -22.164131)
-
 [node name="CSGStairMaker3D" parent="." instance=ExtResource("3_r67dc")]
 transform = Transform3D(2.3832026, 0, 0, 0, 2.3832026, 0, 0, 0, 1, -12.668888, 0.77558583, -14.353321)
 use_collision = true
@@ -913,3 +911,9 @@ shape = SubResource("BoxShape3D_srpf7")
 stream = ExtResource("9_c228y")
 volume_db = -80.0
 script = ExtResource("7_mqldn")
+
+[node name="NPC" parent="." groups=["dialog"] instance=ExtResource("11_m752w")]
+transform = Transform3D(-0.45568478, 0, 0.8901412, 0, 1, 0, -0.8901412, 0, -0.45568478, -19.76845, 1.1493983, -13.238534)
+
+[node name="PlayerController" parent="." instance=ExtResource("2_k3gsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.694437, 1.4629215, -12.230957)

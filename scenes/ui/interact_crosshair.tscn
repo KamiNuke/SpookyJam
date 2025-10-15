@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cksyqkhi0hnam"]
+
+[ext_resource type="Script" uid="uid://bqd5jsq60y3ua" path="res://scenes/ui/interact_crosshair.gd" id="1_wddqq"]
+
+[node name="InteractCrosshair" type="CenterContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_wddqq")
