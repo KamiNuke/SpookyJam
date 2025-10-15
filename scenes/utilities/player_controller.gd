@@ -4,7 +4,7 @@ var speed
 @export var WALK_SPEED = 1.25
 @export var SPRINT_SPEED = 1.5
 
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 1.0
 
 #bob variables
 const BOB_FREQ = 2.4
@@ -47,6 +47,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			spotlight_back.visible = true
 
 func _physics_process(delta: float) -> void:
+	if is_on_floor():
+		_last_frame_was_on_floor = Engine.get_physics_frames()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -56,12 +59,14 @@ func _physics_process(delta: float) -> void:
 	else:
 		speed = WALK_SPEED
 	
+	if Input.is_action_pressed("jump"):
+		velocity.y = JUMP_VELOCITY
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor() or _snapped_to_stairs_last_frame:
-		_last_frame_was_on_floor = Engine.get_physics_frames()
 		if direction:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
@@ -92,6 +97,9 @@ func is_surface_too_steep(normal: Vector3) -> bool:
 
 func _snap_up_to_stairs_check(delta) -> bool:
 	if !is_on_floor() and !_snapped_to_stairs_last_frame:
+		return false
+	
+	if velocity.y > 0 or (velocity * Vector3(1, 0, 1)).length() == 0:
 		return false
 	var expected_move_motion = velocity * Vector3(1, 0, 1) * delta
 	var step_pos_with_clearance = global_transform.translated(expected_move_motion + Vector3(0, MAX_STEP_HEIGHT * 2, 0))

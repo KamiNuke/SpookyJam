@@ -1,0 +1,486 @@
+[gd_scene load_steps=14 format=3 uid="uid://bfps2yj0oq6eu"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wbvmf"]
+size = Vector2(1.739, 9.115)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wbvmf"]
+data = PackedVector3Array(0.8695, 0, 4.5575, -0.8695, 0, 4.5575, 0.8695, 0, -4.5575, -0.8695, 0, 4.5575, -0.8695, 0, -4.5575, 0.8695, 0, -4.5575)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m752w"]
+size = Vector2(1.77, 0.31)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jksws"]
+data = PackedVector3Array(0.885, 0, 0.155, -0.885, 0, 0.155, 0.885, 0, -0.155, -0.885, 0, 0.155, -0.885, 0, -0.155, 0.885, 0, -0.155)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7ax8x"]
+size = Vector2(1.935, 4.03)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7ax8x"]
+data = PackedVector3Array(0.9675, 0, 2.0149999, -0.9675, 0, 2.0149999, 0.9675, 0, -2.0149999, -0.9675, 0, 2.0149999, -0.9675, 0, -2.0149999, 0.9675, 0, -2.0149999)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hl1u4"]
+data = PackedVector3Array(0.9675, 0, 2.0149999, -0.9675, 0, 2.0149999, 0.9675, 0, -2.0149999, -0.9675, 0, 2.0149999, -0.9675, 0, -2.0149999, 0.9675, 0, -2.0149999)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m6v5x"]
+data = PackedVector3Array(0.9675, 0, 2.0149999, -0.9675, 0, 2.0149999, 0.9675, 0, -2.0149999, -0.9675, 0, 2.0149999, -0.9675, 0, -2.0149999, 0.9675, 0, -2.0149999)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k1fi4"]
+size = Vector2(1.25, 3.935)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ew65y"]
+data = PackedVector3Array(0.625, 0, 1.9675, -0.625, 0, 1.9675, 0.625, 0, -1.9675, -0.625, 0, 1.9675, -0.625, 0, -1.9675, 0.625, 0, -1.9675)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qqiox"]
+data = PackedVector3Array(0.625, 0, 1.9675, -0.625, 0, 1.9675, 0.625, 0, -1.9675, -0.625, 0, 1.9675, -0.625, 0, -1.9675, 0.625, 0, -1.9675)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6pssr"]
+data = PackedVector3Array(0.625, 0, 1.9675, -0.625, 0, 1.9675, 0.625, 0, -1.9675, -0.625, 0, 1.9675, -0.625, 0, -1.9675, 0.625, 0, -1.9675)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mxak7"]
+size = Vector2(6, 6)
+
+[node name="underground" type="StaticBody3D"]
+
+[node name="underground_stairs" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.402, 5.787, 8.979)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="underground_stairs"]
+transform = Transform3D(1, 0, 0, 0, 0.76521367, 0.6437764, 0, -0.6437764, 0.76521367, 0, -2.8846443, -3.684298)
+visible = false
+mesh = SubResource("PlaneMesh_wbvmf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="underground_stairs"]
+transform = Transform3D(1, 0, 0, 0, 0.76521367, 0.6437764, 0, -0.6437764, 0.76521367, 0, -2.8846443, -3.684298)
+shape = SubResource("ConcavePolygonShape3D_wbvmf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="underground_stairs"]
+transform = Transform3D(1, 0, 0, 0, 0.95881975, 0.28401536, 0, -0.28401536, 0.95881975, 0, 0.09481643, -0.045535505)
+visible = false
+mesh = SubResource("PlaneMesh_m752w")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="underground_stairs"]
+transform = Transform3D(1, 0, 0, 0, 0.95881975, 0.28401536, 0, -0.28401536, 0.95881975, 0, 0.09481643, -0.045535505)
+shape = SubResource("ConcavePolygonShape3D_jksws")
+
+[node name="stairs_pattern7" type="CSGBox3D" parent="underground_stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000313282, -0.00042295456, -0.00039291382)
+size = Vector3(1.9490967, 0.25, 0.3)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="underground_stairs/stairs_pattern7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.250001, -1.4995451)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="underground_stairs/stairs_pattern7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.500001, -1.7995453)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="underground_stairs/stairs_pattern7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.750001, -2.0995445)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="underground_stairs/stairs_pattern7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.000001, -1.1995449)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="underground_stairs/stairs_pattern7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -0.3000002)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="underground_stairs/stairs_pattern7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -0.6000004)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="underground_stairs/stairs_pattern7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -0.8999996)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="underground_stairs/stairs_pattern7"]
+transform = Transform3D(1, 0, 0, 0, 0.7692435, 0.6389558, 0, -0.6389558, 0.7692435, 0.00596714, -0.95306444, -0.9826667)
+operation = 2
+size = Vector3(2.015625, 0.2012024, 3.113617)
+
+[node name="stairs_pattern8" type="CSGBox3D" parent="underground_stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000313282, -2.000423, -2.3866549)
+size = Vector3(1.9490967, 0.25, 0.3)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="underground_stairs/stairs_pattern8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.250001, -1.4995451)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="underground_stairs/stairs_pattern8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.500001, -1.7995453)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="underground_stairs/stairs_pattern8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.750001, -2.0995445)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="underground_stairs/stairs_pattern8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.000001, -1.1995449)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="underground_stairs/stairs_pattern8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -0.3000002)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="underground_stairs/stairs_pattern8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -0.6000004)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="underground_stairs/stairs_pattern8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -0.8999996)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="underground_stairs/stairs_pattern8"]
+transform = Transform3D(1, 0, 0, 0, 0.7692435, 0.6389558, 0, -0.6389558, 0.7692435, 0.00596714, -0.9506757, -0.9797909)
+operation = 2
+size = Vector3(2.015625, 0.2012024, 3.1061401)
+
+[node name="stairs_pattern9" type="CSGBox3D" parent="underground_stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000313282, -4.000423, -4.7423453)
+size = Vector3(1.9490967, 0.25, 0.3)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="underground_stairs/stairs_pattern9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.250001, -1.4995451)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="underground_stairs/stairs_pattern9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.500001, -1.7995453)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="underground_stairs/stairs_pattern9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.750001, -2.0995445)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="underground_stairs/stairs_pattern9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.000001, -1.1995449)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="underground_stairs/stairs_pattern9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -0.3000002)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="underground_stairs/stairs_pattern9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -0.6000004)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="underground_stairs/stairs_pattern9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -0.8999996)
+size = Vector3(2, 0.25, 0.3)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="underground_stairs/stairs_pattern9"]
+transform = Transform3D(1, 0, 0, 0, 0.7692435, 0.6389558, 0, -0.6389558, 0.7692435, 0.00596714, -0.9506757, -0.9797909)
+operation = 2
+size = Vector3(2.015625, 0.2012024, 3.1061401)
+
+[node name="tunnel_stairs" type="StaticBody3D" parent="."]
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="tunnel_stairs"]
+transform = Transform3D(1, 3.5527137e-15, 1.7763568e-15, -3.5527137e-15, 1.0000014, 6.854534e-07, 3.552714e-15, -6.854534e-07, 1.0000014, -3.417512, 5.4562488, 5.0385723)
+flip_faces = true
+size = Vector3(1.8011475, 0.94970703, 2.5493164)
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="tunnel_stairs/CSGBox3D6"]
+transform = Transform3D(1, -3.644405e-15, -4.3711385e-08, -3.348488e-08, 0.64278674, -0.7660442, 2.8097144e-08, 0.7660442, 0.64278674, 0.012512207, -0.9327051, 0.37757826)
+operation = 2
+radius = 0.94
+height = 3.5155475
+sides = 6
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="tunnel_stairs/CSGBox3D6"]
+transform = Transform3D(1, -3.644405e-15, -4.3711385e-08, -3.348488e-08, 0.64278674, -0.7660442, 2.8097144e-08, 0.7660442, 0.64278674, 0.012512207, -1.5019904, 0.37757778)
+operation = 2
+radius = 1.1889648
+height = 3.5155475
+sides = 6
+
+[node name="CSGBox3D" type="CSGBox3D" parent="tunnel_stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4045377, 0.9007373, 2.015996)
+flip_faces = true
+size = Vector3(1.9, 2, 8.049255)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="tunnel_stairs/CSGBox3D"]
+transform = Transform3D(1, 0, -4.371139e-08, -4.371139e-08, 1.9106855e-15, -1, 0, 1, 1.9106855e-15, 0, 1, -1.812046)
+flip_faces = true
+radius = 0.95
+height = 4.3805466
+sides = 6
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="tunnel_stairs/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01999998, -0.43650103)
+operation = 2
+flip_faces = true
+size = Vector3(1.86, 2, 9.258012)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="tunnel_stairs/CSGBox3D"]
+transform = Transform3D(1, 0, -4.371139e-08, -4.371139e-08, 1.9106855e-15, -1, 0, 1, 1.9106855e-15, 0, 1, -0.020263672)
+operation = 2
+flip_faces = true
+radius = 0.94
+height = 10.650879
+sides = 6
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="tunnel_stairs/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.9361614, 0.3515836, 0, -0.3515836, 0.9361614, 0.026222706, 0.6949196, 2.5602286)
+operation = 2
+size = Vector3(1.9657471, 4.9906006, 3.9269714)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="tunnel_stairs"]
+transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, -3.4049997, 2.7219026, 4.43584)
+flip_faces = true
+size = Vector3(1.9, 1.5, 5.060852)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="tunnel_stairs/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.7660457, -0.6427881, 0, 0.6427881, 0.7660457, 0.00046253204, -0.5881225, 3.0611095)
+flip_faces = true
+size = Vector3(1.9, 2.81958, 3.3359375)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="tunnel_stairs/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.7660457, -0.6427881, 0, 0.6427881, 0.7660457, -0.01183033, -1.1277212, 2.9754794)
+operation = 2
+flip_faces = true
+size = Vector3(1.8562744, 4.140072, 4.17041)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="tunnel_stairs/CSGBox3D2"]
+transform = Transform3D(1, 0, -4.371139e-08, -4.3711466e-08, 1.4901161e-07, -1.0000006, 2.6645353e-14, 1.0000006, 1.4901161e-07, 0, 0.75000095, 0.24769974)
+flip_faces = true
+radius = 0.95
+height = 5.685367
+sides = 6
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="tunnel_stairs/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.76604605, -0.64278805, 0, 0.64278805, 0.76604605, -0.012512207, 1.7072015, 2.219323)
+size = Vector3(1.8011475, 0.94970703, 2.5493164)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="tunnel_stairs/CSGBox3D2"]
+transform = Transform3D(1, 0, -4.371139e-08, -4.3711466e-08, 1.4901161e-07, -1.0000006, 2.6645353e-14, 1.0000006, 1.4901161e-07, 0, 0.7500026, 0.68787)
+operation = 2
+flip_faces = true
+radius = 0.94
+height = 7.0281773
+sides = 6
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="tunnel_stairs/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1.0000006, 1.4901161e-07, 0, -1.4901161e-07, 1.0000006, 0, -4.7683716e-07, -0.8165512)
+operation = 2
+flip_faces = true
+size = Vector3(1.88, 1.5, 8.264103)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="tunnel_stairs/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.9431349, -0.33242428, 0, 0.33242428, 0.9431349, -0.0061888695, 0.92269635, -4.3404217)
+operation = 2
+size = Vector3(1.9, 3.9284668, 4.1997375)
+
+[node name="tunnel_collisions" type="StaticBody3D" parent="tunnel_stairs"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4046178, -0.027794838, -0.09351444)
+visible = false
+mesh = SubResource("PlaneMesh_7ax8x")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4046178, -0.027794838, -0.09351444)
+shape = SubResource("ConcavePolygonShape3D_7ax8x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -2.484991, 0.93376017, -0.09351444)
+visible = false
+mesh = SubResource("PlaneMesh_7ax8x")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -2.484991, 0.93376017, -0.09351444)
+shape = SubResource("ConcavePolygonShape3D_hl1u4")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(4.371139e-08, 1, 8.742278e-08, 1, -4.371139e-08, 0, 3.821371e-15, 8.742278e-08, -1, -4.3021398, 0.93376017, -0.09351444)
+visible = false
+mesh = SubResource("PlaneMesh_7ax8x")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(4.371139e-08, 1, 8.742278e-08, 1, -4.371139e-08, 0, 3.821371e-15, 8.742278e-08, -1, -4.3021398, 0.93376017, -0.09351444)
+shape = SubResource("ConcavePolygonShape3D_m6v5x")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-0.5045277, 0.86339563, 0, -0.86339563, -0.5045277, 0, 0, 0, 1, -4.139973, 2.2461784, 0)
+visible = false
+mesh = SubResource("PlaneMesh_k1fi4")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-0.5045277, 0.86339563, 0, -0.86339563, -0.5045277, 0, 0, 0, 1, -4.139973, 2.2461784, 0)
+shape = SubResource("ConcavePolygonShape3D_ew65y")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-0.5000001, -0.8660255, 0, 0.8660255, -0.5000001, 0, 0, 0, 1, -2.6717625, 2.2461784, 0)
+visible = false
+mesh = SubResource("PlaneMesh_k1fi4")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-0.5000001, -0.8660255, 0, 0.8660255, -0.5000001, 0, 0, 0, 1, -2.6717625, 2.2461784, 0)
+shape = SubResource("ConcavePolygonShape3D_qqiox")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-1.0000001, 8.7422784e-08, 0, -8.7422784e-08, -1.0000001, 0, 0, 0, 1, -3.3700848, 2.6579902, 0)
+visible = false
+mesh = SubResource("PlaneMesh_k1fi4")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-1.0000001, 8.7422784e-08, 0, -8.7422784e-08, -1.0000001, 0, 0, 0, 1, -3.3700848, 2.6579902, 0)
+shape = SubResource("ConcavePolygonShape3D_6pssr")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-4.371139e-08, -1, 0, 0.7522654, -3.2882564e-08, 0.65886015, -0.65886015, 2.8799692e-08, 0.7522654, -2.484991, 2.9535758, 4.3828506)
+visible = false
+mesh = SubResource("PlaneMesh_7ax8x")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-4.371139e-08, -1, 0, 0.7522654, -3.2882564e-08, 0.65886015, -0.65886015, 2.8799692e-08, 0.7522654, -2.484991, 2.9535758, 4.3828506)
+shape = SubResource("ConcavePolygonShape3D_hl1u4")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(4.3711385e-08, 1, 8.742277e-08, 0.7522654, 2.4716819e-08, -0.65886015, -0.65886015, 9.4564825e-08, -0.7522654, -4.3021398, 2.9535758, 4.3828506)
+visible = false
+mesh = SubResource("PlaneMesh_7ax8x")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(4.3711385e-08, 1, 8.742277e-08, 0.7522654, 2.4716819e-08, -0.65886015, -0.65886015, 9.4564825e-08, -0.7522654, -4.3021398, 2.9535758, 4.3828506)
+shape = SubResource("ConcavePolygonShape3D_m6v5x")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-4.3711392e-08, -1, -2.3407415e-15, 0.99781644, -4.361594e-08, -0.06604746, 0.06604746, -2.8870293e-09, 0.99781644, -2.484991, 4.9156876, 7.0881305)
+visible = false
+mesh = SubResource("PlaneMesh_7ax8x")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-4.3711392e-08, -1, -2.3407415e-15, 0.99781644, -4.361594e-08, -0.06604746, 0.06604746, -2.8870293e-09, 0.99781644, -2.484991, 4.9156876, 7.0881305)
+shape = SubResource("ConcavePolygonShape3D_hl1u4")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(4.3711392e-08, 1, 8.742276e-08, 0.99781644, -4.9390003e-08, 0.06604746, 0.06604746, 8.4344855e-08, -0.99781644, -4.3021398, 4.9156876, 7.0881305)
+visible = false
+mesh = SubResource("PlaneMesh_7ax8x")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(4.3711392e-08, 1, 8.742276e-08, 0.99781644, -4.9390003e-08, 0.06604746, 0.06604746, 8.4344855e-08, -0.99781644, -4.3021398, 4.9156876, 7.0881305)
+shape = SubResource("ConcavePolygonShape3D_m6v5x")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-1.0000001, 8.742279e-08, 0, -6.5765136e-08, -0.7522655, 0.6588602, 5.7599397e-08, 0.65886027, 0.7522654, -3.3700848, 3.9552913, 3.5633254)
+visible = false
+mesh = SubResource("PlaneMesh_k1fi4")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="tunnel_stairs/tunnel_collisions"]
+transform = Transform3D(-1.0000001, 8.742279e-08, 0, -6.5765136e-08, -0.7522655, 0.6588602, 5.7599397e-08, 0.65886027, 0.7522654, -3.3700848, 3.9552913, 3.5633254)
+shape = SubResource("ConcavePolygonShape3D_6pssr")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -3.1360788, 1.7129889, -4.936039)
+radius = 3.0
+height = 20.0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCylinder3D"]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, 1, -1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, 0, 0, 2.5)
+operation = 2
+size = Vector3(20, 1, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D"]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, 1, -1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, 0, 0, 1)
+size = Vector3(20, 2, 6)
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(-4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, -4.3711392e-08, 4.3711392e-08, 4.3711385e-08, 1, -6.9809237, 7.0004034, 4.7683716e-07)
+radius = 3.0
+height = 20.0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCylinder3D/CSGCylinder3D3"]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, 1, -1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, 0, 0, 2.5)
+operation = 2
+size = Vector3(20, 1, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D/CSGCylinder3D3"]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, 1, -1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, 0, 0, 1)
+size = Vector3(20, 2, 6)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D/CSGCylinder3D3"]
+transform = Transform3D(0.98, 0, 0, 0, 1.015, 0, 0, 0, 0.98, 0, 0, 0)
+operation = 2
+radius = 3.0
+height = 20.0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCylinder3D/CSGCylinder3D3/CSGCylinder3D2"]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, 1, -1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, 0, 0, 2.4165034)
+operation = 2
+flip_faces = true
+size = Vector3(20, 1.1669922, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D/CSGCylinder3D3/CSGCylinder3D2"]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, 1, -1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, 0, 0, 1)
+size = Vector3(20, 2, 6)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(0.98, 0, 0, 0, 1.015, 0, 0, 0, 0.98, 0, 0, 0)
+operation = 2
+radius = 3.0
+height = 20.0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCylinder3D/CSGCylinder3D2"]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, 1, -1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, 0, 0, 2.4165034)
+operation = 2
+flip_faces = true
+size = Vector3(20, 1.1669922, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D/CSGCylinder3D2"]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, 1, -1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, 0, 0, 1)
+size = Vector3(20, 2, 6)
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(-4.1980403e-08, -1.0302249, 4.1980424e-08, 0.9604001, -4.5032575e-08, -4.1980424e-08, 4.198042e-08, 4.5032564e-08, 0.96040004, -6.9809256, 7.0004025, 4.7683716e-07)
+operation = 2
+radius = 3.0
+height = 20.0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCylinder3D/CSGCylinder3D4"]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, 1, -1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, 0, 0, 2.4165034)
+operation = 2
+flip_faces = true
+size = Vector3(20, 1.1669922, 6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D/CSGCylinder3D4"]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, 1, -1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, 0, 0, 1)
+size = Vector3(20, 2, 6)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCylinder3D"]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, 1, -1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, 6.6081815, 0.26845837, 0.7922516)
+operation = 2
+flip_faces = true
+size = Vector3(1.86, 2, 9.258012)
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(-4.3711385e-08, 1, 4.3711395e-08, -1, -4.371139e-08, 4.3711385e-08, 4.371139e-08, -4.3711392e-08, 1, 7.024419, 0.26845837, -0.18774843)
+operation = 2
+flip_faces = true
+radius = 0.94
+height = 10.650879
+sides = 6
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGCylinder3D"]
+transform = Transform3D(-1, 8.742277e-08, 8.742278e-08, -8.742277e-08, -1, 0, 8.742278e-08, -7.642741e-15, 1, 0.005870819, 9.992614, 0)
+mesh = SubResource("PlaneMesh_mxak7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CSGCylinder3D"]
+transform = Transform3D(-4.371137e-08, -1, 4.3711385e-08, 1, -4.371138e-08, -4.3711392e-08, 4.3711395e-08, 4.371139e-08, 1, 2.9524374, 7.014155, 0)
+mesh = SubResource("PlaneMesh_mxak7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="CSGCylinder3D"]
+transform = Transform3D(-4.37114e-08, 1, 4.3711402e-08, -1, -4.3711395e-08, 4.3711395e-08, 4.3711392e-08, -4.371139e-08, 1, -16.919823, 7.014154, 9.536743e-07)
+mesh = SubResource("PlaneMesh_mxak7")

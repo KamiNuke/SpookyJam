@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://0vspjv86vrcc"]
+
+[ext_resource type="PackedScene" uid="uid://os4bsundcg3w" path="res://assets/models/underground/underground.glb" id="1_g2nqr"]
+
+[node name="underground" instance=ExtResource("1_g2nqr")]
+
+[node name="collision " parent="." index="35"]
+visible = false
