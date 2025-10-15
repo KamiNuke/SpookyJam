@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bbck6ynukyxtp"]
+[gd_scene load_steps=19 format=3 uid="uid://bbck6ynukyxtp"]
 
 [ext_resource type="Script" uid="uid://so7jd85asjig" path="res://scenes/utilities/player_controller.gd" id="1_ppkod"]
 [ext_resource type="Script" uid="uid://dcsvn64biqxr1" path="res://scenes/utilities/interact_raycast.gd" id="2_7ebsd"]
@@ -17,7 +17,11 @@
 radius = 0.2
 height = 1.8
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odcas"]
+no_depth_test = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_ppkod"]
+material = SubResource("StandardMaterial3D_odcas")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ppkod"]
 viewport_path = NodePath("head/equipment/cam1")
@@ -103,6 +107,7 @@ metadata/_edit_group_ = true
 
 [node name="big_monitor_sprite" type="Sprite3D" parent="head/equipment/monitor_big"]
 transform = Transform3D(0.2506409, 0, 0, 0, 0.433298, -3.4924597e-10, 0, 2.3841858e-07, 0.30089036, 0.00308007, -0.009396434, 0.93868256)
+no_depth_test = true
 texture = SubResource("ViewportTexture_ppkod")
 
 [node name="monitor_small" type="MeshInstance3D" parent="head/equipment"]
@@ -113,6 +118,7 @@ metadata/_edit_group_ = true
 
 [node name="small_monitor_sprite" type="Sprite3D" parent="head/equipment/monitor_small"]
 transform = Transform3D(0.19951113, 0, 0, 0, 0.36567315, 1.3969839e-09, 0, 2.3841858e-07, 0.2831152, 0, 0.021881104, 0.6772537)
+no_depth_test = true
 texture = SubResource("ViewportTexture_jxyar")
 
 [node name="cam1" type="SubViewport" parent="head/equipment"]
