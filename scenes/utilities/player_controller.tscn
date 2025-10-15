@@ -147,3 +147,8 @@ footstep_sounds = Array[AudioStream]([ExtResource("3_mybwk"), ExtResource("4_7eb
 
 [node name="InteractCrosshair" parent="." instance=ExtResource("10_odcas")]
 visible = false
+
+[node name="JumpDelay" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="JumpDelay" to="." method="_on_jump_delay_timeout"]

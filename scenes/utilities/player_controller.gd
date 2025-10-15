@@ -5,6 +5,7 @@ const WALK_SPEED = 1.25
 const SPRINT_SPEED = 1.5
 
 const JUMP_VELOCITY = 1.0
+var can_jump : bool = true
 
 #bob variables
 const BOB_FREQ = 2.4
@@ -26,9 +27,10 @@ var _last_frame_was_on_floor = -INF
 @onready var spotlight_back: SpotLight3D = $head/equipment/move_cam2/back_spotlight
 @onready var equipment: Node3D = $head/equipment
 
-
 @onready var top_ray_cast: RayCast3D = $TopRayCast
 @onready var bottom_ray_cast: RayCast3D = $BottomRayCast
+
+@onready var jump_delay_timer: Timer = $JumpDelay
 
 
 func _ready() -> void:
@@ -67,8 +69,11 @@ func _physics_process(delta: float) -> void:
 	
 	var input_dir := Vector2.ZERO
 	if !global.is_dialogue_active:
-		if Input.is_action_pressed("jump"):
+		if Input.is_action_pressed("jump") and can_jump:
 			velocity.y = JUMP_VELOCITY
+			can_jump = false
+			jump_delay_timer.start()
+			
 		input_dir = Input.get_vector("left", "right", "up", "down")
 	
 	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -148,3 +153,7 @@ func _headbob(time) -> Vector3:
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	
 	return pos
+
+
+func _on_jump_delay_timeout() -> void:
+	can_jump = true
