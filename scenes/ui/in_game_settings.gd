@@ -13,7 +13,8 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	
-	sensitivity_label.text = str(global.sensitivity * 10) #multiply by 10 to round numbers
+	sensitivity_label.text = "Sensitivity"
+	#sensitivity_label.text = str(global.sensitivity * 10) #multiply by 10 to round numbers
 	sensitivity_slider.value = global.sensitivity
 	sensitivity_slider.min_value = 0.0001
 	sensitivity_slider.step = 0.0001
@@ -26,7 +27,7 @@ func _process(delta: float) -> void:
 
 func _on_sensitivity_slider_value_changed(value: float) -> void:
 	global.sensitivity = value
-	sensitivity_label.text = str(value * 10) #multiply by 10 to round numbers
+	#sensitivity_label.text = "Sensitivity" + str(value * 10) #multiply by 10 to round numbers
 
 
 func _on_volume_slider_value_changed(value: float) -> void:

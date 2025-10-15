@@ -5,6 +5,7 @@ var speed
 @export var SPRINT_SPEED = 1.5
 
 const JUMP_VELOCITY = 1.0
+var can_jump : bool = true
 
 #bob variables
 const BOB_FREQ = 2.4
@@ -24,6 +25,7 @@ var _last_frame_was_on_floor = -INF
 @onready var camera: Camera3D = $head/Camera3D
 @onready var spotlight_front: SpotLight3D = $head/Camera3D/front_spotlight
 @onready var spotlight_back: SpotLight3D = $head/equipment/move_cam2/back_spotlight
+@onready var equipment: Node3D = $head/equipment
 
 @onready var top_ray_cast: RayCast3D = $TopRayCast
 @onready var bottom_ray_cast: RayCast3D = $BottomRayCast
@@ -31,12 +33,16 @@ var _last_frame_was_on_floor = -INF
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Dialogic.timeline_started.connect(func(): global.is_dialogue_active = true)
+	Dialogic.timeline_ended.connect(func(): global.is_dialogue_active = false)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * global.sensitivity)
 		camera.rotate_x(-event.relative.y * global.sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		equipment.rotate_x(-event.relative.y * global.sensitivity)
+		equipment.rotation.x = camera.rotation.x
 	
 	if event.is_action_pressed("flashlight"):
 		if spotlight_front.visible:
@@ -59,12 +65,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		speed = WALK_SPEED
 	
-	if Input.is_action_pressed("jump"):
-		velocity.y = JUMP_VELOCITY
+	var input_dir := Vector2.ZERO
+	if !global.is_dialogue_active:
+		if Input.is_action_pressed("jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+			
+		input_dir = Input.get_vector("left", "right", "up", "down")
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor() or _snapped_to_stairs_last_frame:
 		if direction:
