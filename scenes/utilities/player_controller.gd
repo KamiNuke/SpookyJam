@@ -4,8 +4,7 @@ var speed
 const WALK_SPEED = 1.25
 const SPRINT_SPEED = 1.5
 
-const JUMP_VELOCITY = 1.0
-var can_jump : bool = true
+const JUMP_VELOCITY = 2.5
 
 #bob variables
 const BOB_FREQ = 2.4
