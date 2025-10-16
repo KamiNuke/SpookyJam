@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbmpvhtqfsu3i"]
+
+[ext_resource type="PackedScene" uid="uid://lkyhq63kk4pj" path="res://assets/models/skybox/raw/tube.glb" id="1_827y1"]
+[ext_resource type="Texture2D" uid="uid://b5hbbpi6lxbri" path="res://assets/textures/floor/angle_brick.jpg" id="2_g6nu0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhgxu"]
+albedo_texture = ExtResource("2_g6nu0")
+uv1_scale = Vector3(12, 12, 12)
+
+[node name="tube2" instance=ExtResource("1_827y1")]
+
+[node name="tube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hhgxu")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://bna434gq4ytgt"]
+
+[ext_resource type="PackedScene" uid="uid://cm082tug1744q" path="res://assets/models/skybox/raw/back_building.glb" id="1_6f0mr"]
+[ext_resource type="Texture2D" uid="uid://bom8yv0u374pk" path="res://assets/textures/walls/roof_shifer.jpg" id="2_wsxuj"]
+[ext_resource type="Texture2D" uid="uid://bya52eghgdvkw" path="res://assets/textures/walls/sandstone.jpg" id="3_wsxuj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3d8vf"]
+albedo_texture = ExtResource("2_wsxuj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jvxx"]
+albedo_texture = ExtResource("3_wsxuj")
+uv1_scale = Vector3(0.73, 0.73, 0.73)
+
+[node name="back_building2" instance=ExtResource("1_6f0mr")]
+
+[node name="back_building" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_3d8vf")
+surface_material_override/1 = SubResource("StandardMaterial3D_6jvxx")
