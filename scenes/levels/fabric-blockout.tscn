@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cqttd845lqbw2"]
+[gd_scene load_steps=19 format=3 uid="uid://cqttd845lqbw2"]
 
 [ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="2_k3gsl"]
@@ -21,6 +21,9 @@ viewport_path = NodePath("1cam/CSGBox3D2/Sprite3D1/SubViewport")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m752w"]
 data = PackedVector3Array(-0.2685547, -0.4199829, 0.5, -0.2685547, -0.4199829, -0.5, -0.2685547, 0.4199829, -0.5, 0.2685547, -0.4199829, -0.5, -0.2685547, -0.4199829, -0.5, -0.2685547, -0.4199829, 0.5, -0.2685547, 0.4199829, -0.5, -0.2685547, -0.4199829, -0.5, 0.2685547, -0.4199829, -0.5, -0.2685547, 0.4199829, -0.5, -0.2685547, 0.4199829, 0.5, -0.2685547, -0.4199829, 0.5, -0.2685547, -0.4199829, 0.5, -0.2685547, 0.4199829, 0.5, 0.2685547, 0.4199829, 0.5, 0.2685547, 0.4199829, 0.5, -0.2685547, 0.4199829, 0.5, -0.2685547, 0.4199829, -0.5, -0.2685547, -0.4199829, 0.5, 0.2685547, -0.4199829, 0.5, 0.2685547, -0.4199829, -0.5, 0.2685547, 0.4199829, 0.5, 0.2685547, -0.4199829, 0.5, -0.2685547, -0.4199829, 0.5, 0.2685547, -0.4199829, -0.5, 0.2685547, -0.4199829, 0.5, 0.2685547, 0.4199829, 0.5, 0.2685547, -0.4199829, -0.5, 0.2685547, 0.4199829, -0.5, -0.2685547, 0.4199829, -0.5, -0.2685547, 0.4199829, -0.5, 0.2685547, 0.4199829, -0.5, 0.2685547, 0.4199829, 0.5, 0.2685547, 0.4199829, 0.5, 0.2685547, 0.4199829, -0.5, 0.2685547, -0.4199829, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wbvmf"]
+size = Vector3(1, 1.5526123, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7ax8x"]
 viewport_path = NodePath("2cam/CSGBox3D2/Sprite3D3/SubViewport")
@@ -97,10 +100,11 @@ transform = Transform3D(0.41380367, 0, 0.9103662, 0, 1, 0, -0.9103662, 0, 0.4138
 dialogue = "alter_1"
 
 [node name="PlayerController" parent="." instance=ExtResource("2_k3gsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.781418, 1.2883838, -12.230957)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9461975, 1.2883838, -22.142439)
 
-[node name="1cam" type="StaticBody3D" parent="."]
+[node name="1cam" type="StaticBody3D" parent="." groups=["camera"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2202144, -0.5653784, -22.442816)
+collision_layer = 5
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="1cam"]
 transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
@@ -128,8 +132,15 @@ text = "1 cam"
 transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
 shape = SubResource("ConcavePolygonShape3D_m752w")
 
-[node name="2cam" type="StaticBody3D" parent="."]
+[node name="Area3D" type="Area3D" parent="1cam"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="1cam/Area3D" groups=["camera"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9436166, -0.61849594)
+shape = SubResource("BoxShape3D_wbvmf")
+
+[node name="2cam" type="StaticBody3D" parent="." groups=["camera"]]
 transform = Transform3D(-0.2896667, 0, 0.9571276, 0, 1, 0, -0.9571276, 0, -0.2896667, 18.372925, -1.0916973, -13.086376)
+collision_layer = 5
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="2cam"]
 transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
@@ -157,8 +168,15 @@ text = "2 cam"
 transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
 shape = SubResource("ConcavePolygonShape3D_m752w")
 
-[node name="cam3" type="StaticBody3D" parent="."]
+[node name="Area3D" type="Area3D" parent="2cam"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="2cam/Area3D" groups=["camera"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9436166, -0.61849594)
+shape = SubResource("BoxShape3D_wbvmf")
+
+[node name="cam3" type="StaticBody3D" parent="." groups=["camera"]]
 transform = Transform3D(-0.9623414, 0, -0.27184367, 0, 1, 0, 0.27184367, 0, -0.9623414, 8.006566, -1.0916976, 11.092229)
+collision_layer = 5
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="cam3"]
 transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
@@ -186,8 +204,15 @@ text = "3 cam"
 transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
 shape = SubResource("ConcavePolygonShape3D_m752w")
 
-[node name="cam4" type="StaticBody3D" parent="."]
+[node name="Area3D" type="Area3D" parent="cam3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cam3/Area3D" groups=["camera"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9436166, -0.61849594)
+shape = SubResource("BoxShape3D_wbvmf")
+
+[node name="cam4" type="StaticBody3D" parent="." groups=["camera"]]
 transform = Transform3D(0.0447703, 0, -0.99899733, 0, 1, 0, 0.99899733, 0, 0.0447703, -2.3078024, -1.0916973, -3.579625)
+collision_layer = 5
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="cam4"]
 transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
@@ -214,3 +239,9 @@ text = "4 cam"
 [node name="CSGBakedCollisionShape3D2" type="CollisionShape3D" parent="cam4"]
 transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
 shape = SubResource("ConcavePolygonShape3D_m752w")
+
+[node name="Area3D" type="Area3D" parent="cam4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cam4/Area3D" groups=["camera"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9436166, -0.61849594)
+shape = SubResource("BoxShape3D_wbvmf")
