@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqttd845lqbw2"]
+[gd_scene load_steps=18 format=3 uid="uid://cqttd845lqbw2"]
 
 [ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="2_k3gsl"]
@@ -15,6 +15,21 @@
 size = Vector3(5.6073, 1.2811279, 2.5268555)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_srpf7"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wbvmf"]
+viewport_path = NodePath("1cam/CSGBox3D2/Sprite3D1/SubViewport")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m752w"]
+data = PackedVector3Array(-0.2685547, -0.4199829, 0.5, -0.2685547, -0.4199829, -0.5, -0.2685547, 0.4199829, -0.5, 0.2685547, -0.4199829, -0.5, -0.2685547, -0.4199829, -0.5, -0.2685547, -0.4199829, 0.5, -0.2685547, 0.4199829, -0.5, -0.2685547, -0.4199829, -0.5, 0.2685547, -0.4199829, -0.5, -0.2685547, 0.4199829, -0.5, -0.2685547, 0.4199829, 0.5, -0.2685547, -0.4199829, 0.5, -0.2685547, -0.4199829, 0.5, -0.2685547, 0.4199829, 0.5, 0.2685547, 0.4199829, 0.5, 0.2685547, 0.4199829, 0.5, -0.2685547, 0.4199829, 0.5, -0.2685547, 0.4199829, -0.5, -0.2685547, -0.4199829, 0.5, 0.2685547, -0.4199829, 0.5, 0.2685547, -0.4199829, -0.5, 0.2685547, 0.4199829, 0.5, 0.2685547, -0.4199829, 0.5, -0.2685547, -0.4199829, 0.5, 0.2685547, -0.4199829, -0.5, 0.2685547, -0.4199829, 0.5, 0.2685547, 0.4199829, 0.5, 0.2685547, -0.4199829, -0.5, 0.2685547, 0.4199829, -0.5, -0.2685547, 0.4199829, -0.5, -0.2685547, 0.4199829, -0.5, 0.2685547, 0.4199829, -0.5, 0.2685547, 0.4199829, 0.5, 0.2685547, 0.4199829, 0.5, 0.2685547, 0.4199829, -0.5, 0.2685547, -0.4199829, -0.5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7ax8x"]
+viewport_path = NodePath("2cam/CSGBox3D2/Sprite3D3/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_k1fi4"]
+viewport_path = NodePath("cam3/CSGBox3D2/Sprite3D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mxak7"]
+viewport_path = NodePath("cam4/CSGBox3D2/Sprite3D/SubViewport")
 
 [node name="FabricBlockout" type="Node3D"]
 script = ExtResource("1_4d3ts")
@@ -83,3 +98,119 @@ dialogue = "alter_1"
 
 [node name="PlayerController" parent="." instance=ExtResource("2_k3gsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.781418, 1.2883838, -12.230957)
+
+[node name="1cam" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2202144, -0.5653784, -22.442816)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="1cam"]
+transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
+size = Vector3(0.5371094, 0.8399658, 1)
+
+[node name="Sprite3D1" type="Sprite3D" parent="1cam/CSGBox3D2"]
+transform = Transform3D(-0.31460547, 0, 0.9492225, 0, 1, 0, -0.9492225, 0, -0.31460547, 0.088544846, 0.65964484, -0.052452087)
+texture = SubResource("ViewportTexture_wbvmf")
+
+[node name="SubViewport" type="SubViewport" parent="1cam/CSGBox3D2/Sprite3D1"]
+transparent_bg = true
+size = Vector2i(62, 32)
+
+[node name="Label" type="Label" parent="1cam/CSGBox3D2/Sprite3D1/SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextEdit" type="TextEdit" parent="1cam/CSGBox3D2/Sprite3D1/SubViewport/Label"]
+layout_mode = 0
+offset_right = 59.0
+offset_bottom = 40.0
+text = "1 cam"
+
+[node name="CSGBakedCollisionShape3D2" type="CollisionShape3D" parent="1cam"]
+transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
+shape = SubResource("ConcavePolygonShape3D_m752w")
+
+[node name="2cam" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.2896667, 0, 0.9571276, 0, 1, 0, -0.9571276, 0, -0.2896667, 18.372925, -1.0916973, -13.086376)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="2cam"]
+transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
+size = Vector3(0.5371094, 0.8399658, 1)
+
+[node name="Sprite3D3" type="Sprite3D" parent="2cam/CSGBox3D2"]
+transform = Transform3D(-0.31460547, 0, 0.9492225, 0, 1, 0, -0.9492225, 0, -0.31460547, 0.088544846, 0.65964484, -0.052452087)
+texture = SubResource("ViewportTexture_7ax8x")
+
+[node name="SubViewport" type="SubViewport" parent="2cam/CSGBox3D2/Sprite3D3"]
+transparent_bg = true
+size = Vector2i(62, 32)
+
+[node name="Label" type="Label" parent="2cam/CSGBox3D2/Sprite3D3/SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextEdit" type="TextEdit" parent="2cam/CSGBox3D2/Sprite3D3/SubViewport/Label"]
+layout_mode = 0
+offset_right = 59.0
+offset_bottom = 40.0
+text = "2 cam"
+
+[node name="CSGBakedCollisionShape3D2" type="CollisionShape3D" parent="2cam"]
+transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
+shape = SubResource("ConcavePolygonShape3D_m752w")
+
+[node name="cam3" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.9623414, 0, -0.27184367, 0, 1, 0, 0.27184367, 0, -0.9623414, 8.006566, -1.0916976, 11.092229)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="cam3"]
+transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
+size = Vector3(0.5371094, 0.8399658, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="cam3/CSGBox3D2"]
+transform = Transform3D(-0.31460547, 0, 0.9492225, 0, 1, 0, -0.9492225, 0, -0.31460547, 0.088544846, 0.65964484, -0.052452087)
+texture = SubResource("ViewportTexture_k1fi4")
+
+[node name="SubViewport" type="SubViewport" parent="cam3/CSGBox3D2/Sprite3D"]
+transparent_bg = true
+size = Vector2i(62, 32)
+
+[node name="Label" type="Label" parent="cam3/CSGBox3D2/Sprite3D/SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextEdit" type="TextEdit" parent="cam3/CSGBox3D2/Sprite3D/SubViewport/Label"]
+layout_mode = 0
+offset_right = 59.0
+offset_bottom = 40.0
+text = "3 cam"
+
+[node name="CSGBakedCollisionShape3D2" type="CollisionShape3D" parent="cam3"]
+transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
+shape = SubResource("ConcavePolygonShape3D_m752w")
+
+[node name="cam4" type="StaticBody3D" parent="."]
+transform = Transform3D(0.0447703, 0, -0.99899733, 0, 1, 0, 0.99899733, 0, 0.0447703, -2.3078024, -1.0916973, -3.579625)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="cam4"]
+transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
+size = Vector3(0.5371094, 0.8399658, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="cam4/CSGBox3D2"]
+transform = Transform3D(-0.31460547, 0, 0.9492225, 0, 1, 0, -0.9492225, 0, -0.31460547, 0.088544846, 0.65964484, -0.052452087)
+texture = SubResource("ViewportTexture_mxak7")
+
+[node name="SubViewport" type="SubViewport" parent="cam4/CSGBox3D2/Sprite3D"]
+transparent_bg = true
+size = Vector2i(62, 32)
+
+[node name="Label" type="Label" parent="cam4/CSGBox3D2/Sprite3D/SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextEdit" type="TextEdit" parent="cam4/CSGBox3D2/Sprite3D/SubViewport/Label"]
+layout_mode = 0
+offset_right = 59.0
+offset_bottom = 40.0
+text = "4 cam"
+
+[node name="CSGBakedCollisionShape3D2" type="CollisionShape3D" parent="cam4"]
+transform = Transform3D(-0.31460547, 0, -0.9492225, 0, 1, 0, 0.9492225, 0, -0.31460547, 0.13006067, 1.4625645, -0.7605896)
+shape = SubResource("ConcavePolygonShape3D_m752w")
