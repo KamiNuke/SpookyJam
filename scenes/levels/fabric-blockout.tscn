@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="2_k3gsl"]
-[ext_resource type="PackedScene" uid="uid://d1xy1jhf4s42c" path="res://scenes/levels/outdoor.tscn" id="2_wbvmf"]
+[ext_resource type="PackedScene" uid="uid://dkdm20efngy2d" path="res://scenes/levels/fabric-blockout_old.tscn" id="2_wbvmf"]
 [ext_resource type="AudioStream" uid="uid://bs7bstle7lybp" path="res://assets/sfx/OutdoorAmbience.mp3" id="4_fxuma"]
 [ext_resource type="Script" uid="uid://coc712db3eq6g" path="res://scenes/sound/RoomArea.gd" id="4_srpf7"]
 [ext_resource type="Script" uid="uid://bxgpxcfc0b5tp" path="res://scenes/sound/OutdoorAmbientPlayer.gd" id="6_mqldn"]
@@ -19,7 +19,7 @@ size = Vector3(5.6073, 1.2811279, 2.5268555)
 [node name="FabricBlockout" type="Node3D"]
 script = ExtResource("1_4d3ts")
 
-[node name="Outdoor" parent="." instance=ExtResource("2_wbvmf")]
+[node name="FabricBlockout_old" parent="." instance=ExtResource("2_wbvmf")]
 
 [node name="AudioManager" type="Node" parent="."]
 
