@@ -148,3 +148,10 @@ func _headbob(time) -> Vector3:
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	
 	return pos
+
+@onready var block_enemy_1: MeshInstance3D = $head/equipment/move_cam1/block_enemy1
+@onready var block_enemy_2: MeshInstance3D = $head/equipment/move_cam2/block_enemy2
+
+func _on_fabric_blockout_block_cameras() -> void:
+	block_enemy_1.visible = true
+	block_enemy_2.visible = true

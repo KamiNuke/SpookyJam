@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bbck6ynukyxtp"]
+[gd_scene load_steps=21 format=3 uid="uid://bbck6ynukyxtp"]
 
 [ext_resource type="Script" uid="uid://so7jd85asjig" path="res://scenes/utilities/player_controller.gd" id="1_ppkod"]
 [ext_resource type="Script" uid="uid://dcsvn64biqxr1" path="res://scenes/utilities/interact_raycast.gd" id="2_7ebsd"]
@@ -16,6 +16,12 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mybwk"]
 radius = 0.2
 height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rsqqw"]
+no_depth_test = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_6d84g"]
+material = SubResource("StandardMaterial3D_rsqqw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odcas"]
 no_depth_test = true
@@ -76,8 +82,13 @@ script = ExtResource("2_7ebsd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2667799, -0.18721676, -0.09299369)
 
 [node name="move_cam1" type="RemoteTransform3D" parent="head/equipment"]
-transform = Transform3D(0.9674888, 0, -0.25291374, 0, 1, 0, 0.25291374, 0, 0.9674888, -0.204, 0.1, 0)
+transform = Transform3D(0.88160855, 0, -0.4719816, 0, 1, 0, 0.4719816, 0, 0.88160855, -0.44407463, 0.099999994, 0.10699619)
 remote_path = NodePath("../cam1/front_cam")
+
+[node name="block_enemy1" type="MeshInstance3D" parent="head/equipment/move_cam1"]
+transform = Transform3D(0.1271894, 0, 3.4924597e-09, 0, 0.34145862, 0, 0, 0, 0.01073674, 0.0016358979, 0, -0.05556982)
+visible = false
+mesh = SubResource("BoxMesh_6d84g")
 
 [node name="move_cam2" type="RemoteTransform3D" parent="head/equipment"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.1, 0.11212847)
@@ -92,6 +103,11 @@ light_volumetric_fog_energy = 0.1
 spot_range = 100.0
 spot_attenuation = 2.0
 spot_angle_attenuation = 3.0
+
+[node name="block_enemy2" type="MeshInstance3D" parent="head/equipment/move_cam2"]
+transform = Transform3D(0.29608917, 0, 1.3038516e-08, 0, 0.34145862, 0, 0, 0, 0.080650136, -0.06238252, 0, -0.09191891)
+visible = false
+mesh = SubResource("BoxMesh_6d84g")
 
 [node name="stick" type="MeshInstance3D" parent="head/equipment"]
 transform = Transform3D(0.04500001, 0, 0, 0, 0.0538867, -0.050174512, 0, 0.0034960296, 0.77337414, 0.099999994, -0.2729443, -0.42881387)
@@ -125,7 +141,7 @@ texture = SubResource("ViewportTexture_jxyar")
 size = Vector2i(384, 216)
 
 [node name="front_cam" type="Camera3D" parent="head/equipment/cam1"]
-transform = Transform3D(0.9674888, 0, -0.25291374, 0, 1, 0, 0.25291374, 0, 0.9674888, 0.0627799, 0.16900054, -0.09299369)
+transform = Transform3D(0.88160855, 0, -0.4719816, 0, 1, 0, 0.4719816, 0, 0.88160855, -0.17729473, 0.16900054, 0.014002502)
 environment = SubResource("Environment_ppkod")
 
 [node name="cam2" type="SubViewport" parent="head/equipment"]

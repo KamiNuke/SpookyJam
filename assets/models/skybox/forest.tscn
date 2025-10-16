@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://pxvv4isr8eu5"]
+
+[ext_resource type="PackedScene" uid="uid://cnfiglfnkmt0r" path="res://assets/models/skybox/raw/forest.glb" id="1_47uud"]
+[ext_resource type="Texture2D" uid="uid://b8v5l6ai6wwj3" path="res://assets/textures/skybox/forest.jpg" id="2_n6680"]
+[ext_resource type="Texture2D" uid="uid://cmp4pkt1dikow" path="res://assets/textures/skybox/forest_transparent.png" id="3_wql16"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygcbo"]
+albedo_texture = ExtResource("2_n6680")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vsht"]
+transparency = 1
+albedo_texture = ExtResource("3_wql16")
+uv1_scale = Vector3(0.545, 1, 1)
+
+[node name="forest2" instance=ExtResource("1_47uud")]
+
+[node name="forest" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ygcbo")
+surface_material_override/1 = SubResource("StandardMaterial3D_6vsht")
