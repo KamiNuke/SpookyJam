@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cqttd845lqbw2"]
+[gd_scene load_steps=27 format=3 uid="uid://cqttd845lqbw2"]
 
 [ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="2_k3gsl"]
@@ -6,11 +6,19 @@
 [ext_resource type="AudioStream" uid="uid://bs7bstle7lybp" path="res://assets/sfx/OutdoorAmbience.mp3" id="4_fxuma"]
 [ext_resource type="Script" uid="uid://coc712db3eq6g" path="res://scenes/sound/RoomArea.gd" id="4_srpf7"]
 [ext_resource type="Script" uid="uid://bxgpxcfc0b5tp" path="res://scenes/sound/OutdoorAmbientPlayer.gd" id="6_mqldn"]
+[ext_resource type="Script" uid="uid://bxau48rj4bi6m" path="res://scenes/sound/CourtyardAmbientPlayer.gd" id="7_7l64u"]
 [ext_resource type="Script" uid="uid://sdgnxbg5gmdi" path="res://scenes/sound/EntranceAmbientPlayer.gd" id="7_mqldn"]
 [ext_resource type="AudioStream" uid="uid://co7rrvhehlith" path="res://assets/sfx/HallwayAmbience.mp3" id="8_m752w"]
 [ext_resource type="AudioStream" uid="uid://debqhogdvjkrm" path="res://assets/sfx/Entrance2Ambience.mp3" id="9_c228y"]
 [ext_resource type="AudioStream" uid="uid://cgkwbuoyf4x50" path="res://assets/sfx/CourtyardAmbience.mp3" id="9_m752w"]
+[ext_resource type="AudioStream" uid="uid://jq28mnf5rqjd" path="res://assets/sfx/BasementAmbience.mp3" id="10_mxak7"]
+[ext_resource type="AudioStream" uid="uid://cai6nnr8q8cmt" path="res://assets/sfx/CameraRoom2Ambience.mp3" id="11_0go4e"]
 [ext_resource type="PackedScene" uid="uid://cshkbl1rcpcvp" path="res://scenes/utilities/npc.tscn" id="11_m752w"]
+[ext_resource type="Script" uid="uid://drs657y2a6jsu" path="res://scenes/sound/HallwayAmbientPlayer.gd" id="11_nom3i"]
+[ext_resource type="AudioStream" uid="uid://coyu4i5ik4s4c" path="res://assets/sfx/StairwellAmbience.mp3" id="12_m0x24"]
+[ext_resource type="Script" uid="uid://b1velas27rph0" path="res://scenes/sound/BasementAmbientPlayer.gd" id="13_yl0if"]
+[ext_resource type="Script" uid="uid://13sj5k7f780t" path="res://scenes/sound/Cam2AmbientPlayer.gd" id="15_qjc2r"]
+[ext_resource type="Script" uid="uid://cbkgrq8tip08m" path="res://scenes/sound/StairwellAmbientPlayer.gd" id="17_jksws"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fxuma"]
 size = Vector3(5.6073, 1.2811279, 2.5268555)
@@ -33,7 +41,6 @@ viewport_path = NodePath("cam3/CSGBox3D2/Sprite3D/SubViewport")
 viewport_path = NodePath("cam4/CSGBox3D2/Sprite3D/SubViewport")
 
 [node name="FabricBlockout" type="Node3D"]
-visible = false
 script = ExtResource("1_4d3ts")
 
 [node name="FabricBlockout_old" parent="." instance=ExtResource("2_wbvmf")]
@@ -76,7 +83,7 @@ shape = SubResource("BoxShape3D_srpf7")
 [node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/CourtyardAmbience"]
 stream = ExtResource("9_m752w")
 volume_db = -80.0
-script = ExtResource("7_mqldn")
+script = ExtResource("7_7l64u")
 
 [node name="CourtyardAmbience2" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
 transform = Transform3D(-1.6568569, 0, 2.3147861e-07, 0, 0.9844049, 0, -2.501784e-07, 0, -1.5330132, 9.621803, 1.6918367, -6.8670936)
@@ -90,10 +97,10 @@ shape = SubResource("BoxShape3D_srpf7")
 [node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/CourtyardAmbience2"]
 stream = ExtResource("9_m752w")
 volume_db = -80.0
-script = ExtResource("7_mqldn")
+script = ExtResource("7_7l64u")
 
 [node name="EntranceAmbience2" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
-transform = Transform3D(-2.1493294, 0, 6.299442e-07, 0, 0.9844049, 0, -3.2453974e-07, 0, -4.1719313, -0.22037005, 1.6918367, -1.9604846)
+transform = Transform3D(-2.2221208, 0, 6.299442e-07, 0, 0.9844049, 0, -3.3553093e-07, 0, -4.1719313, -0.40146208, 1.6918367, -1.9604846)
 script = ExtResource("4_srpf7")
 ambient_player = NodePath("AmbientPlayer")
 
@@ -107,7 +114,7 @@ volume_db = -80.0
 script = ExtResource("7_mqldn")
 
 [node name="HallwayAmbience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
-transform = Transform3D(-2.3469002, 0, 1.1200151e-07, 0, 0.9844049, 0, -3.543721e-07, 0, -0.74175227, 14.059597, 1.6918367, 3.197614)
+transform = Transform3D(-2.4207408, 0, 4.7890484e-07, 0, 0.9844049, 0, -3.6552171e-07, 0, -3.1716423, 14.059596, 1.6918367, 7.7782173)
 script = ExtResource("4_srpf7")
 ambient_player = NodePath("AmbientPlayer")
 
@@ -118,66 +125,10 @@ shape = SubResource("BoxShape3D_srpf7")
 [node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/HallwayAmbience"]
 stream = ExtResource("8_m752w")
 volume_db = -80.0
-script = ExtResource("7_mqldn")
-
-[node name="Hallway2Ambience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
-transform = Transform3D(-2.0021656, 0, 2.1609762e-07, 0, 0.9844049, 0, -3.0231863e-07, 0, -1.4311495, 20.165094, 1.6918367, -21.49084)
-script = ExtResource("4_srpf7")
-ambient_player = NodePath("AmbientPlayer")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioManager/Hallway2Ambience"]
-transform = Transform3D(5.97, 0, 0, 0, 3.347, 0, 0, 0, 3.692, -0.19262695, -0.03813526, 0)
-shape = SubResource("BoxShape3D_srpf7")
-
-[node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/Hallway2Ambience"]
-stream = ExtResource("8_m752w")
-volume_db = -80.0
-script = ExtResource("7_mqldn")
-
-[node name="BasementAmbience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
-transform = Transform3D(-4.4120193, 0, 7.524392e-07, 0, 1.8128349, 0, -6.6619646e-07, 0, -4.9831786, 11.2919235, -5.049037, -12.475207)
-script = ExtResource("4_srpf7")
-ambient_player = NodePath("AmbientPlayer")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioManager/BasementAmbience"]
-transform = Transform3D(5.97, 0, 0, 0, 3.347, 0, 0, 0, 3.692, -0.19262695, -0.03813526, 0)
-shape = SubResource("BoxShape3D_srpf7")
-
-[node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/BasementAmbience"]
-stream = ExtResource("8_m752w")
-volume_db = -80.0
-script = ExtResource("7_mqldn")
-
-[node name="BasementAmbience2" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
-transform = Transform3D(-3.7472048, 0, 1.8074504e-06, 0, 1.8480706, 0, -5.6581223e-07, 0, -11.970204, 13.395643, -4.936935, -43.542435)
-script = ExtResource("4_srpf7")
-ambient_player = NodePath("AmbientPlayer")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioManager/BasementAmbience2"]
-transform = Transform3D(5.97, 0, 0, 0, 3.347, 0, 0, 0, 3.692, -0.19262695, -0.03813526, 0)
-shape = SubResource("BoxShape3D_srpf7")
-
-[node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/BasementAmbience2"]
-stream = ExtResource("8_m752w")
-volume_db = -80.0
-script = ExtResource("7_mqldn")
-
-[node name="Cam3Ambience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
-transform = Transform3D(-1.5528753, 0, 3.8092153e-07, 0, 0.9844049, 0, -2.3447765e-07, 0, -2.5227287, 9.794787, 1.6918367, 9.427326)
-script = ExtResource("4_srpf7")
-ambient_player = NodePath("AmbientPlayer")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioManager/Cam3Ambience"]
-transform = Transform3D(5.97, 0, 0, 0, 3.347, 0, 0, 0, 3.692, -0.19262695, -0.03813526, 0)
-shape = SubResource("BoxShape3D_srpf7")
-
-[node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/Cam3Ambience"]
-stream = ExtResource("8_m752w")
-volume_db = -80.0
-script = ExtResource("7_mqldn")
+script = ExtResource("11_nom3i")
 
 [node name="Cam2Ambience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
-transform = Transform3D(-1.8456138, 0, 8.670383e-07, 0, 0.9844049, 0, -2.7867995e-07, 0, -5.7421346, 20.652887, 1.6918367, -8.571909)
+transform = Transform3D(-2.2702975, 0, 1.0878445e-06, 0, 0.9844049, 0, -3.4280544e-07, 0, -7.2044673, 20.544422, 1.6918367, -11.031753)
 script = ExtResource("4_srpf7")
 ambient_player = NodePath("AmbientPlayer")
 
@@ -186,12 +137,28 @@ transform = Transform3D(5.97, 0, 0, 0, 3.347, 0, 0, 0, 3.692, -0.19262695, -0.03
 shape = SubResource("BoxShape3D_srpf7")
 
 [node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/Cam2Ambience"]
-stream = ExtResource("8_m752w")
+stream = ExtResource("11_0go4e")
 volume_db = -80.0
-script = ExtResource("7_mqldn")
+script = ExtResource("15_qjc2r")
+fade_out_time = 2.5
+
+[node name="BasementAmbience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
+transform = Transform3D(-4.4120193, 0, 2.5110692e-06, 0, 1.8963623, 0, -6.6619646e-07, 0, -16.630054, 11.291926, -4.835986, -34.47312)
+script = ExtResource("4_srpf7")
+ambient_player = NodePath("AmbientPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioManager/BasementAmbience"]
+transform = Transform3D(5.97, 0, 0, 0, 3.347, 0, 0, 0, 3.692, -0.19262695, -0.03813526, 0)
+shape = SubResource("BoxShape3D_srpf7")
+
+[node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/BasementAmbience"]
+stream = ExtResource("10_mxak7")
+volume_db = -80.0
+script = ExtResource("13_yl0if")
+fade_out_time = 2.5
 
 [node name="StairwellAmbience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
-transform = Transform3D(-0.989701, 0, 2.5185614e-07, 0, 4.823184, 0, -1.4944071e-07, 0, -1.6679674, 9.706376, 2.8686678, -1.2725266)
+transform = Transform3D(-0.989701, 0, 2.8024846e-07, 0, 4.823184, 0, -1.4944071e-07, 0, -1.8560014, 9.706376, 2.8686678, -1.2725266)
 script = ExtResource("4_srpf7")
 ambient_player = NodePath("AmbientPlayer")
 
@@ -200,9 +167,9 @@ transform = Transform3D(5.97, 0, 0, 0, 3.347, 0, 0, 0, 3.692, -0.19262695, -0.03
 shape = SubResource("BoxShape3D_srpf7")
 
 [node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/StairwellAmbience"]
-stream = ExtResource("8_m752w")
+stream = ExtResource("12_m0x24")
 volume_db = -80.0
-script = ExtResource("7_mqldn")
+script = ExtResource("17_jksws")
 
 [node name="NPC" parent="." groups=["dialog"] instance=ExtResource("11_m752w")]
 transform = Transform3D(0.41380367, 0, 0.9103662, 0, 1, 0, -0.9103662, 0, 0.41380367, -19.76845, 1.1493983, -15.063415)
