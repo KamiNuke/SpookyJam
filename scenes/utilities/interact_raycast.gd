@@ -1,6 +1,8 @@
 extends RayCast3D
 
 @onready var interact_crosshair: CenterContainer = $"../../../InteractCrosshair"
+@onready var player_controller: CharacterBody3D = $"../../.."
+
 
 var map_node
 
@@ -8,8 +10,7 @@ const PLACED_CAMERA = preload("uid://bbq76bxa5xt65")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	map_node = get_parent().get_parent().get_parent().get_parent()
-
+	map_node = player_controller.get_parent()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
