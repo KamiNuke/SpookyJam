@@ -1,24 +1,24 @@
-[gd_scene load_steps=52 format=3 uid="uid://cqttd845lqbw2"]
+[gd_scene load_steps=52 format=3 uid="uid://dkdm20efngy2d"]
 
-[ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
-[ext_resource type="Texture2D" uid="uid://kmt4pecauj55" path="res://assets/dev/raw-textures/refs/1-segment.png" id="1_6nik8"]
-[ext_resource type="AudioStream" uid="uid://bs7bstle7lybp" path="res://assets/sfx/OutdoorAmbience.mp3" id="4_fxuma"]
-[ext_resource type="Script" uid="uid://coc712db3eq6g" path="res://scenes/sound/RoomArea.gd" id="4_srpf7"]
-[ext_resource type="Script" uid="uid://bxgpxcfc0b5tp" path="res://scenes/sound/OutdoorAmbientPlayer.gd" id="6_mqldn"]
-[ext_resource type="Script" uid="uid://sdgnxbg5gmdi" path="res://scenes/sound/EntranceAmbientPlayer.gd" id="7_mqldn"]
-[ext_resource type="AudioStream" uid="uid://bsl6lnd2tpxiu" path="res://assets/sfx/EntranceAmbience.mp3" id="7_mu5rc"]
-[ext_resource type="AudioStream" uid="uid://debqhogdvjkrm" path="res://assets/sfx/Entrance2Ambience.mp3" id="9_c228y"]
-[ext_resource type="PackedScene" uid="uid://0vspjv86vrcc" path="res://scenes/levels/underground.tscn" id="11_0go4e"]
-[ext_resource type="Texture2D" uid="uid://fuapmq2acex2" path="res://assets/textures/walls/tile_1st_floor_hq.jpg" id="12_7ax8x"]
-[ext_resource type="Texture2D" uid="uid://cvr5oq5ki1pk5" path="res://assets/textures/walls/tile_basement_floor.jpg" id="12_k1fi4"]
-[ext_resource type="Texture2D" uid="uid://c0ev8ycmm56b5" path="res://assets/textures/windows/window_basement.png" id="14_mxak7"]
-[ext_resource type="Texture2D" uid="uid://dm7w6rkuycl4r" path="res://assets/textures/windows/window_round.png" id="15_0go4e"]
+[ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_ofjxi"]
+[ext_resource type="Texture2D" uid="uid://kmt4pecauj55" path="res://assets/dev/raw-textures/refs/1-segment.png" id="2_pqsg4"]
+[ext_resource type="Script" uid="uid://coc712db3eq6g" path="res://scenes/sound/RoomArea.gd" id="3_76feu"]
+[ext_resource type="AudioStream" uid="uid://bs7bstle7lybp" path="res://assets/sfx/OutdoorAmbience.mp3" id="4_383ph"]
+[ext_resource type="Script" uid="uid://bxgpxcfc0b5tp" path="res://scenes/sound/OutdoorAmbientPlayer.gd" id="5_ehnjc"]
+[ext_resource type="AudioStream" uid="uid://bsl6lnd2tpxiu" path="res://assets/sfx/EntranceAmbience.mp3" id="6_tepbx"]
+[ext_resource type="Script" uid="uid://sdgnxbg5gmdi" path="res://scenes/sound/EntranceAmbientPlayer.gd" id="7_us3vr"]
+[ext_resource type="AudioStream" uid="uid://debqhogdvjkrm" path="res://assets/sfx/Entrance2Ambience.mp3" id="8_camep"]
+[ext_resource type="PackedScene" uid="uid://0vspjv86vrcc" path="res://scenes/levels/underground.tscn" id="9_lbv6d"]
+[ext_resource type="Texture2D" uid="uid://cvr5oq5ki1pk5" path="res://assets/textures/walls/tile_basement_floor.jpg" id="10_ewcy5"]
+[ext_resource type="Texture2D" uid="uid://fuapmq2acex2" path="res://assets/textures/walls/tile_1st_floor_hq.jpg" id="11_h2tvl"]
+[ext_resource type="Texture2D" uid="uid://c0ev8ycmm56b5" path="res://assets/textures/windows/window_basement.png" id="12_vxhsu"]
+[ext_resource type="Texture2D" uid="uid://dm7w6rkuycl4r" path="res://assets/textures/windows/window_round.png" id="13_jrfgg"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k3gsl"]
 size = Vector2(60, 60)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r67dc"]
-albedo_texture = ExtResource("1_6nik8")
+albedo_texture = ExtResource("2_pqsg4")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6nik8"]
 size = Vector2(10, 2.6)
@@ -122,15 +122,15 @@ size = Vector3(5.6073, 1.2811279, 2.5268555)
 [sub_resource type="BoxShape3D" id="BoxShape3D_srpf7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxak7"]
-albedo_texture = ExtResource("12_k1fi4")
+albedo_texture = ExtResource("10_ewcy5")
 uv1_scale = Vector3(2, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1fi4"]
-albedo_texture = ExtResource("12_7ax8x")
+albedo_texture = ExtResource("11_h2tvl")
 uv1_scale = Vector3(2, 1, 1)
 
-[node name="FabricBlockout" type="Node3D"]
-script = ExtResource("1_4d3ts")
+[node name="FabricBlockout_old" type="Node3D"]
+script = ExtResource("1_ofjxi")
 
 [node name="ref" type="StaticBody3D" parent="."]
 visible = false
@@ -1188,6 +1188,7 @@ size = Vector3(12.648926, 25.071823, 14.512085)
 
 [node name="OutdoorReverbZone" type="Area3D" parent="AudioManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603569, 1.7331916, -8.874054)
+visible = false
 reverb_bus_enabled = true
 reverb_bus_name = &"SFXReverb"
 reverb_bus_amount = 1.0
@@ -1198,7 +1199,7 @@ shape = SubResource("BoxShape3D_fxuma")
 
 [node name="OutdoorAmbience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
 transform = Transform3D(-2.6791933, 0, 1.5099579e-06, 0, 4.741, 0, -4.04547e-07, 0, -9.999999, -13.765028, 1.887105, -13.605251)
-script = ExtResource("4_srpf7")
+script = ExtResource("3_76feu")
 ambient_player = NodePath("AmbientPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AudioManager/OutdoorAmbience"]
@@ -1206,14 +1207,14 @@ transform = Transform3D(5.97, 0, 0, 0, 3.347, 0, 0, 0, 3.692, -0.19262695, -0.03
 shape = SubResource("BoxShape3D_srpf7")
 
 [node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/OutdoorAmbience"]
-stream = ExtResource("4_fxuma")
+stream = ExtResource("4_383ph")
 volume_db = -45.333
-script = ExtResource("6_mqldn")
+script = ExtResource("5_ehnjc")
 
 [node name="EntranceAmbiance" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
 transform = Transform3D(-1.2010933, 0, 2.711692e-07, 0, 2.232675, 0, -1.8136004e-07, 0, -1.7958723, -3.4778614, 2.1193774, -22.98089)
 visible = false
-script = ExtResource("4_srpf7")
+script = ExtResource("3_76feu")
 ambient_player = NodePath("AmbientPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AudioManager/EntranceAmbiance"]
@@ -1221,13 +1222,13 @@ transform = Transform3D(5.97, 0, 0, 0, 3.347, 0, 0, 0, 3.692, -0.19262695, -0.03
 shape = SubResource("BoxShape3D_srpf7")
 
 [node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/EntranceAmbiance"]
-stream = ExtResource("7_mu5rc")
+stream = ExtResource("6_tepbx")
 volume_db = -80.0
-script = ExtResource("7_mqldn")
+script = ExtResource("7_us3vr")
 
 [node name="EntranceAmbiance2" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
 transform = Transform3D(-2.3469005, 0, 6.299442e-07, 0, 0.9844049, 0, -3.5437213e-07, 0, -4.1719313, 0.22975802, 1.6918367, -1.9604845)
-script = ExtResource("4_srpf7")
+script = ExtResource("3_76feu")
 ambient_player = NodePath("AmbientPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AudioManager/EntranceAmbiance2"]
@@ -1235,11 +1236,11 @@ transform = Transform3D(5.97, 0, 0, 0, 3.347, 0, 0, 0, 3.692, -0.19262695, -0.03
 shape = SubResource("BoxShape3D_srpf7")
 
 [node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/EntranceAmbiance2"]
-stream = ExtResource("9_c228y")
+stream = ExtResource("8_camep")
 volume_db = -80.0
-script = ExtResource("7_mqldn")
+script = ExtResource("7_us3vr")
 
-[node name="underground2" parent="." instance=ExtResource("11_0go4e")]
+[node name="underground2" parent="." instance=ExtResource("9_lbv6d")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.763, -8.058, -18.396)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
@@ -1255,9 +1256,9 @@ material = SubResource("StandardMaterial3D_k1fi4")
 [node name="Decal" type="Decal" parent="."]
 transform = Transform3D(-1.1828145, 5.9604645e-08, -0.045005035, 0.04500504, 4.2642988e-08, -1.1828144, 8.940697e-08, -1, -5.7742e-08, -15.6063175, 1.4212308, -12.130496)
 size = Vector3(1, 2, 2)
-texture_albedo = ExtResource("14_mxak7")
+texture_albedo = ExtResource("12_vxhsu")
 
 [node name="Decal2" type="Decal" parent="."]
 transform = Transform3D(-1.2799169, 5.721453e-08, 0.022013828, -0.020486344, 4.5799947e-08, -1.375349, 9.668921e-08, -1, -6.71011e-08, -12.3162565, 6.0715847, -12.130496)
 size = Vector3(1, 2, 2)
-texture_albedo = ExtResource("15_0go4e")
+texture_albedo = ExtResource("13_jrfgg")
