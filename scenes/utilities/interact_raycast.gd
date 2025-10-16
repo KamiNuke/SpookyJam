@@ -1,11 +1,14 @@
 extends RayCast3D
 
 @onready var interact_crosshair: CenterContainer = $"../../../InteractCrosshair"
+
+var map_node
+
 const PLACED_CAMERA = preload("uid://bbq76bxa5xt65")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	map_node = get_parent().get_parent().get_parent().get_parent()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,7 +24,7 @@ func _process(delta: float) -> void:
 				collider.queue_free()
 				var cam = PLACED_CAMERA.instantiate()
 				cam.position = Vector3(pos.x, pos.y + 2.0, pos.z)
-				get_parent().get_parent().get_parent().get_parent().add_child(cam)
+				map_node.add_child(cam)
 				
 	else:
 		interact_crosshair.visible = false
