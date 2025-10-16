@@ -94,13 +94,13 @@ spot_attenuation = 2.0
 spot_angle_attenuation = 3.0
 
 [node name="stick" type="MeshInstance3D" parent="head/equipment"]
-transform = Transform3D(0.045000006, 0, 0, 0, 0.050743397, -0.2650656, 0, 0.018469086, 0.7282618, 0.1, -0.2, -0.2)
+transform = Transform3D(0.04500001, 0, 0, 0, 0.0538867, -0.050174512, 0, 0.0034960296, 0.77337414, 0.099999994, -0.2729443, -0.42881387)
 mesh = SubResource("BoxMesh_ppkod")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
 [node name="monitor_big" type="MeshInstance3D" parent="head/equipment"]
-transform = Transform3D(0.33075002, 0, 0, 0, 0.30574378, 0.0020595978, 0, -0.07595281, 0.008290795, 0.1, -0.08257344, -0.3872819)
+transform = Transform3D(0.33075002, 0, 0, 0, 0.3122496, 0.0011338287, 0, -0.04181276, 0.008467211, 0.043644518, 0.01623103, -0.5330228)
 mesh = SubResource("BoxMesh_ppkod")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
@@ -111,16 +111,14 @@ no_depth_test = true
 texture = SubResource("ViewportTexture_ppkod")
 
 [node name="monitor_small" type="MeshInstance3D" parent="head/equipment"]
-transform = Transform3D(0.111599915, 0, 0, 0, 0.10839913, 0.0017293525, 0, -0.026928492, 0.0069614113, 0.14882557, 0.020496048, -0.41338903)
+transform = Transform3D(0.11159991, 0, 0, 0, 0.1112426, 0.0006441226, 0, -0.010029912, 0.0071440195, 0.09769642, 0.16587126, -0.4719116)
 mesh = SubResource("BoxMesh_ppkod")
 skeleton = NodePath("../cam2")
 metadata/_edit_group_ = true
 
 [node name="small_monitor_sprite" type="Sprite3D" parent="head/equipment/monitor_small"]
-
 transform = Transform3D(0.19951113, 0, 0, 0, 0.36567315, 1.3969839e-09, 0, 2.3841858e-07, 0.2831152, 0, 0.021881104, 0.6772537)
 no_depth_test = true
-
 texture = SubResource("ViewportTexture_jxyar")
 
 [node name="cam1" type="SubViewport" parent="head/equipment"]
