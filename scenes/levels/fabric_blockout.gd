@@ -61,7 +61,7 @@ func _on_place_camera() -> void:
 	label.text = "Place {cams}/4 cameras".format({"cams" : placed_cameras})
 	
 	if placed_cameras >= 4:
-		label.text = ""
+		label.text = "go to the basement"
 		pickle_man.visible = true
 		pickle_man.set_collision_layer_value(3, true)
 		pickle_man.add_to_group("dialog")

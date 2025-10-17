@@ -38,14 +38,14 @@ viewport_path = NodePath("head/equipment/cam2")
 [sub_resource type="Environment" id="Environment_ppkod"]
 background_mode = 1
 background_color = Color(0, 0.10980392, 0, 1)
-background_energy_multiplier = 4.0
+background_energy_multiplier = 8.0
 ambient_light_color = Color(0, 0.20392157, 0, 1)
 ambient_light_energy = 8.0
 
 [sub_resource type="Environment" id="Environment_jxyar"]
 background_mode = 1
 background_color = Color(0, 0.10980392, 0, 1)
-background_energy_multiplier = 4.0
+background_energy_multiplier = 8.0
 ambient_light_color = Color(0, 0.20392157, 0, 1)
 ambient_light_energy = 8.0
 
@@ -66,10 +66,9 @@ current = true
 
 [node name="front_spotlight" type="SpotLight3D" parent="head/Camera3D"]
 light_color = Color(0.9764706, 0.9411765, 0.87058824, 1)
-light_energy = 5.0
-light_indirect_energy = 0.5
+light_energy = 7.5
 light_volumetric_fog_energy = 0.1
-spot_range = 100.0
+spot_range = 150.0
 spot_attenuation = 2.0
 spot_angle_attenuation = 3.0
 
