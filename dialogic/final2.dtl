@@ -7,5 +7,6 @@ gopnik3: *Chaotic panic*
 pickle_man: *burp*
 pickle_man: Imma sleep
 [signal arg="final3"]
-pickle_man: I definitely need to find a work
+[wait time="0.5"]
+player: I definitely need to find a work
 [signal arg="final4"]
