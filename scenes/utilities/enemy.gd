@@ -1,7 +1,6 @@
 extends CharacterBody3D
 
-
-@export var speed = 2.5
+@export var speed = 3.5
 const JUMP_VELOCITY = 4.5
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D

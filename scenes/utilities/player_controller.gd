@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 var speed
 @export var WALK_SPEED = 1.25
-@export var SPRINT_SPEED = 1.5
+@export var SPRINT_SPEED = 3.0
 
 const JUMP_VELOCITY = 3
 

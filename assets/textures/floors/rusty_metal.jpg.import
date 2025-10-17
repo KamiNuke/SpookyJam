@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwx4dkmnphg35"
 path.s3tc="res://.godot/imported/rusty_metal.jpg-2def7ec9a31b996e309761145f9dccc0.s3tc.ctex"
+path.etc2="res://.godot/imported/rusty_metal.jpg-2def7ec9a31b996e309761145f9dccc0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/floors/rusty_metal.jpg"
-dest_files=["res://.godot/imported/rusty_metal.jpg-2def7ec9a31b996e309761145f9dccc0.s3tc.ctex"]
+dest_files=["res://.godot/imported/rusty_metal.jpg-2def7ec9a31b996e309761145f9dccc0.s3tc.ctex", "res://.godot/imported/rusty_metal.jpg-2def7ec9a31b996e309761145f9dccc0.etc2.ctex"]
 
 [params]
 

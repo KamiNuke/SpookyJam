@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0ev8ycmm56b5"
 path.s3tc="res://.godot/imported/window_basement.png-ca57511d47232dc5ed2bd6f250000116.s3tc.ctex"
+path.etc2="res://.godot/imported/window_basement.png-ca57511d47232dc5ed2bd6f250000116.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/windows/window_basement.png"
-dest_files=["res://.godot/imported/window_basement.png-ca57511d47232dc5ed2bd6f250000116.s3tc.ctex"]
+dest_files=["res://.godot/imported/window_basement.png-ca57511d47232dc5ed2bd6f250000116.s3tc.ctex", "res://.godot/imported/window_basement.png-ca57511d47232dc5ed2bd6f250000116.etc2.ctex"]
 
 [params]
 
