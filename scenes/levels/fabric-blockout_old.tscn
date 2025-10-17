@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://dkdm20efngy2d"]
+[gd_scene load_steps=150 format=3 uid="uid://dkdm20efngy2d"]
 
 [ext_resource type="Texture2D" uid="uid://bmcldqgk8rqym" path="res://assets/textures/floors/concrete.jpg" id="1_3bsmb"]
 [ext_resource type="PackedScene" uid="uid://brr18xr3icu4j" path="res://assets/models/border/fence.tscn" id="1_84x4s"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://gsyrwr3irt0g" path="res://assets/textures/floors/concrete_painted.jpg" id="29_nu7xr"]
 [ext_resource type="Texture2D" uid="uid://681iguhlebt" path="res://assets/textures/floors/concrete_trash.jpg" id="30_daixp"]
 [ext_resource type="Texture2D" uid="uid://r0kexxbdlxv7" path="res://assets/textures/floors/worn_planks.jpg" id="33_5bc04"]
+[ext_resource type="PackedScene" uid="uid://bujcbsvfybtxe" path="res://assets/models/underground/block_gates.tscn" id="34_p8fuo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntac"]
 albedo_texture = ExtResource("2_ehnjc")
@@ -1530,6 +1531,9 @@ material = SubResource("StandardMaterial3D_1qhds")
 transform = Transform3D(1, 0, 0, 0, 0.7692435, 0.6389558, 0, -0.6389558, 0.7692435, -0.0018453598, -0.9506757, -0.9797909)
 size = Vector3(2, 0.2012024, 3.1061401)
 material = SubResource("StandardMaterial3D_1qhds")
+
+[node name="block_gates2" parent="1st_segment/front_corpus/stairs2" instance=ExtResource("34_p8fuo")]
+transform = Transform3D(0.041945368, 0, -0.9991199, 0, 1, 0, 0.9991199, 0, 0.041945368, 0.40129566, 0, -0.36842227)
 
 [node name="stairs_pattern6" type="CSGBox3D" parent="1st_segment/front_corpus/stairs2"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.5726776, 0.24869144, -0.33251953)
