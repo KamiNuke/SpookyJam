@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://brr18xr3icu4j"]
+
+[ext_resource type="PackedScene" uid="uid://cqdaf11yyhnyb" path="res://assets/models/border/raw/fence.glb" id="1_h0mbe"]
+[ext_resource type="Texture2D" uid="uid://drolkqf8lehxr" path="res://assets/textures/borders/barbwire.png" id="2_24wsj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_altpa"]
+transparency = 2
+alpha_scissor_threshold = 0.736
+alpha_antialiasing_mode = 2
+alpha_antialiasing_edge = 0.0
+albedo_texture = ExtResource("2_24wsj")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xy867"]
+data = PackedVector3Array(-7.3403997, -0.4617, -12.8208, -16.4499, 2.1382, -9.3084, -16.4499, -0.4617, -9.3084, -7.3403997, -0.4617, -12.8208, -7.3403997, 2.1382, -12.8208, -16.4499, 2.1382, -9.3084, 6.0978, -0.144, -8.870299, 5.5153, 2.529, -0.20969999, 5.5153, -0.0711, -0.20969999, 6.0978, -0.144, -8.870299, 6.0978, 2.4559999, -8.870299, 5.5153, 2.529, -0.20969999, -16.4499, -0.4617, -9.3084, -18.951199, 2.6311998, 0.3216, -18.951199, 0.0312, 0.3216, -16.4499, -0.4617, -9.3084, -16.4499, 2.1382, -9.3084, -18.951199, 2.6311998, 0.3216, -1.9807999, -0.144, -14.7639, 6.0978, 2.4559999, -8.870299, 6.0978, -0.144, -8.870299, -1.9807999, -0.144, -14.7639, -1.9807999, 2.4559999, -14.7639, 6.0978, 2.4559999, -8.870299)
+
+[node name="fence" instance=ExtResource("1_h0mbe")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_altpa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConcavePolygonShape3D_xy867")

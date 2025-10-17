@@ -66,7 +66,7 @@ current = true
 
 [node name="front_spotlight" type="SpotLight3D" parent="head/Camera3D"]
 light_color = Color(0.9764706, 0.9411765, 0.87058824, 1)
-light_energy = 0.5
+light_energy = 5.0
 light_indirect_energy = 0.5
 light_volumetric_fog_energy = 0.1
 spot_range = 100.0
@@ -97,10 +97,10 @@ remote_path = NodePath("../cam2/back_cam")
 [node name="back_spotlight" type="SpotLight3D" parent="head/equipment/move_cam2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0413324e-09, -0.030992232, -0.02335012)
 light_color = Color(0.9764706, 0.9411765, 0.87058824, 1)
-light_energy = 0.5
+light_energy = 5.0
 light_indirect_energy = 0.5
 light_volumetric_fog_energy = 0.1
-spot_range = 100.0
+spot_range = 200.0
 spot_attenuation = 2.0
 spot_angle_attenuation = 3.0
 
@@ -169,3 +169,9 @@ footstep_sounds = Array[AudioStream]([ExtResource("3_mybwk"), ExtResource("4_7eb
 
 [node name="InteractCrosshair" parent="." instance=ExtResource("10_odcas")]
 visible = false
+
+[node name="camera_block" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="camera_block" to="." method="_on_camera_block_timeout"]

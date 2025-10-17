@@ -33,16 +33,19 @@ directories/dch_directory={
 "player": "res://dialogic/player.dch"
 }
 directories/dtl_directory={
-"alter_1": "res://dialogic/alter_1.dtl"
+"alter_1": "res://dialogic/alter_1.dtl",
+"dialogue1": "res://dialogic/dialogue1.dtl",
+"pickle1": "res://dialogic/pickle1.dtl"
 }
 layout/style_directory={
-"": "res://dialogic/style1.tres",
 "style1": "res://dialogic/style1.tres"
 }
 layout/style_list=["res://dialogic/style1.tres"]
-layout/default_style="res://dialogic/style1.tres"
+layout/default_style=""
 glossary/default_case_sensitive=true
-variables={}
+variables={
+"accept_drink": false
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.05
 text/initial_text_reveal_skippable=true

@@ -1,0 +1,19 @@
+pickle_man: Yo, youngster.
+player: Hello, Mister.
+pickle_man: Young man! I’ve got down here a pickle mepsi with a pickle in a pickle jar.
+pickle_man: Cheap and simple. Go on, try it.
+player: I don't think I want to..
+pickle_man: Give that theory a theory and try it out!
+- accept
+	player: DISGUSTING! WORST SHIT I’VE EVER TRIED!
+	pickle_man: yo, youngster. Are you ok?
+	player: seems so
+- decline
+	player: Nah, I'm pass
+	pickle_man: Fine...
+player: Anyway... man, what are you doing down here in the basement?
+pickle_man: Me and my buddy live down here!
+pickle_man: OH NO... WHERE IS CODY?
+pickle_man: I HAVE TO FIND CODY!
+[signal arg="pickle_run"]
+player: I think I've se... Ohh nevermind...
