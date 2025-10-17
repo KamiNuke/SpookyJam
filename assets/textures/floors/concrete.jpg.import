@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5hbbpi6lxbri"
-path.s3tc="res://.godot/imported/angle_brick.jpg-cd7cf7c6f51def3f91111aec506a0544.s3tc.ctex"
+uid="uid://bmcldqgk8rqym"
+path.s3tc="res://.godot/imported/concrete.jpg-d265afa133058dff62a71d8735b61333.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/floor/angle_brick.jpg"
-dest_files=["res://.godot/imported/angle_brick.jpg-cd7cf7c6f51def3f91111aec506a0544.s3tc.ctex"]
+source_file="res://assets/textures/floors/concrete.jpg"
+dest_files=["res://.godot/imported/concrete.jpg-d265afa133058dff62a71d8735b61333.s3tc.ctex"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cqlr5yx2tb34g"
-path="res://.godot/imported/crash.glb-cf5f026f897af0d5c0cf799ba3aee2c7.scn"
+uid="uid://os4bsundcg3w"
+path="res://.godot/imported/underground.glb-63821e2bb09d0bf169f9465cf6eee82b.scn"
 
 [deps]
 
-source_file="res://assets/models/underground/crash.glb"
-dest_files=["res://.godot/imported/crash.glb-cf5f026f897af0d5c0cf799ba3aee2c7.scn"]
+source_file="res://assets/models/underground/raw/underground.glb"
+dest_files=["res://.godot/imported/underground.glb-63821e2bb09d0bf169f9465cf6eee82b.scn"]
 
 [params]
 

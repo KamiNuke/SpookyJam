@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3305n0sa5mbr"
-path="res://.godot/imported/dirty_concrete.jpg-64b972927099e7e40d328a1f39b920c0.ctex"
+uid="uid://be3uqemesh288"
+path="res://.godot/imported/soviet_floor.jpg-a4dd30312e6db69a789a0d884e29a409.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/floor/dirty_concrete.jpg"
-dest_files=["res://.godot/imported/dirty_concrete.jpg-64b972927099e7e40d328a1f39b920c0.ctex"]
+source_file="res://assets/textures/floors/soviet_floor.jpg"
+dest_files=["res://.godot/imported/soviet_floor.jpg-a4dd30312e6db69a789a0d884e29a409.ctex"]
 
 [params]
 

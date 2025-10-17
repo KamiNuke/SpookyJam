@@ -1,0 +1,129 @@
+[gd_scene load_steps=37 format=3 uid="uid://cjecchkm0kn4"]
+
+[ext_resource type="PackedScene" uid="uid://bn1r0h0jtoury" path="res://assets/models/attic/raw/attic.glb" id="1_t4mfc"]
+[ext_resource type="Texture2D" uid="uid://blcxh7dsq7yd4" path="res://assets/textures/floors/pavement.jpg" id="2_6vibj"]
+[ext_resource type="Texture2D" uid="uid://bom8yv0u374pk" path="res://assets/textures/walls/roof_shifer.jpg" id="2_a1jl1"]
+[ext_resource type="Texture2D" uid="uid://co8gflt3disvh" path="res://assets/textures/walls/plaster_white.jpg" id="3_sp8yk"]
+[ext_resource type="Texture2D" uid="uid://cb7iru385dmlf" path="res://assets/textures/floors/brick_rough.jpg" id="3_x8has"]
+[ext_resource type="Texture2D" uid="uid://djv8dpfdnbsi3" path="res://assets/textures/walls/cracked_concrete.jpg" id="4_3pm0l"]
+[ext_resource type="Texture2D" uid="uid://cleykm0negav1" path="res://assets/textures/floors/old_wood.jpg" id="4_ivt2o"]
+[ext_resource type="Texture2D" uid="uid://dbgsrycvmswu3" path="res://assets/textures/walls/painted_concrete.jpg" id="5_xajbo"]
+[ext_resource type="Texture2D" uid="uid://dh1rfj2lhv00v" path="res://assets/textures/walls/plaster.jpg" id="6_foej1"]
+[ext_resource type="Texture2D" uid="uid://r0kexxbdlxv7" path="res://assets/textures/floors/worn_planks.jpg" id="7_xajbo"]
+[ext_resource type="Texture2D" uid="uid://drolkqf8lehxr" path="res://assets/textures/borders/barbwire.png" id="8_foej1"]
+[ext_resource type="Texture2D" uid="uid://8h6nlmhiiiie" path="res://assets/textures/walls/figured_metall.jpg" id="9_wotod"]
+[ext_resource type="Texture2D" uid="uid://67opnxf8xhu2" path="res://assets/textures/walls/metal_plate.jpg" id="10_d7ywf"]
+[ext_resource type="Texture2D" uid="uid://b3305n0sa5mbr" path="res://assets/textures/floors/dirty_concrete.jpg" id="13_rxgn8"]
+[ext_resource type="Texture2D" uid="uid://dhayuqbcyj6k2" path="res://assets/textures/walls/plaster_damaged.jpg" id="13_yytd2"]
+[ext_resource type="Texture2D" uid="uid://681iguhlebt" path="res://assets/textures/floors/concrete_trash.jpg" id="15_l6n1m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8has"]
+albedo_texture = ExtResource("2_6vibj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwxhd"]
+albedo_texture = ExtResource("3_x8has")
+uv1_scale = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ve8yt"]
+albedo_texture = ExtResource("4_3pm0l")
+uv1_scale = Vector3(2.22, 2.22, 2.22)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wotod"]
+albedo_color = Color(0.8509804, 0.8745098, 0.78039217, 1)
+albedo_texture = ExtResource("5_xajbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7ywf"]
+albedo_texture = ExtResource("6_foej1")
+uv1_scale = Vector3(1.655, 1.655, 1.655)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_foej1"]
+albedo_texture = ExtResource("7_xajbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lq32h"]
+transparency = 1
+albedo_texture = ExtResource("8_foej1")
+uv1_scale = Vector3(1.08, 1, 1)
+uv1_offset = Vector3(-0.03, -0.15, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxgn8"]
+albedo_texture = ExtResource("9_wotod")
+uv1_scale = Vector3(2.485, 2.485, 2.485)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yytd2"]
+albedo_texture = ExtResource("13_rxgn8")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6n1m"]
+albedo_texture = ExtResource("10_d7ywf")
+uv1_scale = Vector3(1.99, 1.99, 1.99)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4d7k6"]
+albedo_texture = ExtResource("2_a1jl1")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fh4gv"]
+albedo_texture = ExtResource("4_3pm0l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o20la"]
+albedo_color = Color(1.353256, 1.3427868, 1.353256, 1)
+albedo_texture = ExtResource("13_yytd2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wlfs"]
+albedo_texture = ExtResource("13_rxgn8")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etp8c"]
+albedo_texture = ExtResource("15_l6n1m")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xdug"]
+albedo_texture = ExtResource("5_xajbo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uaw85"]
+albedo_color = Color(1.5226163, 1.8916494, 1.8916494, 1)
+albedo_texture = ExtResource("5_xajbo")
+uv1_scale = Vector3(1.575, 1.575, 1.575)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sp8yk"]
+albedo_texture = ExtResource("2_a1jl1")
+uv1_scale = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivt2o"]
+albedo_texture = ExtResource("3_sp8yk")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vibj"]
+albedo_texture = ExtResource("4_ivt2o")
+
+[node name="attic" instance=ExtResource("1_t4mfc")]
+
+[node name="attic_pre_room" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_x8has")
+surface_material_override/1 = SubResource("StandardMaterial3D_mwxhd")
+surface_material_override/2 = SubResource("StandardMaterial3D_ve8yt")
+surface_material_override/3 = SubResource("StandardMaterial3D_wotod")
+surface_material_override/4 = SubResource("StandardMaterial3D_d7ywf")
+surface_material_override/5 = SubResource("StandardMaterial3D_foej1")
+surface_material_override/6 = SubResource("StandardMaterial3D_lq32h")
+surface_material_override/7 = SubResource("StandardMaterial3D_rxgn8")
+
+[node name="attic_interior" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yytd2")
+surface_material_override/1 = SubResource("StandardMaterial3D_l6n1m")
+surface_material_override/2 = SubResource("StandardMaterial3D_4d7k6")
+surface_material_override/3 = SubResource("StandardMaterial3D_fh4gv")
+surface_material_override/4 = SubResource("StandardMaterial3D_o20la")
+surface_material_override/5 = SubResource("StandardMaterial3D_4wlfs")
+surface_material_override/6 = SubResource("StandardMaterial3D_o20la")
+surface_material_override/7 = SubResource("StandardMaterial3D_etp8c")
+surface_material_override/8 = SubResource("StandardMaterial3D_1xdug")
+surface_material_override/9 = SubResource("StandardMaterial3D_uaw85")
+
+[node name="roof" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_sp8yk")
+surface_material_override/1 = SubResource("StandardMaterial3D_ivt2o")
+
+[node name="attic_balks" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6vibj")
+
+[node name="attic_pre_room " parent="." index="4"]
+visible = false

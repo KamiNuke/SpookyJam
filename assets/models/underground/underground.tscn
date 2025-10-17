@@ -1,0 +1,205 @@
+[gd_scene load_steps=22 format=3 uid="uid://dgfjesfkkqrsk"]
+
+[ext_resource type="PackedScene" uid="uid://os4bsundcg3w" path="res://assets/models/underground/raw/underground.glb" id="1_flet2"]
+[ext_resource type="Texture2D" uid="uid://681iguhlebt" path="res://assets/textures/floors/concrete_trash.jpg" id="2_no5oo"]
+[ext_resource type="Texture2D" uid="uid://cb7iru385dmlf" path="res://assets/textures/floors/brick_rough.jpg" id="2_uu5lc"]
+[ext_resource type="Texture2D" uid="uid://b3305n0sa5mbr" path="res://assets/textures/floors/dirty_concrete.jpg" id="2_wvvtf"]
+[ext_resource type="Texture2D" uid="uid://bgku4g7cbkq3e" path="res://assets/textures/floors/garage_floor.jpg" id="3_uu5lc"]
+[ext_resource type="Texture2D" uid="uid://d3wlp1jhdx8oc" path="res://assets/textures/underground/gate_block.png" id="5_mb48p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0b5wy"]
+albedo_texture = ExtResource("2_uu5lc")
+uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x15il"]
+albedo_texture = ExtResource("2_wvvtf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lv2bo"]
+albedo_texture = ExtResource("2_wvvtf")
+uv1_scale = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqxhm"]
+albedo_texture = ExtResource("2_wvvtf")
+uv1_scale = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mb48p"]
+albedo_texture = ExtResource("2_uu5lc")
+uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2cm5x"]
+albedo_texture = ExtResource("3_uu5lc")
+uv1_scale = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ydfk"]
+transparency = 1
+albedo_texture = ExtResource("5_mb48p")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckkhm"]
+albedo_texture = ExtResource("3_uu5lc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2ljn"]
+albedo_texture = ExtResource("2_wvvtf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2618"]
+albedo_texture = ExtResource("2_uu5lc")
+uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gvbm4"]
+albedo_texture = ExtResource("3_uu5lc")
+uv1_scale = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_413sa"]
+albedo_texture = ExtResource("2_wvvtf")
+uv1_scale = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32ovq"]
+albedo_texture = ExtResource("2_uu5lc")
+uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu5lc"]
+albedo_texture = ExtResource("2_no5oo")
+uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvvtf"]
+albedo_texture = ExtResource("2_no5oo")
+uv1_scale = Vector3(3, 3, 3)
+
+[node name="underground" instance=ExtResource("1_flet2")]
+
+[node name="tunnel_enter" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0b5wy")
+surface_material_override/1 = SubResource("StandardMaterial3D_x15il")
+surface_material_override/2 = SubResource("StandardMaterial3D_lv2bo")
+
+[node name="cross_001" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vqxhm")
+surface_material_override/1 = SubResource("StandardMaterial3D_mb48p")
+surface_material_override/2 = SubResource("StandardMaterial3D_2cm5x")
+
+[node name="block_gates_001" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0ydfk")
+
+[node name="cross_002" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vqxhm")
+surface_material_override/1 = SubResource("StandardMaterial3D_mb48p")
+surface_material_override/2 = SubResource("StandardMaterial3D_2cm5x")
+
+[node name="cross_003" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vqxhm")
+surface_material_override/1 = SubResource("StandardMaterial3D_mb48p")
+surface_material_override/2 = SubResource("StandardMaterial3D_2cm5x")
+
+[node name="cross_004" parent="." index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vqxhm")
+surface_material_override/1 = SubResource("StandardMaterial3D_mb48p")
+surface_material_override/2 = SubResource("StandardMaterial3D_2cm5x")
+
+[node name="cross_005" parent="." index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vqxhm")
+surface_material_override/1 = SubResource("StandardMaterial3D_mb48p")
+surface_material_override/2 = SubResource("StandardMaterial3D_2cm5x")
+
+[node name="cross_006" parent="." index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vqxhm")
+surface_material_override/1 = SubResource("StandardMaterial3D_mb48p")
+surface_material_override/2 = SubResource("StandardMaterial3D_2cm5x")
+
+[node name="tunnel_pattern_002" parent="." index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ckkhm")
+surface_material_override/1 = SubResource("StandardMaterial3D_0b5wy")
+surface_material_override/2 = SubResource("StandardMaterial3D_t2ljn")
+
+[node name="tunnel_block_001" parent="." index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_u2618")
+
+[node name="tunnel_block_002" parent="." index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_u2618")
+
+[node name="tunnel_block_003" parent="." index="11"]
+surface_material_override/0 = SubResource("StandardMaterial3D_u2618")
+
+[node name="tunnel_block_004" parent="." index="12"]
+surface_material_override/0 = SubResource("StandardMaterial3D_u2618")
+
+[node name="block_gates_002" parent="." index="13"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0ydfk")
+
+[node name="block_gates_003" parent="." index="14"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0ydfk")
+
+[node name="tunnel_block_005" parent="." index="15"]
+surface_material_override/0 = SubResource("StandardMaterial3D_u2618")
+
+[node name="cross_007" parent="." index="16"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vqxhm")
+surface_material_override/1 = SubResource("StandardMaterial3D_mb48p")
+surface_material_override/2 = SubResource("StandardMaterial3D_2cm5x")
+
+[node name="tunnel_block_006" parent="." index="17"]
+surface_material_override/0 = SubResource("StandardMaterial3D_u2618")
+
+[node name="tunnel_block_007" parent="." index="18"]
+surface_material_override/0 = SubResource("StandardMaterial3D_u2618")
+
+[node name="tunnel_pattern_003" parent="." index="19"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gvbm4")
+surface_material_override/1 = SubResource("StandardMaterial3D_413sa")
+surface_material_override/2 = SubResource("StandardMaterial3D_32ovq")
+
+[node name="cross_008" parent="." index="20"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vqxhm")
+surface_material_override/1 = SubResource("StandardMaterial3D_mb48p")
+surface_material_override/2 = SubResource("StandardMaterial3D_2cm5x")
+
+[node name="tunnel_block_008" parent="." index="21"]
+surface_material_override/0 = SubResource("StandardMaterial3D_u2618")
+
+[node name="tunnel_pattern_001" parent="." index="22"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ckkhm")
+surface_material_override/1 = SubResource("StandardMaterial3D_0b5wy")
+surface_material_override/2 = SubResource("StandardMaterial3D_t2ljn")
+
+[node name="tunnel_pattern_004" parent="." index="23"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ckkhm")
+surface_material_override/1 = SubResource("StandardMaterial3D_0b5wy")
+surface_material_override/2 = SubResource("StandardMaterial3D_t2ljn")
+
+[node name="tunnel_pattern_007" parent="." index="24"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gvbm4")
+surface_material_override/1 = SubResource("StandardMaterial3D_413sa")
+surface_material_override/2 = SubResource("StandardMaterial3D_32ovq")
+
+[node name="cross_009" parent="." index="25"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vqxhm")
+surface_material_override/1 = SubResource("StandardMaterial3D_mb48p")
+surface_material_override/2 = SubResource("StandardMaterial3D_2cm5x")
+
+[node name="tunnel_block_009" parent="." index="26"]
+surface_material_override/0 = SubResource("StandardMaterial3D_u2618")
+
+[node name="tunnel_block_010" parent="." index="27"]
+surface_material_override/0 = SubResource("StandardMaterial3D_u2618")
+
+[node name="Mball_001" parent="." index="28"]
+surface_material_override/0 = SubResource("StandardMaterial3D_uu5lc")
+
+[node name="Mball_002" parent="." index="29"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wvvtf")
+
+[node name="Mball_003" parent="." index="30"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wvvtf")
+
+[node name="Mball_004" parent="." index="31"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wvvtf")
+
+[node name="Mball_005" parent="." index="32"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wvvtf")
+
+[node name="Mball_006" parent="." index="33"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wvvtf")
+
+[node name="Mball_007" parent="." index="34"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wvvtf")
+
+[node name="collision " parent="." index="35"]
+visible = false

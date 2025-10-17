@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://083y0io4xp5v"
-path="res://.godot/imported/block_gates.glb-b45bfea681312bc60f18f0eec5bd2905.scn"
+uid="uid://cqlr5yx2tb34g"
+path="res://.godot/imported/crash.glb-ea679714e533ee9a079bfbcef28f5211.scn"
 
 [deps]
 
-source_file="res://assets/models/underground/block_gates.glb"
-dest_files=["res://.godot/imported/block_gates.glb-b45bfea681312bc60f18f0eec5bd2905.scn"]
+source_file="res://assets/models/underground/raw/crash.glb"
+dest_files=["res://.godot/imported/crash.glb-ea679714e533ee9a079bfbcef28f5211.scn"]
 
 [params]
 

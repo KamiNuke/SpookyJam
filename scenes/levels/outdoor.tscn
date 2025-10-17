@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=4 uid="uid://d1xy1jhf4s42c"]
 
 [ext_resource type="Texture2D" uid="uid://kmt4pecauj55" path="res://assets/dev/raw-textures/refs/1-segment.png" id="1_3s3xn"]
-[ext_resource type="PackedScene" uid="uid://os4bsundcg3w" path="res://assets/models/underground/underground.glb" id="1_tpb34"]
+[ext_resource type="PackedScene" uid="uid://os4bsundcg3w" path="res://assets/models/underground/raw/underground.glb" id="1_tpb34"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tpb34"]
 size = Vector2(60, 60)

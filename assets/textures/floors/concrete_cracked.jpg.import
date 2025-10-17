@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://67opnxf8xhu2"
-path.s3tc="res://.godot/imported/metal_plate.jpg-88e0fa23201a35d9481edad0e4f787ac.s3tc.ctex"
+uid="uid://b22ug2gxx01dw"
+path.s3tc="res://.godot/imported/concrete_cracked.jpg-f744f50dd3c178c05052a530b5af0a35.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/walls/metal_plate.jpg"
-dest_files=["res://.godot/imported/metal_plate.jpg-88e0fa23201a35d9481edad0e4f787ac.s3tc.ctex"]
+source_file="res://assets/textures/floors/concrete_cracked.jpg"
+dest_files=["res://.godot/imported/concrete_cracked.jpg-f744f50dd3c178c05052a530b5af0a35.s3tc.ctex"]
 
 [params]
 

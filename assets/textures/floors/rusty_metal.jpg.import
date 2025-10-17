@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgku4g7cbkq3e"
-path.s3tc="res://.godot/imported/garage_floor.jpg-48dad6174a3af57b51da655611fa5be1.s3tc.ctex"
+uid="uid://dwx4dkmnphg35"
+path.s3tc="res://.godot/imported/rusty_metal.jpg-2def7ec9a31b996e309761145f9dccc0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/floor/garage_floor.jpg"
-dest_files=["res://.godot/imported/garage_floor.jpg-48dad6174a3af57b51da655611fa5be1.s3tc.ctex"]
+source_file="res://assets/textures/floors/rusty_metal.jpg"
+dest_files=["res://.godot/imported/rusty_metal.jpg-2def7ec9a31b996e309761145f9dccc0.s3tc.ctex"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b88r5y7qyajj1"
-path="res://.godot/imported/attic.glb-5609bb717492218ebbdb8b9013491db6.scn"
+uid="uid://083y0io4xp5v"
+path="res://.godot/imported/block_gates.glb-ad4d193765a0b5dca1aad437383b15f7.scn"
 
 [deps]
 
-source_file="res://assets/models/attic/attic.glb"
-dest_files=["res://.godot/imported/attic.glb-5609bb717492218ebbdb8b9013491db6.scn"]
+source_file="res://assets/models/underground/raw/block_gates.glb"
+dest_files=["res://.godot/imported/block_gates.glb-ad4d193765a0b5dca1aad437383b15f7.scn"]
 
 [params]
 
