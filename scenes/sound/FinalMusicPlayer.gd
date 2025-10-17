@@ -1,7 +1,7 @@
 extends AudioStreamPlayer
 
-@export var fade_in_time: float = 3
-@export var fade_out_time: float = 3
+@export var fade_in_time: float = 2
+@export var fade_out_time: float = 10
 
 var tween: Tween = null
 
@@ -15,7 +15,7 @@ func fade_in():
 	if tween:
 		tween.kill()
 	tween = create_tween()
-	tween.tween_property(self, "volume_db", -9, fade_in_time)
+	tween.tween_property(self, "volume_db", -11, fade_in_time)
 
 func fade_out():
 	if tween:

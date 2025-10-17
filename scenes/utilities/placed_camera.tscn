@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbq76bxa5xt65"]
+[gd_scene load_steps=4 format=3 uid="uid://bbq76bxa5xt65"]
+
+[ext_resource type="AudioStream" uid="uid://mhdupr1oldv6" path="res://assets/sfx/Camera.mp3" id="1_hw25r"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_e6a30"]
 
@@ -22,3 +24,8 @@ mesh = SubResource("BoxMesh_e6a30")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09465599, -0.26731235, -0.059753418)
 shape = SubResource("BoxShape3D_e6a30")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_hw25r")
+volume_db = -28.394
+autoplay = true

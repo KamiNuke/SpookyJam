@@ -161,7 +161,7 @@ target_position = Vector3(0, -0.7, 0)
 
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
 attenuation_model = 3
-volume_db = -10.874
+volume_db = -14.753
 panning_strength = 0.0
 bus = &"SFXReverb"
 script = ExtResource("2_jxyar")
