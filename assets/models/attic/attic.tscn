@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cjecchkm0kn4"]
+[gd_scene load_steps=39 format=3 uid="uid://cjecchkm0kn4"]
 
 [ext_resource type="PackedScene" uid="uid://bn1r0h0jtoury" path="res://assets/models/attic/raw/attic.glb" id="1_t4mfc"]
 [ext_resource type="Texture2D" uid="uid://blcxh7dsq7yd4" path="res://assets/textures/floors/pavement.jpg" id="2_6vibj"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://67opnxf8xhu2" path="res://assets/textures/walls/metal_plate.jpg" id="10_d7ywf"]
 [ext_resource type="Texture2D" uid="uid://b3305n0sa5mbr" path="res://assets/textures/floors/dirty_concrete.jpg" id="13_rxgn8"]
 [ext_resource type="Texture2D" uid="uid://dhayuqbcyj6k2" path="res://assets/textures/walls/plaster_damaged.jpg" id="13_yytd2"]
+[ext_resource type="Texture2D" uid="uid://b4sgsds5ystgh" path="res://assets/textures/walls/job_app.jpg" id="15_4d7k6"]
 [ext_resource type="Texture2D" uid="uid://681iguhlebt" path="res://assets/textures/floors/concrete_trash.jpg" id="15_l6n1m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8has"]
@@ -83,6 +84,9 @@ albedo_color = Color(1.5226163, 1.8916494, 1.8916494, 1)
 albedo_texture = ExtResource("5_xajbo")
 uv1_scale = Vector3(1.575, 1.575, 1.575)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kct1j"]
+albedo_texture = ExtResource("15_4d7k6")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sp8yk"]
 albedo_texture = ExtResource("2_a1jl1")
 uv1_scale = Vector3(5, 5, 5)
@@ -117,6 +121,7 @@ surface_material_override/6 = SubResource("StandardMaterial3D_o20la")
 surface_material_override/7 = SubResource("StandardMaterial3D_etp8c")
 surface_material_override/8 = SubResource("StandardMaterial3D_1xdug")
 surface_material_override/9 = SubResource("StandardMaterial3D_uaw85")
+surface_material_override/10 = SubResource("StandardMaterial3D_kct1j")
 
 [node name="roof" parent="." index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_sp8yk")
