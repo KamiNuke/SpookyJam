@@ -1,0 +1,12 @@
+pickle_man: DONTCHU DARE TOUCH ME FIENDS AND FIND A WORK LOSERS
+gopnik1: IT'S PICKLE MAN
+[signal arg="final2"]
+gopnik2: RUN
+gopnik3: *Chaotic panic*
+[wait time="0.5"]
+pickle_man: *burp*
+pickle_man: Imma sleep
+[signal arg="final3"]
+[wait time="0.5"]
+player: I definitely need to find a work
+[signal arg="final4"]

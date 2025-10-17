@@ -1,0 +1,232 @@
+[gd_scene load_steps=13 format=3 uid="uid://0bgybeucpdm2"]
+
+[ext_resource type="Script" uid="uid://74063p2cs41x" path="res://scenes/levels/final_cutscene.gd" id="1_11yiw"]
+[ext_resource type="PackedScene" uid="uid://dkdm20efngy2d" path="res://scenes/levels/fabric-blockout_old.tscn" id="1_iiobc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_11yiw"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_3hcvx"]
+sky_material = SubResource("ProceduralSkyMaterial_11yiw")
+
+[sub_resource type="Environment" id="Environment_sy0rl"]
+background_mode = 2
+sky = SubResource("Sky_3hcvx")
+tonemap_mode = 2
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_11yiw"]
+
+[sub_resource type="Animation" id="Animation_11yiw"]
+resource_name = "1"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-14.484806, 7.727613, -11.347547), Vector3(-14.484806, 3.2951598, -11.347547)]
+}
+
+[sub_resource type="Animation" id="Animation_3hcvx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-14.484806, 7.727613, -11.347547)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gopnik2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-11.316857, 1.2531354, -14.76309)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Gopnik1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-10.433313, 1.2531354, -13.528946)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Gopnik3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-10.810542, 1.2531354, -16.361046)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pickle_Man:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-6.842473, 18.596127, -19.317265)]
+}
+
+[sub_resource type="Animation" id="Animation_sy0rl"]
+resource_name = "2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-14.484806, 3.2951598, -11.347547)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gopnik2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.04, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-11.316857, 1.2531354, -14.76309), Vector3(-16.458683, 1.2531354, -10.354446)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Gopnik1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-10.433313, 1.2531354, -13.528946), Vector3(-12.225174, 1.2531354, -4.2359667)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Gopnik3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.04, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-10.810542, 1.2531354, -16.361046), Vector3(-18.356861, 1.2531354, -12.918568)]
+}
+
+[sub_resource type="Animation" id="Animation_87see"]
+resource_name = "1_5"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pickle_Man:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-6.842473, 18.596127, -19.317265), Vector3(-6.842473, 5.1793013, -19.317265)]
+}
+
+[sub_resource type="Animation" id="Animation_mx7lb"]
+resource_name = "3"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pickle_Man:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-6.842473, 5.1793013, -19.317265), Vector3(-6.842473, 18.596127, -19.317265)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sy0rl"]
+_data = {
+&"1": SubResource("Animation_11yiw"),
+&"1_5": SubResource("Animation_87see"),
+&"2": SubResource("Animation_sy0rl"),
+&"3": SubResource("Animation_mx7lb"),
+&"RESET": SubResource("Animation_3hcvx")
+}
+
+[node name="Final_Cutscene" type="Node3D"]
+script = ExtResource("1_11yiw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sy0rl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="FabricBlockout_old" parent="." instance=ExtResource("1_iiobc")]
+
+[node name="Player" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.842473, 1.2531354, -15.649337)
+mesh = SubResource("CapsuleMesh_11yiw")
+
+[node name="Pickle_Man" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.842473, 18.596127, -19.317265)
+mesh = SubResource("CapsuleMesh_11yiw")
+
+[node name="Gopnik1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.433313, 1.2531354, -13.528946)
+mesh = SubResource("CapsuleMesh_11yiw")
+
+[node name="Gopnik2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.316857, 1.2531354, -14.76309)
+mesh = SubResource("CapsuleMesh_11yiw")
+
+[node name="Gopnik3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.810542, 1.2531354, -16.361046)
+mesh = SubResource("CapsuleMesh_11yiw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sy0rl")
+}
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.5690212, 0, -0.82232285, 0, 1, 0, 0.82232285, 0, 0.5690212, -14.484806, 7.727613, -11.347547)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

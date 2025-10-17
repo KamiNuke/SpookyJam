@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cqttd845lqbw2"]
+[gd_scene load_steps=44 format=3 uid="uid://cqttd845lqbw2"]
 
 [ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="2_k3gsl"]
@@ -87,6 +87,17 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jksws"]
+size = Vector3(1.9555664, 1.5776367, 1.894043)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hl1u4"]
+size = Vector3(2.370636, 2.7315063, 1.0080566)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jksws"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hl1u4"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
 [node name="FabricBlockout" type="Node3D"]
 script = ExtResource("1_4d3ts")
@@ -270,7 +281,7 @@ transform = Transform3D(0.41380367, 0, 0.9103662, 0, 1, 0, -0.9103662, 0, 0.4138
 dialogue = "alter_1"
 
 [node name="PlayerController" parent="." groups=["Player"] instance=ExtResource("2_k3gsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2246609, -7.196666, -18.969828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.179407, 1.3174394, -12.314735)
 
 [node name="1cam" type="StaticBody3D" parent="." groups=["camera"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2202144, -0.5653784, -22.442816)
@@ -462,7 +473,7 @@ spot_angle = 70.0
 [node name="obstacles_to_remove1" type="Node" parent="."]
 
 [node name="door_at_basement" type="MeshInstance3D" parent="obstacles_to_remove1"]
-transform = Transform3D(1, 0, 0, 0, 2.4456332, 0, 0, 0, 3.5487978, 15.8367, -6.7703805, -18.31742)
+transform = Transform3D(1, 0, 0, 0, 2.4456332, 0, 0, 0, 5.0159707, 15.8367, -6.7703805, -18.31742)
 mesh = SubResource("BoxMesh_yl0if")
 
 [node name="enemy1_spawpoints" type="Node" parent="."]
@@ -494,7 +505,36 @@ transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711395e-08, 0,
 visible = false
 collision_layer = 1
 
+[node name="final_area3d" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.060895, 17.294174, -25.6523)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="final_area3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4777832, -0.28881836, -0.44702148)
+shape = SubResource("BoxShape3D_jksws")
+
+[node name="area_to_block_path" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5243354, -6.9527764, -14.524821)
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="area_to_block_path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33576965, 0.07333374, -0.0040283203)
+shape = SubResource("BoxShape3D_hl1u4")
+
+[node name="block_basement2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.781312, -10.136429, -3.193635)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="block_basement2"]
+transform = Transform3D(5.276253, 0, 0, 0, 4.4203176, 0.54601425, 0, -2.8809094, 0.8377759, 0.030006886, 0.07849455, 1.0309875)
+mesh = SubResource("BoxMesh_jksws")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block_basement2"]
+transform = Transform3D(5.276253, 0, 0, 0, 4.4203176, 0.54601425, 0, -2.8809094, 0.8377759, 0.030006886, 0.07849455, 1.0309875)
+shape = SubResource("ConvexPolygonShape3D_hl1u4")
+
 [connection signal="block_cameras" from="." to="PlayerController" method="_on_fabric_blockout_block_cameras"]
 [connection signal="place_camera" from="." to="." method="_on_place_camera"]
 [connection signal="body_entered" from="enemy1_spawpoints/area1" to="enemy1_spawpoints" method="_on_area_1_body_entered"]
 [connection signal="body_entered" from="enemy1_spawpoints/area2" to="enemy1_spawpoints" method="_on_area_2_body_entered"]
+[connection signal="body_entered" from="final_area3d" to="." method="_on_final_area_3d_body_entered"]
+[connection signal="body_entered" from="area_to_block_path" to="." method="_on_area_to_block_path_body_entered"]

@@ -28,6 +28,9 @@ settings/stdout/print_fps=true
 [dialogic]
 
 directories/dch_directory={
+"gopnik1": "res://dialogic/gopnik1.dch",
+"gopnik2": "res://dialogic/gopnik2.dch",
+"gopnik3": "res://dialogic/gopnik3.dch",
 "homeless_next_to_bus_stop": "res://dialogic/homeless_next_to_bus_stop.dch",
 "pickle_man": "res://dialogic/pickle_man.dch",
 "player": "res://dialogic/player.dch"
@@ -36,6 +39,8 @@ directories/dtl_directory={
 "alter_1": "res://dialogic/alter_1.dtl",
 "dead_pickle": "res://dialogic/dead_pickle.dtl",
 "dialogue1": "res://dialogic/dialogue1.dtl",
+"final1": "res://dialogic/final1.dtl",
+"final2": "res://dialogic/final2.dtl",
 "pickle1": "res://dialogic/pickle1.dtl"
 }
 layout/style_directory={

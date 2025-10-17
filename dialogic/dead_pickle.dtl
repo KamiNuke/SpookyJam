@@ -1,5 +1,6 @@
 if {talked_to_dead_pickle} == false:
 	pickle_man: I need to move.... NOW
 	set {talked_to_dead_pickle} = true
+	[signal arg="dead_pickle"]
 else:
 	pickle_man: He's dead

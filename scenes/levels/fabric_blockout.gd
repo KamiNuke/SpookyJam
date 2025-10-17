@@ -1,5 +1,7 @@
 extends Node3D
 
+signal change_scene(scene: Node, next_scene_path: String)
+
 @onready var player: CharacterBody3D = $PlayerController
 @onready var npc_1: CharacterBody3D = $NPC1
 @onready var label: Label = $Label
@@ -7,11 +9,13 @@ extends Node3D
 @onready var pickle_man: CharacterBody3D = $pickle_man_path/PathFollow3D/PickleMan
 @onready var pickle_man_path: Path3D = $pickle_man_path
 @onready var pickle_man_path_follow: PathFollow3D = $pickle_man_path/PathFollow3D
+@onready var final_area_3d: Area3D = $final_area3d
 
 const DEAD_PICKLE_MAN = preload("uid://djp2bycq5xkyd")
+@onready var area_to_block_path: Area3D = $area_to_block_path
 
 
-var placed_cameras = 4
+var placed_cameras = 0
 var can_pickle_man_walk: bool = false
 
 signal place_camera
@@ -19,6 +23,9 @@ signal block_cameras
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var transition = get_parent().get_node("TransitionController")
+	connect("change_scene", Callable(transition, "_change_scene"))
+	
 	get_parent().enable_input()
 	Dialogic.start("dialogue1")
 	Dialogic.timeline_started.connect(func(): label.visible = false)
@@ -26,7 +33,6 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal_map)
 	
 	label.text = "Place {cams}/4 cameras".format({"cams" : placed_cameras})
-	_on_place_camera()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -60,7 +66,6 @@ func _on_place_camera() -> void:
 		pickle_man.set_collision_layer_value(3, true)
 		pickle_man.add_to_group("dialog")
 		pickle_man.dialogue = "pickle1"
-		#obstacles_to_remove_1.queue_free()
 		#do stuff after all cameras are placed
 		pass
 
@@ -68,3 +73,21 @@ func _on_dialogic_signal_map(argument: String):
 	if argument == "pickle_run":
 		can_pickle_man_walk = true
 		pickle_man.set_collision_layer_value(3, false)
+	if argument == "dead_pickle":
+		obstacles_to_remove_1.queue_free()
+		label.text = "Run to the basement"
+		area_to_block_path.monitoring = true
+		area_to_block_path.monitorable = true
+
+
+func _on_final_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Player"):
+		emit_signal("change_scene", get_node("."), "res://scenes/levels/final_cutscene.tscn")
+
+@onready var block_basement_2: StaticBody3D = $block_basement2
+
+func _on_area_to_block_path_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Player"):
+		block_basement_2.position = Vector3(7.781, -3.107, -3.194)
+		block_basement_2.rotation = Vector3(0, 0, 0)
+		label.text = "Find an exit"
