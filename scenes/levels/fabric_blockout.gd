@@ -8,6 +8,9 @@ extends Node3D
 @onready var pickle_man_path: Path3D = $pickle_man_path
 @onready var pickle_man_path_follow: PathFollow3D = $pickle_man_path/PathFollow3D
 
+const DEAD_PICKLE_MAN = preload("uid://djp2bycq5xkyd")
+
+
 var placed_cameras = 4
 var can_pickle_man_walk: bool = false
 
@@ -33,6 +36,11 @@ func _process(delta: float) -> void:
 		pickle_man_path_follow.progress += 6 * delta
 		if pickle_man_path_follow.progress_ratio >= 0.9:
 			pickle_man_path.queue_free()
+			label.text = "find a pickle man"
+			var dead_pickle = DEAD_PICKLE_MAN.instantiate()
+			dead_pickle.position = Vector3(-4.443, 0.493, 2.859)
+			dead_pickle.rotation = Vector3(0, 90, 0)
+			add_child(dead_pickle)
 
 #func _on_dialogic_signal(argument: String):
 	#if argument == "finish_dialogue1":

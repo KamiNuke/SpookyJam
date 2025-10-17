@@ -34,6 +34,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "alter_1": "res://dialogic/alter_1.dtl",
+"dead_pickle": "res://dialogic/dead_pickle.dtl",
 "dialogue1": "res://dialogic/dialogue1.dtl",
 "pickle1": "res://dialogic/pickle1.dtl"
 }
@@ -44,7 +45,7 @@ layout/style_list=["res://dialogic/style1.tres"]
 layout/default_style=""
 glossary/default_case_sensitive=true
 variables={
-"accept_drink": false
+"talked_to_dead_pickle": false
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.05

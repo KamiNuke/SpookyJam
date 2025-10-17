@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://djp2bycq5xkyd"]
+
+[ext_resource type="PackedScene" uid="uid://cshkbl1rcpcvp" path="res://scenes/utilities/npc.tscn" id="1_l43vs"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ntlaj"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_wnve3"]
+
+[node name="dead_pickle_man" type="Node3D"]
+
+[node name="NPC" parent="." groups=["dialog"] instance=ExtResource("1_l43vs")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+dialogue = "dead_pickle"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.06479615, 0, 0, 0, 1, 0, 0, 0, 0.080078125, 0, 0.3773054, 0)
+mesh = SubResource("BoxMesh_ntlaj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05460835, 0, 0, 0, 0.07484847, 0, 0, 0, 0.07490334, 0, 0.9114169, 0)
+mesh = SubResource("PrismMesh_wnve3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.7513942e-09, 0, -0.064983346, 0, 0.07484847, 0, 0.06294456, 0, -2.8405123e-09, 0, 0.9114169, 0)
+mesh = SubResource("PrismMesh_wnve3")

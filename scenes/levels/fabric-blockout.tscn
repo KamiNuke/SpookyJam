@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cqttd845lqbw2"]
+[gd_scene load_steps=40 format=3 uid="uid://cqttd845lqbw2"]
 
 [ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="2_k3gsl"]
@@ -491,6 +491,7 @@ transform = Transform3D(-4.371136e-08, 0, -0.99999934, 0, 1, 0, 0.99999934, 0, -
 
 [node name="PickleMan" parent="pickle_man_path/PathFollow3D" instance=ExtResource("11_m752w")]
 transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711395e-08, 0, 0, 0)
+visible = false
 collision_layer = 1
 
 [connection signal="block_cameras" from="." to="PlayerController" method="_on_fabric_blockout_block_cameras"]

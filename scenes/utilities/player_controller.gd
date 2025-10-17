@@ -4,7 +4,7 @@ var speed
 @export var WALK_SPEED = 1.25
 @export var SPRINT_SPEED = 1.5
 
-const JUMP_VELOCITY = 2.5
+const JUMP_VELOCITY = 3
 
 #bob variables
 const BOB_FREQ = 2.4
