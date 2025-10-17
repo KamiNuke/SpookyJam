@@ -14,7 +14,7 @@ height = 1.0
 radius = 0.23046875
 height = 1.0546875
 
-[node name="Enemy" type="CharacterBody3D"]
+[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_7iqul")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -27,5 +27,10 @@ shape = SubResource("CapsuleShape3D_0sgnj")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="link_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_link_reached"]
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

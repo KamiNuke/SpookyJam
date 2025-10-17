@@ -32,8 +32,19 @@ var _last_frame_was_on_floor = -INF
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	Dialogic.timeline_started.connect(func(): global.is_dialogue_active = true)
-	Dialogic.timeline_ended.connect(func(): global.is_dialogue_active = false)
+	Dialogic.timeline_started.connect(dialogue_start)
+	Dialogic.timeline_ended.connect(dialogue_finish)
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+	spotlight_front.visible = false
+	spotlight_back.visible = false
+
+func dialogue_start() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	global.is_dialogue_active = true
+
+func dialogue_finish() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	global.is_dialogue_active = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -152,6 +163,20 @@ func _headbob(time) -> Vector3:
 @onready var block_enemy_1: MeshInstance3D = $head/equipment/move_cam1/block_enemy1
 @onready var block_enemy_2: MeshInstance3D = $head/equipment/move_cam2/block_enemy2
 
+@onready var camera_block: Timer = $camera_block
+
 func _on_fabric_blockout_block_cameras() -> void:
 	block_enemy_1.visible = true
 	block_enemy_2.visible = true
+	camera_block.start()
+
+
+func _on_dialogic_signal(argument: String):
+	$head/Camera3D.current = true
+	if argument == "finish_dialogue1":
+		print("Something was activated!")
+
+
+func _on_camera_block_timeout() -> void:
+	block_enemy_1.visible = false
+	block_enemy_2.visible = false

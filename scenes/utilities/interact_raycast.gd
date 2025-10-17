@@ -13,7 +13,7 @@ func _ready() -> void:
 	map_node = player_controller.get_parent()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_colliding():
 		interact_crosshair.visible = true
 		if Input.is_action_just_released("action") and !global.is_dialogue_active and get_collider() != null:
@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 				var cam = PLACED_CAMERA.instantiate()
 				cam.position = Vector3(pos.x, pos.y + 2.0, pos.z)
 				map_node.add_child(cam)
+				map_node.place_camera.emit()
 				
 	else:
 		interact_crosshair.visible = false

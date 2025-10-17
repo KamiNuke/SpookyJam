@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-@export var speed = 2.0
+@export var speed = 2.5
 const JUMP_VELOCITY = 4.5
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
@@ -23,7 +23,6 @@ func _physics_process(delta: float) -> void:
 func target_position(target):
 	nav_agent.target_position = target
 
-
 func _on_navigation_agent_3d_target_reached() -> void:
 	var map = get_parent()
 	if map != null and map.has_signal("block_cameras"):
@@ -32,3 +31,7 @@ func _on_navigation_agent_3d_target_reached() -> void:
 
 func _on_navigation_agent_3d_link_reached(_details: Dictionary) -> void:
 	obsctable = true
+
+
+func _on_timer_timeout() -> void:
+	queue_free()
