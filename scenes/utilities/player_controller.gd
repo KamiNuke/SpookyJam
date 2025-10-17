@@ -62,6 +62,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			spotlight_front.visible = true
 			spotlight_back.visible = true
 
+func _input(event: InputEvent):
+	# required for web build 
+	if (Input.mouse_mode != Input.MOUSE_MODE_CAPTURED) and event is InputEventMouseButton: 
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		_last_frame_was_on_floor = Engine.get_physics_frames()

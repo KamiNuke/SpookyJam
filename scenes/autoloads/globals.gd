@@ -8,8 +8,10 @@ var is_dialogue_active: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	if OS.get_name() == "Web":
+		sensitivity = 0.0125 #WEB Sensitivity for some reason should be smaller
+	else:
+		sensitivity = 0.008
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
