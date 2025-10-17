@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dgfjesfkkqrsk"]
+[gd_scene load_steps=23 format=3 uid="uid://dgfjesfkkqrsk"]
 
 [ext_resource type="PackedScene" uid="uid://os4bsundcg3w" path="res://assets/models/underground/raw/underground.glb" id="1_flet2"]
 [ext_resource type="Texture2D" uid="uid://681iguhlebt" path="res://assets/textures/floors/concrete_trash.jpg" id="2_no5oo"]
@@ -63,6 +63,9 @@ uv1_scale = Vector3(3, 3, 3)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvvtf"]
 albedo_texture = ExtResource("2_no5oo")
 uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mb48p"]
+size = Vector3(6.8703613, 3.3572998, 1)
 
 [node name="underground" instance=ExtResource("1_flet2")]
 
@@ -203,3 +206,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wvvtf")
 
 [node name="collision " parent="." index="35"]
 visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="36"]
+transform = Transform3D(1, 0, 0, 0, 0.9692996, 0.24588262, 0, -0.24588262, 0.9692996, 0.25190568, 1.5681932, -6.525787)
+shape = SubResource("BoxShape3D_mb48p")
