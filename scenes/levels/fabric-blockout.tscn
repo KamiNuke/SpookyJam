@@ -19,6 +19,8 @@
 [ext_resource type="Script" uid="uid://b1velas27rph0" path="res://scenes/sound/BasementAmbientPlayer.gd" id="13_yl0if"]
 [ext_resource type="Script" uid="uid://13sj5k7f780t" path="res://scenes/sound/Cam2AmbientPlayer.gd" id="15_qjc2r"]
 [ext_resource type="Script" uid="uid://cbkgrq8tip08m" path="res://scenes/sound/StairwellAmbientPlayer.gd" id="17_jksws"]
+[ext_resource type="AudioStream" uid="uid://dwdmu1774qvue" path="res://assets/music/menuMusic.mp3" id="18_qjc2r"]
+[ext_resource type="Script" uid="uid://dqlno44iiqwpx" path="res://scenes/sound/FinalMusicPlayer.gd" id="19_jksws"]
 [ext_resource type="Texture2D" uid="uid://cefn43toaj76l" path="res://assets/textures/skybox/blood_sky.jpg" id="21_yl0if"]
 [ext_resource type="Script" uid="uid://liiintik8tvs" path="res://scenes/levels/enemy_1_spawpoints.gd" id="22_qjc2r"]
 
@@ -106,7 +108,8 @@ navigation_mesh = SubResource("NavigationMesh_m752w")
 [node name="AudioManager" type="Node" parent="."]
 
 [node name="OutdoorReverbZone" type="Area3D" parent="AudioManager"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603569, 1.7331916, -8.874054)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603569, 1.5319813, -8.874054)
+visible = false
 reverb_bus_enabled = true
 reverb_bus_name = &"SFXReverb"
 reverb_bus_amount = 1.0
@@ -115,8 +118,20 @@ reverb_bus_amount = 1.0
 transform = Transform3D(2.79241, 0, 0, 0, 2.0380175, 0, 0, 0, 10.629264, -1.9744911, -0.32483077, -3.7957573)
 shape = SubResource("BoxShape3D_fxuma")
 
+[node name="HallwayReverbZone" type="Area3D" parent="AudioManager"]
+transform = Transform3D(2.1978176, 0, 0, 0, 1, 0, 0, 0, 0.5800291, 14.913582, 1.5319813, 0.17670953)
+visible = false
+reverb_bus_enabled = true
+reverb_bus_name = &"SFXReverbHallway"
+reverb_bus_amount = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioManager/HallwayReverbZone"]
+transform = Transform3D(2.79241, 0, 0, 0, 2.0380175, 0, 0, 0, 10.629264, -1.9744911, -0.32483077, -3.7957573)
+shape = SubResource("BoxShape3D_fxuma")
+
 [node name="OutdoorAmbience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
 transform = Transform3D(-2.4703019, 0, 1.5099579e-06, 0, 4.741, 0, -3.7300526e-07, 0, -9.999999, -13.765028, 1.887105, -13.605251)
+visible = false
 script = ExtResource("4_srpf7")
 ambient_player = NodePath("AmbientPlayer")
 
@@ -131,6 +146,7 @@ script = ExtResource("6_mqldn")
 
 [node name="CourtyardAmbience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
 transform = Transform3D(-3.5542443, 0, 6.1379797e-07, 0, 0.9844049, 0, -5.366759e-07, 0, -4.064999, 3.5471635, 1.6918367, -16.757206)
+visible = false
 script = ExtResource("4_srpf7")
 ambient_player = NodePath("AmbientPlayer")
 
@@ -145,6 +161,7 @@ script = ExtResource("7_7l64u")
 
 [node name="CourtyardAmbience2" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
 transform = Transform3D(-1.6568569, 0, 2.3147861e-07, 0, 0.9844049, 0, -2.501784e-07, 0, -1.5330132, 9.621803, 1.6918367, -6.8670936)
+visible = false
 script = ExtResource("4_srpf7")
 ambient_player = NodePath("AmbientPlayer")
 
@@ -173,6 +190,7 @@ script = ExtResource("7_mqldn")
 
 [node name="HallwayAmbience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
 transform = Transform3D(-2.4207408, 0, 4.7890484e-07, 0, 0.9844049, 0, -3.6552171e-07, 0, -3.1716423, 14.059596, 1.6918367, 7.7782173)
+visible = false
 script = ExtResource("4_srpf7")
 ambient_player = NodePath("AmbientPlayer")
 
@@ -187,6 +205,7 @@ script = ExtResource("11_nom3i")
 
 [node name="Cam2Ambience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
 transform = Transform3D(-2.2702975, 0, 1.0878445e-06, 0, 0.9844049, 0, -3.4280544e-07, 0, -7.2044673, 20.544422, 1.6918367, -11.031753)
+visible = false
 script = ExtResource("4_srpf7")
 ambient_player = NodePath("AmbientPlayer")
 
@@ -199,6 +218,21 @@ stream = ExtResource("11_0go4e")
 volume_db = -80.0
 script = ExtResource("15_qjc2r")
 fade_out_time = 2.5
+
+[node name="StairwellAmbience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
+transform = Transform3D(-0.989701, 0, 2.8024846e-07, 0, 4.823184, 0, -1.4944071e-07, 0, -1.8560014, 9.706376, 2.8686678, -1.2725266)
+visible = false
+script = ExtResource("4_srpf7")
+ambient_player = NodePath("AmbientPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioManager/StairwellAmbience"]
+transform = Transform3D(5.97, 0, 0, 0, 3.347, 0, 0, 0, 3.692, -0.19262695, -0.03813526, 0)
+shape = SubResource("BoxShape3D_srpf7")
+
+[node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/StairwellAmbience"]
+stream = ExtResource("12_m0x24")
+volume_db = -80.0
+script = ExtResource("17_jksws")
 
 [node name="BasementAmbience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
 transform = Transform3D(-4.4120193, 0, 2.5110692e-06, 0, 1.8963623, 0, -6.6619646e-07, 0, -16.630054, 11.291926, -4.835986, -34.47312)
@@ -215,19 +249,21 @@ volume_db = -80.0
 script = ExtResource("13_yl0if")
 fade_out_time = 2.5
 
-[node name="StairwellAmbience" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
-transform = Transform3D(-0.989701, 0, 2.8024846e-07, 0, 4.823184, 0, -1.4944071e-07, 0, -1.8560014, 9.706376, 2.8686678, -1.2725266)
+[node name="FinalMusic" type="Area3D" parent="AudioManager" node_paths=PackedStringArray("ambient_player")]
+transform = Transform3D(-4.4120193, 0, 1.7115664e-06, 0, 5.5786443, 0, -6.6619646e-07, 0, -11.335189, 21.269333, 8.085491, -45.89934)
 script = ExtResource("4_srpf7")
 ambient_player = NodePath("AmbientPlayer")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioManager/StairwellAmbience"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioManager/FinalMusic"]
 transform = Transform3D(5.97, 0, 0, 0, 3.347, 0, 0, 0, 3.692, -0.19262695, -0.03813526, 0)
 shape = SubResource("BoxShape3D_srpf7")
 
-[node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/StairwellAmbience"]
-stream = ExtResource("12_m0x24")
+[node name="AmbientPlayer" type="AudioStreamPlayer" parent="AudioManager/FinalMusic"]
+stream = ExtResource("18_qjc2r")
 volume_db = -80.0
-script = ExtResource("17_jksws")
+script = ExtResource("19_jksws")
+fade_in_time = 3.0
+fade_out_time = 2.5
 
 [node name="NPC1" parent="." groups=["dialog"] instance=ExtResource("11_m752w")]
 transform = Transform3D(0.41380367, 0, 0.9103662, 0, 1, 0, -0.9103662, 0, 0.41380367, -19.76845, 1.1493983, -15.063415)
