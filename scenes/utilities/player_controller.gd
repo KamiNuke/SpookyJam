@@ -22,7 +22,7 @@ var _last_frame_was_on_floor = -INF
 
 @onready var head: Node3D = $head
 @onready var camera: Camera3D = $head/Camera3D
-@onready var spotlight_front: SpotLight3D = $head/Camera3D/front_spotlight
+@onready var spotlight_front: SpotLight3D = $head/front_spotlight
 @onready var spotlight_back: SpotLight3D = $head/equipment/move_cam2/back_spotlight
 @onready var equipment: Node3D = $head/equipment
 
