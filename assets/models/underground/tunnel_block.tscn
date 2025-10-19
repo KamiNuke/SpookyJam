@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnertq5vtrxr2"]
+
+[ext_resource type="PackedScene" uid="uid://bvml83gwbvrva" path="res://assets/models/underground/raw/tunnel_block.glb" id="1_wfvc6"]
+[ext_resource type="Texture2D" uid="uid://cb7iru385dmlf" path="res://assets/textures/floors/brick_rough.jpg" id="2_ihboo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adn4u"]
+albedo_texture = ExtResource("2_ihboo")
+uv1_scale = Vector3(3, 3, 3)
+
+[node name="tunnel_block2" instance=ExtResource("1_wfvc6")]
+
+[node name="tunnel_block" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_adn4u")
