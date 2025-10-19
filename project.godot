@@ -36,8 +36,8 @@ directories/dch_directory={
 "player": "res://dialogic/player.dch"
 }
 directories/dtl_directory={
-"alter_1": "res://dialogic/alter_1.dtl",
 "dead_pickle": "res://dialogic/dead_pickle.dtl",
+"dialogic/alter_1": "res://dialogic/alter_1.dtl",
 "dialogue1": "res://dialogic/dialogue1.dtl",
 "final1": "res://dialogic/final1.dtl",
 "final2": "res://dialogic/final2.dtl",
@@ -95,7 +95,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/virtual_joystick/plugin.cfg")
 
 [global_group]
 
@@ -167,3 +167,7 @@ dialogic_default_action={
 [layer_names]
 
 3d_physics/layer_3="Interactables"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
