@@ -15,7 +15,7 @@ func fade_in():
 	if tween:
 		tween.kill()
 	tween = create_tween()
-	tween.tween_property(self, "volume_db", -5, fade_in_time)
+	tween.tween_property(self, "volume_db", -3, fade_in_time)
 
 func fade_out():
 	if tween:

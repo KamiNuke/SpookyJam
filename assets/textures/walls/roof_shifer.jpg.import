@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bom8yv0u374pk"
 path.s3tc="res://.godot/imported/roof_shifer.jpg-eb85bfbdce743e2fe9756348a4b1c1c3.s3tc.ctex"
+path.etc2="res://.godot/imported/roof_shifer.jpg-eb85bfbdce743e2fe9756348a4b1c1c3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/walls/roof_shifer.jpg"
-dest_files=["res://.godot/imported/roof_shifer.jpg-eb85bfbdce743e2fe9756348a4b1c1c3.s3tc.ctex"]
+dest_files=["res://.godot/imported/roof_shifer.jpg-eb85bfbdce743e2fe9756348a4b1c1c3.s3tc.ctex", "res://.godot/imported/roof_shifer.jpg-eb85bfbdce743e2fe9756348a4b1c1c3.etc2.ctex"]
 
 [params]
 

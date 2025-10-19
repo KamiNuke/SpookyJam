@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 var speed
 @export var WALK_SPEED = 1.25
-@export var SPRINT_SPEED = 1.5
+@export var SPRINT_SPEED = 3.0
 
 const JUMP_VELOCITY = 3
 
@@ -64,8 +64,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _input(event: InputEvent):
 	# required for web build 
-	if (Input.mouse_mode != Input.MOUSE_MODE_CAPTURED) and event is InputEventMouseButton: 
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if OS.get_name() == "Web":
+		if (Input.mouse_mode != Input.MOUSE_MODE_CAPTURED) and event is InputEventMouseButton: 
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
 	if is_on_floor():

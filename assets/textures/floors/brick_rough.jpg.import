@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cb7iru385dmlf"
 path.s3tc="res://.godot/imported/brick_rough.jpg-c1fc14c33e5134a5370dbeb45b533114.s3tc.ctex"
+path.etc2="res://.godot/imported/brick_rough.jpg-c1fc14c33e5134a5370dbeb45b533114.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/floors/brick_rough.jpg"
-dest_files=["res://.godot/imported/brick_rough.jpg-c1fc14c33e5134a5370dbeb45b533114.s3tc.ctex"]
+dest_files=["res://.godot/imported/brick_rough.jpg-c1fc14c33e5134a5370dbeb45b533114.s3tc.ctex", "res://.godot/imported/brick_rough.jpg-c1fc14c33e5134a5370dbeb45b533114.etc2.ctex"]
 
 [params]
 

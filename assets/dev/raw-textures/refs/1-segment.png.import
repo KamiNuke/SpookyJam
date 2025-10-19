@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://kmt4pecauj55"
 path.s3tc="res://.godot/imported/1-segment.png-0aab0d2f8a28684d0142d5700b76306a.s3tc.ctex"
+path.etc2="res://.godot/imported/1-segment.png-0aab0d2f8a28684d0142d5700b76306a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/dev/raw-textures/refs/1-segment.png"
-dest_files=["res://.godot/imported/1-segment.png-0aab0d2f8a28684d0142d5700b76306a.s3tc.ctex"]
+dest_files=["res://.godot/imported/1-segment.png-0aab0d2f8a28684d0142d5700b76306a.s3tc.ctex", "res://.godot/imported/1-segment.png-0aab0d2f8a28684d0142d5700b76306a.etc2.ctex"]
 
 [params]
 

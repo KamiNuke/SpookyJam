@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://8h6nlmhiiiie"
 path.s3tc="res://.godot/imported/figured_metall.jpg-6c42f2850f145cfbb5eea41d7b07d3c3.s3tc.ctex"
+path.etc2="res://.godot/imported/figured_metall.jpg-6c42f2850f145cfbb5eea41d7b07d3c3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/walls/figured_metall.jpg"
-dest_files=["res://.godot/imported/figured_metall.jpg-6c42f2850f145cfbb5eea41d7b07d3c3.s3tc.ctex"]
+dest_files=["res://.godot/imported/figured_metall.jpg-6c42f2850f145cfbb5eea41d7b07d3c3.s3tc.ctex", "res://.godot/imported/figured_metall.jpg-6c42f2850f145cfbb5eea41d7b07d3c3.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://blcxh7dsq7yd4"
 path.s3tc="res://.godot/imported/pavement.jpg-8f113eea9943b6b84216f12063dbce4c.s3tc.ctex"
+path.etc2="res://.godot/imported/pavement.jpg-8f113eea9943b6b84216f12063dbce4c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/floors/pavement.jpg"
-dest_files=["res://.godot/imported/pavement.jpg-8f113eea9943b6b84216f12063dbce4c.s3tc.ctex"]
+dest_files=["res://.godot/imported/pavement.jpg-8f113eea9943b6b84216f12063dbce4c.s3tc.ctex", "res://.godot/imported/pavement.jpg-8f113eea9943b6b84216f12063dbce4c.etc2.ctex"]
 
 [params]
 

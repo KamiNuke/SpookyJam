@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5phthor3nk0d"
 path.s3tc="res://.godot/imported/window_metal.png-f0593c35e26d2ac1eaa2656b011ed1ed.s3tc.ctex"
+path.etc2="res://.godot/imported/window_metal.png-f0593c35e26d2ac1eaa2656b011ed1ed.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/windows/window_metal.png"
-dest_files=["res://.godot/imported/window_metal.png-f0593c35e26d2ac1eaa2656b011ed1ed.s3tc.ctex"]
+dest_files=["res://.godot/imported/window_metal.png-f0593c35e26d2ac1eaa2656b011ed1ed.s3tc.ctex", "res://.godot/imported/window_metal.png-f0593c35e26d2ac1eaa2656b011ed1ed.etc2.ctex"]
 
 [params]
 

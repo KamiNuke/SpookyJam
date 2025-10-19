@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8v5l6ai6wwj3"
 path.s3tc="res://.godot/imported/forest.jpg-d9d67b09034ad9faf8fdf097af389122.s3tc.ctex"
+path.etc2="res://.godot/imported/forest.jpg-d9d67b09034ad9faf8fdf097af389122.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/skybox/forest.jpg"
-dest_files=["res://.godot/imported/forest.jpg-d9d67b09034ad9faf8fdf097af389122.s3tc.ctex"]
+dest_files=["res://.godot/imported/forest.jpg-d9d67b09034ad9faf8fdf097af389122.s3tc.ctex", "res://.godot/imported/forest.jpg-d9d67b09034ad9faf8fdf097af389122.etc2.ctex"]
 
 [params]
 

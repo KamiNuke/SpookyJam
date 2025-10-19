@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://681iguhlebt"
 path.s3tc="res://.godot/imported/concrete_trash.jpg-e3308134248020a8ff2f911e39efb761.s3tc.ctex"
+path.etc2="res://.godot/imported/concrete_trash.jpg-e3308134248020a8ff2f911e39efb761.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/floors/concrete_trash.jpg"
-dest_files=["res://.godot/imported/concrete_trash.jpg-e3308134248020a8ff2f911e39efb761.s3tc.ctex"]
+dest_files=["res://.godot/imported/concrete_trash.jpg-e3308134248020a8ff2f911e39efb761.s3tc.ctex", "res://.godot/imported/concrete_trash.jpg-e3308134248020a8ff2f911e39efb761.etc2.ctex"]
 
 [params]
 
