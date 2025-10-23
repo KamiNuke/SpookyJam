@@ -48,6 +48,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Exit"
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(192, 112)
+action = "action"
+
 [connection signal="button_up" from="VBoxContainer/ButtonContainer/PlayButton" to="." method="_on_play_button_button_up"]
 [connection signal="button_up" from="VBoxContainer/ButtonContainer/SettingsButton" to="." method="_on_settings_button_button_up"]
 [connection signal="button_up" from="VBoxContainer/ButtonContainer/ExitButton" to="." method="_on_exit_button_button_up"]
