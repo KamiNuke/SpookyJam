@@ -177,3 +177,5 @@ one_shot = true
 [node name="MobileUI" parent="." instance=ExtResource("11_rsqqw")]
 
 [connection signal="timeout" from="camera_block" to="." method="_on_camera_block_timeout"]
+
+[editable path="MobileUI"]

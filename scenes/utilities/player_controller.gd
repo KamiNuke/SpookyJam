@@ -20,6 +20,9 @@ const MAX_STEP_HEIGHT = 0.75
 var _snapped_to_stairs_last_frame := false
 var _last_frame_was_on_floor = -INF
 
+@onready var joystick: VirtualJoystick = $"MobileUI/Virtual Joystick"
+
+
 @onready var head: Node3D = $head
 @onready var camera: Camera3D = $head/Camera3D
 @onready var spotlight_front: SpotLight3D = $head/Camera3D/front_spotlight
@@ -38,6 +41,7 @@ func _ready() -> void:
 	spotlight_front.visible = false
 	spotlight_back.visible = false
 
+
 func dialogue_start() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	global.is_dialogue_active = true
@@ -46,13 +50,22 @@ func dialogue_finish() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	global.is_dialogue_active = false
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		head.rotate_y(-event.relative.x * global.sensitivity)
-		camera.rotate_x(-event.relative.y * global.sensitivity)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
-		equipment.rotate_x(-event.relative.y * global.sensitivity)
-		equipment.rotation.x = camera.rotation.x
+
+func _input(event: InputEvent):
+	# required for web build 
+	if OS.get_name() == "Web":
+		if (Input.mouse_mode != Input.MOUSE_MODE_CAPTURED) and event is InputEventMouseButton: 
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	# Basically move camera 
+	# (android) AND if joystick is being dragged you still can move screen
+	if !global.is_dialogue_active:
+		if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			_rotate_camera(event)
+		elif event is InputEventScreenDrag and joystick != null:
+			if joystick._touch_index != 1 and event.index == joystick._touch_index or joystick._is_point_inside_joystick_area(event.position):
+				return
+			_rotate_camera(event)
 	
 	if event.is_action_pressed("flashlight"):
 		if spotlight_front.visible:
@@ -62,11 +75,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			spotlight_front.visible = true
 			spotlight_back.visible = true
 
-func _input(event: InputEvent):
-	# required for web build 
-	if OS.get_name() == "Web":
-		if (Input.mouse_mode != Input.MOUSE_MODE_CAPTURED) and event is InputEventMouseButton: 
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+func _rotate_camera(event: InputEvent) -> void:
+	head.rotate_y(-event.relative.x * global.sensitivity)
+	camera.rotate_x(-event.relative.y * global.sensitivity)
+	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+	equipment.rotate_x(-event.relative.y * global.sensitivity)
+	equipment.rotation.x = camera.rotation.x
 
 func _physics_process(delta: float) -> void:
 	if is_on_floor():

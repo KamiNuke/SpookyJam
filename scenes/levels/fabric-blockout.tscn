@@ -272,7 +272,7 @@ fade_out_time = 2.5
 
 [node name="NPC1" parent="." groups=["dialog"] instance=ExtResource("11_m752w")]
 transform = Transform3D(0.41380367, 0, 0.9103662, 0, 1, 0, -0.9103662, 0, 0.41380367, -19.76845, 1.1493983, -15.063415)
-dialogue = "alter_1"
+dialogue = "homeless_bus_stop1"
 
 [node name="PlayerController" parent="." groups=["Player"] instance=ExtResource("2_k3gsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.179407, 1.3174394, -12.314735)

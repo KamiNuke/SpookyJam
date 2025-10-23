@@ -37,10 +37,10 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "dead_pickle": "res://dialogic/dead_pickle.dtl",
-"dialogic/alter_1": "res://dialogic/alter_1.dtl",
 "dialogue1": "res://dialogic/dialogue1.dtl",
 "final1": "res://dialogic/final1.dtl",
 "final2": "res://dialogic/final2.dtl",
+"homeless_bus_stop1": "res://dialogic/homeless_bus_stop1.dtl",
 "pickle1": "res://dialogic/pickle1.dtl"
 }
 layout/style_directory={
@@ -170,4 +170,6 @@ dialogic_default_action={
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
