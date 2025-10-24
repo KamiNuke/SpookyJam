@@ -8,6 +8,7 @@ func _ready() -> void:
 	var transition = get_parent().get_node("TransitionController")
 	connect("change_scene", Callable(transition, "_change_scene"))
 	AudioManager.play_music()
+	get_tree().set_quit_on_go_back(true)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -16,6 +17,7 @@ func _process(_delta: float) -> void:
 func _on_play_button_button_up() -> void:
 	AudioManager.play_sfx_play()
 	AudioManager.stop_music(1.0) 
+	get_tree().set_quit_on_go_back(false)
 	emit_signal("change_scene", get_node("."), "res://scenes/levels/fabric-blockout.tscn")
 	
 func _on_exit_button_button_up() -> void:

@@ -1,9 +1,11 @@
-extends Control
+extends CanvasLayer
 
 signal change_scene(scene: Node, next_scene_path: String)
 
 @onready var sensitivity_label: Label = $VBoxContainer/SensitivityContainer/SensitivityLabel
 @onready var sensitivity_slider: HSlider = $VBoxContainer/SensitivityContainer/SensitivitySlider
+@onready var shadows_check_box: CheckBox = $VBoxContainer/ShadowsCheckBox
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +20,8 @@ func _ready() -> void:
 	sensitivity_slider.value = global.sensitivity
 	sensitivity_slider.min_value = 0.0001
 	sensitivity_slider.step = 0.0001
+	
+	shadows_check_box.button_pressed = global.is_shadows_enabled
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,14 +35,19 @@ func _on_sensitivity_slider_value_changed(value: float) -> void:
 
 
 func _on_volume_slider_value_changed(value: float) -> void:
-	pass # Replace with function body.
+	global.is_shadows_enabled = value
 
 
 func _on_return_button_button_up() -> void:
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	global.is_paused = false
 	queue_free()
 
 
 func _on_exit_button_button_up() -> void:
 	emit_signal("change_scene", get_tree().get_root(), "res://scenes/quit_scene.tscn")
+
+
+func _on_check_box_toggled(toggled_on: bool) -> void:
+	global.is_shadows_enabled = toggled_on

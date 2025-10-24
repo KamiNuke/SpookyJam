@@ -41,6 +41,11 @@ func _ready() -> void:
 	spotlight_front.visible = false
 	spotlight_back.visible = false
 
+func toggle_shadows() -> void:
+	spotlight_front.shadow_enabled = global.is_shadows_enabled
+
+func _process(_delta: float) -> void:
+	toggle_shadows()
 
 func dialogue_start() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

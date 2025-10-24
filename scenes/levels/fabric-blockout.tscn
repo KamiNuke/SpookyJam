@@ -469,14 +469,14 @@ current = true
 
 [node name="light" type="Node" parent="."]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="light"]
+[node name="spotlight1" type="SpotLight3D" parent="light"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -19.947975, 3.0921578, -13.812416)
 light_energy = 0.5
 shadow_enabled = true
 spot_angle = 71.13
 spot_angle_attenuation = 0.9012505
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="light"]
+[node name="spotlight2" type="SpotLight3D" parent="light"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 6.3652177, -3.004148, -18.606833)
 light_energy = 0.5
 shadow_enabled = true

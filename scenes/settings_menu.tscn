@@ -21,12 +21,17 @@ offset_right = -64.0
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 28
+theme_override_constants/separation = 18
 
 [node name="MenuTitleLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Settings"
+
+[node name="ShadowsCheckBox" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Shadows"
 
 [node name="SensitivityContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -61,6 +66,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Return"
 
+[connection signal="toggled" from="VBoxContainer/ShadowsCheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="value_changed" from="VBoxContainer/SensitivityContainer/SensitivitySlider" to="." method="_on_sensitivity_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/VolumeContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="button_up" from="VBoxContainer/Button" to="." method="_on_button_button_up"]

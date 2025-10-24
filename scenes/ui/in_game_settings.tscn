@@ -5,21 +5,15 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h80le"]
 shader = ExtResource("1_0g6rq")
-shader_parameter/lod = 2.50000011875
+shader_parameter/lod = 5.0
 
-[node name="InGameSettings" type="Control"]
+[node name="InGameSettings" type="CanvasLayer"]
 process_mode = 3
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layer = 10
 script = ExtResource("1_h80le")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_h80le")
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -27,7 +21,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -36,21 +29,26 @@ offset_right = -64.0
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 22
+theme_override_constants/separation = 10
 
 [node name="MenuTitleLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Settings"
 
+[node name="ShadowsCheckBox" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Shadows"
+
 [node name="SensitivityContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = -4
+theme_override_constants/separation = -5
 
 [node name="SensitivityLabel" type="Label" parent="VBoxContainer/SensitivityContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 text = "Sensitivity"
 
 [node name="SensitivitySlider" type="HSlider" parent="VBoxContainer/SensitivityContainer"]
@@ -61,12 +59,12 @@ value = 0.01
 
 [node name="VolumeContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = -4
+theme_override_constants/separation = -5
 
 [node name="VolumeLabel" type="Label" parent="VBoxContainer/VolumeContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 text = "Volume"
 
 [node name="VolumeSlider" type="HSlider" parent="VBoxContainer/VolumeContainer"]
@@ -74,7 +72,7 @@ layout_mode = 2
 
 [node name="ButtonContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 4
+theme_override_constants/separation = 2
 
 [node name="ReturnButton" type="Button" parent="VBoxContainer/ButtonContainer"]
 layout_mode = 2
@@ -84,6 +82,7 @@ text = "Return"
 layout_mode = 2
 text = "Exit"
 
+[connection signal="toggled" from="VBoxContainer/ShadowsCheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="value_changed" from="VBoxContainer/SensitivityContainer/SensitivitySlider" to="." method="_on_sensitivity_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/VolumeContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="button_up" from="VBoxContainer/ButtonContainer/ReturnButton" to="." method="_on_return_button_button_up"]

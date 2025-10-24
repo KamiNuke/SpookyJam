@@ -2,6 +2,11 @@ extends Node3D
 
 signal change_scene(scene: Node, next_scene_path: String)
 
+@onready var sun: DirectionalLight3D = $Sun
+@onready var spotlight_1: SpotLight3D = $light/spotlight1
+@onready var spotlight_2: SpotLight3D = $light/spotlight2
+
+
 @onready var player: CharacterBody3D = $PlayerController
 @onready var npc_1: CharacterBody3D = $NPC1
 @onready var label: Label = $Label
@@ -34,8 +39,15 @@ func _ready() -> void:
 	
 	label.text = "Place {cams}/4 cameras".format({"cams" : placed_cameras})
 
+
+func toggle_shadows() -> void:
+	sun.shadow_enabled = global.is_shadows_enabled
+	spotlight_1.shadow_enabled = global.is_shadows_enabled
+	spotlight_2.shadow_enabled = global.is_shadows_enabled
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	toggle_shadows()
 	get_tree().call_group("enemy", "target_position", player.global_transform.origin)
 	
 	if can_pickle_man_walk and pickle_man != null:

@@ -33,6 +33,90 @@ tracks/0/keys = {
 "values": [Vector3(-14.484806, 7.727613, -11.347547), Vector3(-14.484806, 3.2951598, -11.347547)]
 }
 
+[sub_resource type="Animation" id="Animation_87see"]
+resource_name = "1_5"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pickle_Man:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-6.842473, 18.596127, -19.317265), Vector3(-6.842473, 5.1793013, -19.317265)]
+}
+
+[sub_resource type="Animation" id="Animation_sy0rl"]
+resource_name = "2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-14.484806, 3.2951598, -11.347547)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gopnik2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.04, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-11.316857, 1.2531354, -14.76309), Vector3(-16.458683, 1.2531354, -10.354446)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Gopnik1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-10.433313, 1.2531354, -13.528946), Vector3(-12.225174, 1.2531354, -4.2359667)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Gopnik3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.04, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-10.810542, 1.2531354, -16.361046), Vector3(-18.356861, 1.2531354, -12.918568)]
+}
+
+[sub_resource type="Animation" id="Animation_mx7lb"]
+resource_name = "3"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pickle_Man:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-6.842473, 5.1793013, -19.317265), Vector3(-6.842473, 18.596127, -19.317265)]
+}
+
 [sub_resource type="Animation" id="Animation_3hcvx"]
 length = 0.001
 tracks/0/type = "value"
@@ -96,90 +180,6 @@ tracks/4/keys = {
 "values": [Vector3(-6.842473, 18.596127, -19.317265)]
 }
 
-[sub_resource type="Animation" id="Animation_sy0rl"]
-resource_name = "2"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-14.484806, 3.2951598, -11.347547)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Gopnik2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.04, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-11.316857, 1.2531354, -14.76309), Vector3(-16.458683, 1.2531354, -10.354446)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Gopnik1:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-10.433313, 1.2531354, -13.528946), Vector3(-12.225174, 1.2531354, -4.2359667)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Gopnik3:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.04, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-10.810542, 1.2531354, -16.361046), Vector3(-18.356861, 1.2531354, -12.918568)]
-}
-
-[sub_resource type="Animation" id="Animation_87see"]
-resource_name = "1_5"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pickle_Man:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.98),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-6.842473, 18.596127, -19.317265), Vector3(-6.842473, 5.1793013, -19.317265)]
-}
-
-[sub_resource type="Animation" id="Animation_mx7lb"]
-resource_name = "3"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pickle_Man:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.9666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-6.842473, 5.1793013, -19.317265), Vector3(-6.842473, 18.596127, -19.317265)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sy0rl"]
 _data = {
 &"1": SubResource("Animation_11yiw"),
@@ -195,7 +195,7 @@ script = ExtResource("1_11yiw")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sy0rl")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
