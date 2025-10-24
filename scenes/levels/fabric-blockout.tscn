@@ -526,7 +526,7 @@ curve = SubResource("Curve3D_yl0if")
 transform = Transform3D(-4.371136e-08, 0, -0.99999934, 0, 1, 0, 0.99999934, 0, -4.371136e-08, 0, 0, 0)
 
 [node name="PickleMan" parent="pickle_man_path/PathFollow3D" instance=ExtResource("11_m752w")]
-transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711395e-08, 0, 0, 0)
+transform = Transform3D(-0.96592575, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, -0.96592575, 0, 0, 0)
 collision_layer = 1
 
 [node name="final_area3d" type="Area3D" parent="."]
