@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://vvxom4m50dph"
-path="res://.godot/imported/bomj.glb-29c6648c31f90c0a4807e38ac0e7cdf2.scn"
+uid="uid://bnq1vrdo6ssh2"
+path="res://.godot/imported/chars.glb-4ce4aebc58ddfeafe551840def7b15b1.scn"
 
 [deps]
 
-source_file="res://assets/models/characters/raw/bomj.glb"
-dest_files=["res://.godot/imported/bomj.glb-29c6648c31f90c0a4807e38ac0e7cdf2.scn"]
+source_file="res://assets/models/characters/raw/chars.glb"
+dest_files=["res://.godot/imported/chars.glb-4ce4aebc58ddfeafe551840def7b15b1.scn"]
 
 [params]
 
@@ -4151,7 +4151,7 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 },
-"run": {
+"idle": {
 "save_to_file/enabled": false,
 "save_to_file/fallback_path": "",
 "save_to_file/keep_custom_tracks": "",
