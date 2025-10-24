@@ -1,20 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://djp2bycq5xkyd"]
+[gd_scene load_steps=7 format=3 uid="uid://djp2bycq5xkyd"]
 
 [ext_resource type="PackedScene" uid="uid://cshkbl1rcpcvp" path="res://scenes/utilities/npc.tscn" id="1_l43vs"]
+[ext_resource type="Script" uid="uid://dtvcq8s6p5t2c" path="res://scenes/places/dead_pickle_man.gd" id="1_wnve3"]
+[ext_resource type="Texture2D" uid="uid://dwx4dkmnphg35" path="res://assets/textures/floors/rusty_metal.jpg" id="2_ntlaj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ntlaj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnve3"]
+albedo_texture = ExtResource("2_ntlaj")
 
 [sub_resource type="PrismMesh" id="PrismMesh_wnve3"]
 
 [node name="dead_pickle_man" type="Node3D"]
+script = ExtResource("1_wnve3")
 
 [node name="NPC" parent="." groups=["dialog"] instance=ExtResource("1_l43vs")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 dialogue = "dead_pickle"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.06479615, 0, 0, 0, 1, 0, 0, 0, 0.080078125, 0, 0.3773054, 0)
 mesh = SubResource("BoxMesh_ntlaj")
+surface_material_override/0 = SubResource("StandardMaterial3D_wnve3")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.05460835, 0, 0, 0, 0.07484847, 0, 0, 0, 0.07490334, 0, 0.9114169, 0)

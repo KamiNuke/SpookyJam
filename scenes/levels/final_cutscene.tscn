@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://0bgybeucpdm2"]
+[gd_scene load_steps=14 format=3 uid="uid://0bgybeucpdm2"]
 
 [ext_resource type="Script" uid="uid://74063p2cs41x" path="res://scenes/levels/final_cutscene.gd" id="1_11yiw"]
 [ext_resource type="PackedScene" uid="uid://dkdm20efngy2d" path="res://scenes/levels/fabric-blockout_old.tscn" id="1_iiobc"]
+[ext_resource type="PackedScene" uid="uid://sb53b2t6l1ru" path="res://assets/models/characters/bomj.tscn" id="3_3hcvx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_11yiw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -207,9 +208,11 @@ directional_shadow_mode = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.842473, 1.2531354, -15.649337)
 mesh = SubResource("CapsuleMesh_11yiw")
 
-[node name="Pickle_Man" type="MeshInstance3D" parent="."]
+[node name="Pickle_Man" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.842473, 18.596127, -19.317265)
-mesh = SubResource("CapsuleMesh_11yiw")
+
+[node name="chars" parent="Pickle_Man" instance=ExtResource("3_3hcvx")]
+transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 0, -1, 0)
 
 [node name="Gopnik1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.433313, 1.2531354, -13.528946)

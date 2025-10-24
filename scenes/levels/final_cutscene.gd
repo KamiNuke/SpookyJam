@@ -4,6 +4,7 @@ signal change_scene(scene: Node, next_scene_path: String)
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sun: DirectionalLight3D = $Sun
+@onready var bomj_anim: AnimationPlayer = $Pickle_Man/chars/AnimationPlayer
 
 
 
@@ -12,6 +13,7 @@ func _ready() -> void:
 	var transition = get_parent().get_node("TransitionController")
 	connect("change_scene", Callable(transition, "_change_scene"))
 	
+	bomj_anim.play("float")
 	Dialogic.start("final1")
 	Dialogic.signal_event.connect(_on_dialogic_signal_map)
 	animation_player.play("1")

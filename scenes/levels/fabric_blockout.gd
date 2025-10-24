@@ -9,9 +9,11 @@ signal change_scene(scene: Node, next_scene_path: String)
 
 @onready var player: CharacterBody3D = $PlayerController
 @onready var npc_1: CharacterBody3D = $NPC1
+@onready var npc_1_anims: AnimationPlayer = $NPC1/bomj/AnimationPlayer
 @onready var label: Label = $Label
 @onready var obstacles_to_remove_1: Node = $obstacles_to_remove1
 @onready var pickle_man: CharacterBody3D = $pickle_man_path/PathFollow3D/PickleMan
+@onready var pickle_man_anims: AnimationPlayer = $pickle_man_path/PathFollow3D/PickleMan/bomj/AnimationPlayer
 @onready var pickle_man_path: Path3D = $pickle_man_path
 @onready var pickle_man_path_follow: PathFollow3D = $pickle_man_path/PathFollow3D
 @onready var final_area_3d: Area3D = $final_area3d
@@ -30,7 +32,8 @@ signal block_cameras
 func _ready() -> void:
 	var transition = get_parent().get_node("TransitionController")
 	connect("change_scene", Callable(transition, "_change_scene"))
-	
+	npc_1_anims.play("talk")
+	pickle_man_anims.play("talk")
 	get_parent().enable_input()
 	Dialogic.start("dialogue1")
 	Dialogic.timeline_started.connect(func(): label.visible = false)
@@ -51,6 +54,7 @@ func _process(delta: float) -> void:
 	get_tree().call_group("enemy", "target_position", player.global_transform.origin)
 	
 	if can_pickle_man_walk and pickle_man != null:
+		pickle_man_anims.play("run")
 		pickle_man_path_follow.progress += 6 * delta
 		if pickle_man_path_follow.progress_ratio >= 0.9:
 			pickle_man_path.queue_free()
@@ -69,6 +73,7 @@ func _on_place_camera() -> void:
 	placed_cameras += 1
 	if placed_cameras == 1:
 		npc_1.queue_free()
+		npc_1_anims.queue_free()
 	
 	label.text = "Place {cams}/4 cameras".format({"cams" : placed_cameras})
 	

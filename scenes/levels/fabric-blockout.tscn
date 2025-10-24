@@ -1,6 +1,6 @@
-[gd_scene load_steps=45 format=3 uid="uid://cqttd845lqbw2"]
+[gd_scene load_steps=47 format=3 uid="uid://cqttd845lqbw2"]
 
-[ext_resource type="Script" uid="uid://drno5ihwpwy6y" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
+[ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="2_k3gsl"]
 [ext_resource type="PackedScene" uid="uid://dkdm20efngy2d" path="res://scenes/levels/fabric-blockout_old.tscn" id="2_wbvmf"]
 [ext_resource type="AudioStream" uid="uid://bs7bstle7lybp" path="res://assets/sfx/OutdoorAmbience.mp3" id="4_fxuma"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cefn43toaj76l" path="res://assets/textures/skybox/blood_sky.jpg" id="21_yl0if"]
 [ext_resource type="Script" uid="uid://liiintik8tvs" path="res://scenes/levels/enemy_1_spawpoints.gd" id="22_qjc2r"]
 [ext_resource type="PackedScene" uid="uid://dnertq5vtrxr2" path="res://assets/models/underground/tunnel_block.tscn" id="24_86ch6"]
+[ext_resource type="Texture2D" uid="uid://681iguhlebt" path="res://assets/textures/floors/concrete_trash.jpg" id="25_86ch6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_86ch6"]
 size = Vector3(10.905624, 2.9433594, 0.9086914)
@@ -99,6 +100,9 @@ size = Vector3(1.9555664, 1.5776367, 1.894043)
 size = Vector3(2.370636, 2.7315063, 1.0080566)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jksws"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6v5x"]
+albedo_texture = ExtResource("25_86ch6")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hl1u4"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
@@ -294,7 +298,7 @@ fade_in_time = 3.0
 fade_out_time = 2.5
 
 [node name="NPC1" parent="." groups=["dialog"] instance=ExtResource("11_m752w")]
-transform = Transform3D(0.41380367, 0, 0.9103662, 0, 1, 0, -0.9103662, 0, 0.41380367, -19.76845, 1.1493983, -15.063415)
+transform = Transform3D(0.9363295, 0, 0.35112274, 0, 1, 0, -0.35112274, 0, 0.9363295, -19.76845, 1.1493983, -15.063415)
 dialogue = "homeless_bus_stop1"
 
 [node name="PlayerController" parent="." groups=["Player"] instance=ExtResource("2_k3gsl")]
@@ -547,6 +551,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.781312, -10.136429, -3.1936
 [node name="MeshInstance3D" type="MeshInstance3D" parent="block_basement2"]
 transform = Transform3D(5.276253, 0, 0, 0, 4.4203176, 0.54601425, 0, -2.8809094, 0.8377759, 0.030006886, 0.07849455, 1.0309875)
 mesh = SubResource("BoxMesh_jksws")
+surface_material_override/0 = SubResource("StandardMaterial3D_m6v5x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="block_basement2"]
 transform = Transform3D(5.276253, 0, 0, 0, 4.4203176, 0.54601425, 0, -2.8809094, 0.8377759, 0.030006886, 0.07849455, 1.0309875)
