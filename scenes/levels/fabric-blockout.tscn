@@ -1,6 +1,6 @@
 [gd_scene load_steps=45 format=3 uid="uid://cqttd845lqbw2"]
 
-[ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
+[ext_resource type="Script" uid="uid://drno5ihwpwy6y" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="2_k3gsl"]
 [ext_resource type="PackedScene" uid="uid://dkdm20efngy2d" path="res://scenes/levels/fabric-blockout_old.tscn" id="2_wbvmf"]
 [ext_resource type="AudioStream" uid="uid://bs7bstle7lybp" path="res://assets/sfx/OutdoorAmbience.mp3" id="4_fxuma"]
@@ -485,6 +485,7 @@ spot_angle_attenuation = 0.5
 
 [node name="spotlight2" type="SpotLight3D" parent="light"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 6.3652177, -3.004148, -18.606833)
+light_color = Color(0.9999997, 0.6679775, 0.28066286, 1)
 light_energy = 3.0
 light_bake_mode = 1
 shadow_enabled = true
