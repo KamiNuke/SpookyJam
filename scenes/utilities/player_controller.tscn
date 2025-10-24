@@ -42,6 +42,7 @@ background_color = Color(0, 0.10980392, 0, 1)
 background_energy_multiplier = 8.0
 ambient_light_color = Color(0, 0.20392157, 0, 1)
 ambient_light_energy = 8.0
+tonemap_exposure = 2.5
 
 [sub_resource type="Environment" id="Environment_jxyar"]
 background_mode = 1
@@ -49,6 +50,7 @@ background_color = Color(0, 0.10980392, 0, 1)
 background_energy_multiplier = 8.0
 ambient_light_color = Color(0, 0.20392157, 0, 1)
 ambient_light_energy = 8.0
+tonemap_exposure = 2.5
 
 [node name="PlayerController" type="CharacterBody3D"]
 script = ExtResource("1_ppkod")
@@ -66,6 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2562173, 0)
 light_color = Color(0.9764706, 0.9411765, 0.87058824, 1)
 light_energy = 7.5
 light_volumetric_fog_energy = 0.1
+light_bake_mode = 1
 shadow_enabled = true
 spot_range = 150.0
 spot_attenuation = 2.0
@@ -101,6 +104,7 @@ light_color = Color(0.9764706, 0.9411765, 0.87058824, 1)
 light_energy = 5.0
 light_indirect_energy = 0.5
 light_volumetric_fog_energy = 0.1
+light_bake_mode = 1
 spot_range = 200.0
 spot_attenuation = 2.0
 spot_angle_attenuation = 3.0

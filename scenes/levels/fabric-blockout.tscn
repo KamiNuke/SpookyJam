@@ -67,7 +67,9 @@ radiance_size = 0
 background_mode = 2
 sky = SubResource("Sky_qjc2r")
 tonemap_mode = 3
+fog_enabled = true
 fog_light_color = Color(0.09797881, 0.06216068, 0.06521444, 1)
+fog_light_energy = 0.75
 fog_density = 0.05
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.2662049, 0.26620513, 0.26620498, 1)
@@ -459,7 +461,9 @@ environment = SubResource("Environment_jksws")
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.82872623, -0.52221566, -0.20125476, 0.14612691, -0.14522414, 0.9785483, -0.5402403, -0.8403574, -0.044041283, 0, 3.9, 0)
 light_energy = 0.2
+light_bake_mode = 1
 shadow_enabled = true
+shadow_opacity = 0.8
 directional_shadow_mode = 0
 
 [node name="CinematicCameras" type="Node" parent="."]
@@ -472,17 +476,19 @@ current = true
 
 [node name="spotlight1" type="SpotLight3D" parent="light"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -19.947975, 3.0921578, -13.812416)
-light_energy = 0.5
+light_energy = 2.0
+light_bake_mode = 1
 shadow_enabled = true
-spot_angle = 71.13
-spot_angle_attenuation = 0.9012505
+spot_attenuation = 0.5
+spot_angle = 70.0
+spot_angle_attenuation = 0.5
 
 [node name="spotlight2" type="SpotLight3D" parent="light"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 6.3652177, -3.004148, -18.606833)
-light_energy = 0.5
+light_energy = 3.0
+light_bake_mode = 1
 shadow_enabled = true
 spot_range = 100.0
-spot_attenuation = 1.5
 spot_angle = 70.0
 
 [node name="obstacles_to_remove1" type="Node" parent="."]
