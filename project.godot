@@ -20,6 +20,7 @@ config/icon="res://assets/icon.svg"
 global="*res://scenes/autoloads/globals.gd"
 AudioManager="*res://scenes/AudioManager.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+ConfigFileHandler="*res://scenes/autoloads/config_file_handler.gd"
 
 [debug]
 

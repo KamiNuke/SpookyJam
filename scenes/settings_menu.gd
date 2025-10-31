@@ -49,6 +49,7 @@ func _on_volume_slider_value_changed(value: float) -> void:
 func _on_button_button_up() -> void:
 	AudioManager.play_sfx_button()
 	AudioManager.stop_music(1.0)
+	ConfigFileHandler.save_settings()
 	emit_signal("change_scene", get_node("."), "res://scenes/main_menu.tscn")
 
 

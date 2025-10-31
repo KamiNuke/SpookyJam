@@ -46,6 +46,7 @@ func _on_volume_slider_value_changed(value: float) -> void:
 
 
 func _on_return_button_button_up() -> void:
+	ConfigFileHandler.save_settings()
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	global.is_paused = false
@@ -53,6 +54,7 @@ func _on_return_button_button_up() -> void:
 
 
 func _on_exit_button_button_up() -> void:
+	ConfigFileHandler.save_settings()
 	emit_signal("change_scene", get_tree().get_root(), "res://scenes/quit_scene.tscn")
 
 
