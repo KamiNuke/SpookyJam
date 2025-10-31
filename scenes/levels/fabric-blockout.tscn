@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cqttd845lqbw2"]
+[gd_scene load_steps=50 format=3 uid="uid://cqttd845lqbw2"]
 
 [ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="2_k3gsl"]
@@ -85,6 +85,9 @@ size = Vector3(7.263794, 1, 0.43603516)
 [sub_resource type="BoxShape3D" id="BoxShape3D_qjc2r"]
 size = Vector3(14.4657135, 3.1020508, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_m6v5x"]
+size = Vector3(0.70996094, 3.10437, 8.540161)
+
 [sub_resource type="Curve3D" id="Curve3D_yl0if"]
 bake_interval = 2.0
 _data = {
@@ -106,6 +109,15 @@ albedo_texture = ExtResource("25_86ch6")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hl1u4"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="Curve3D" id="Curve3D_ew65y"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0.35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12.615, 0, 0, 0.74, 0, 0, 0, 0, 0, 12.243355, 0, -16.06211, 0, 0, 0, 0, 0, 0, 3.474228, 0, -15.787056, 0, 0, 0, 0, 0, 0, 3.4280834, 0, -42.45924),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="BoxMesh" id="BoxMesh_86ch6"]
 
 [node name="FabricBlockout" type="Node3D"]
 script = ExtResource("1_4d3ts")
@@ -518,6 +530,13 @@ transform = Transform3D(0.7748562, 0, 0.63213754, 0, 1, 0, -0.63213754, 0, 0.774
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.702094, 1.0510254, 2.0870285)
 shape = SubResource("BoxShape3D_qjc2r")
 
+[node name="basement_monster_area1" type="Area3D" parent="enemy1_spawpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.852198, -6.7538652, -18.224771)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enemy1_spawpoints/basement_monster_area1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14501953, -0.18804932, -0.87054443)
+shape = SubResource("BoxShape3D_m6v5x")
+
 [node name="pickle_man_path" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6117344, -7.0579996, -17.221474)
 curve = SubResource("Curve3D_yl0if")
@@ -557,9 +576,27 @@ surface_material_override/0 = SubResource("StandardMaterial3D_m6v5x")
 transform = Transform3D(5.276253, 0, 0, 0, 4.4203176, 0.54601425, 0, -2.8809094, 0.8377759, 0.030006886, 0.07849455, 1.0309875)
 shape = SubResource("ConvexPolygonShape3D_hl1u4")
 
+[node name="falling_box_path1" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7739983, -7.120371, -18.31783)
+curve = SubResource("Curve3D_ew65y")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="falling_box_path1"]
+transform = Transform3D(-0.99999696, 0, -8.742252e-08, 0, 0.99999964, 0, 8.7422514e-08, 0, -0.9999971, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="falling_box_path1/PathFollow3D"]
+visible = false
+mesh = SubResource("BoxMesh_86ch6")
+
+[node name="falling_box_timer" type="Timer" parent="falling_box_path1"]
+wait_time = 0.25
+
 [connection signal="block_cameras" from="." to="PlayerController" method="_on_fabric_blockout_block_cameras"]
 [connection signal="place_camera" from="." to="." method="_on_place_camera"]
+[connection signal="die" from="PlayerController" to="." method="_on_player_controller_die"]
 [connection signal="body_entered" from="enemy1_spawpoints/area1" to="enemy1_spawpoints" method="_on_area_1_body_entered"]
 [connection signal="body_entered" from="enemy1_spawpoints/area2" to="enemy1_spawpoints" method="_on_area_2_body_entered"]
+[connection signal="body_entered" from="enemy1_spawpoints/basement_monster_area1" to="." method="_on_basement_monster_area_1_body_entered"]
+[connection signal="body_entered" from="enemy1_spawpoints/basement_monster_area1" to="enemy1_spawpoints" method="_on_basement_monster_area_1_body_entered"]
 [connection signal="body_entered" from="final_area3d" to="." method="_on_final_area_3d_body_entered"]
 [connection signal="body_entered" from="area_to_block_path" to="." method="_on_area_to_block_path_body_entered"]
+[connection signal="timeout" from="falling_box_path1/falling_box_timer" to="." method="_on_falling_box_timer_timeout"]

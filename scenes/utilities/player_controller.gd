@@ -32,6 +32,7 @@ var _last_frame_was_on_floor = -INF
 @onready var top_ray_cast: RayCast3D = $TopRayCast
 @onready var bottom_ray_cast: RayCast3D = $BottomRayCast
 
+signal die
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -205,3 +206,6 @@ func _on_dialogic_signal(argument: String):
 func _on_camera_block_timeout() -> void:
 	block_enemy_1.visible = false
 	block_enemy_2.visible = false
+
+func _die() -> void:
+	emit_signal("die")

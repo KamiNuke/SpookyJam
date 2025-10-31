@@ -1,8 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbqdfjffgqib"]
+[gd_scene load_steps=5 format=3 uid="uid://dbqdfjffgqib"]
+
+[ext_resource type="Script" uid="uid://davkludydyweb" path="res://scenes/Elements/falling_box.gd" id="1_4nrj2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_grcta"]
 
-[node name="FallingBox" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_grcta"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4nrj2"]
+
+[node name="FallingBox" type="RigidBody3D"]
+script = ExtResource("1_4nrj2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_grcta")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_grcta")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_4nrj2")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

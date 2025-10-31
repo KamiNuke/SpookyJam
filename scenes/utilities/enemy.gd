@@ -1,11 +1,16 @@
 extends CharacterBody3D
 
-@export var speed = 3.5
+@export var speed = 3.25
 const JUMP_VELOCITY = 4.5
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
+@onready var timer: Timer = $Timer
+var timer_left = 5
 
 var obsctable = false
+
+func _ready() -> void:
+	timer.start(timer_left)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -30,7 +35,6 @@ func _on_navigation_agent_3d_target_reached() -> void:
 
 func _on_navigation_agent_3d_link_reached(_details: Dictionary) -> void:
 	obsctable = true
-
 
 func _on_timer_timeout() -> void:
 	queue_free()

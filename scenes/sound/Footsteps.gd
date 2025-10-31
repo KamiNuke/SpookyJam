@@ -11,7 +11,7 @@ var recent_indices: Array[int] = []
 
 @onready var player: CharacterBody3D = get_parent()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not player.is_on_floor():
 		return
 	

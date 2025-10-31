@@ -28,7 +28,7 @@ func _ready() -> void:
 	volume_slider.min_value = -40
 	volume_slider.max_value = 0
 	volume_slider.step = 0.1
-	volume_slider.value = global.volume_db if "volume_db" in global else 0
+	volume_slider.value = global.volume_db
 
 	# Apply initial volume
 	_on_volume_slider_value_changed(volume_slider.value)

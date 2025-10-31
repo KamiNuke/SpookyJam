@@ -10,6 +10,7 @@ signal change_scene(scene: Node, next_scene_path: String)
 @onready var resolution_label: Label = $VBoxContainer/ResolutionContainer/ResolutionLabel
 @onready var resolution_slider: HSlider = $VBoxContainer/ResolutionContainer/ResolutionSlider
 
+@onready var volume_slider: HSlider = $VBoxContainer/VolumeContainer/VolumeSlider
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,6 +30,14 @@ func _ready() -> void:
 	shadows_check_box.button_pressed = global.is_shadows_enabled
 	
 	resolution_slider.value = get_viewport().get_scaling_3d_scale()
+	
+	volume_slider.min_value = -40
+	volume_slider.max_value = 0
+	volume_slider.step = 0.1
+	volume_slider.value = global.volume_db
+
+	# Apply initial volume
+	_on_volume_slider_value_changed(volume_slider.value)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,7 +51,10 @@ func _on_sensitivity_slider_value_changed(value: float) -> void:
 
 
 func _on_volume_slider_value_changed(value: float) -> void:
-	global.is_shadows_enabled = value
+	global.volume_db = value 
+	AudioManager.music_player.volume_db = value
+	AudioManager.sfx_button.volume_db = value
+	AudioManager.sfx_play.volume_db = value
 
 
 func _on_return_button_button_up() -> void:
