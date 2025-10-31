@@ -22,7 +22,12 @@ func _physics_process(delta: float) -> void:
 	
 	var next_location = nav_agent.get_next_path_position()
 	var cur_location = global_transform.origin
-	var new_velocity = (next_location - cur_location).normalized() * speed
+	var direction = (next_location - cur_location).normalized()
+	var new_velocity = direction * speed
+	
+	# rotation towards the player
+	const ROTATION_SPEED = 10
+	rotation.y = lerp_angle(rotation.y, atan2(direction.x, direction.z), ROTATION_SPEED * delta)
 	
 	velocity = velocity.move_toward(new_velocity, 0.25)
 	move_and_slide()
