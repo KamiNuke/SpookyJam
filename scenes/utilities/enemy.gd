@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal on_spawn
+
 @export var speed = 3.25
 const JUMP_VELOCITY = 4.5
 
@@ -11,6 +13,7 @@ var obsctable = false
 
 func _ready() -> void:
 	timer.start(timer_left)
+	on_spawn.emit()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

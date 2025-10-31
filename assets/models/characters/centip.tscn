@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://djdsqmf65sus0"]
+[gd_scene load_steps=6 format=3 uid="uid://djdsqmf65sus0"]
 
 [ext_resource type="PackedScene" uid="uid://gw6bbtujwdi" path="res://assets/models/characters/raw/centip.glb" id="1_y8oio"]
 [ext_resource type="Texture2D" uid="uid://lyy0qetntf68" path="res://assets/textures/centip/centip.png" id="2_5tcxr"]
+[ext_resource type="Script" uid="uid://d1wi57m0m63db" path="res://assets/models/characters/centip_model.gd" id="2_tjaxp"]
 [ext_resource type="Script" uid="uid://brdnhws2fm4vn" path="res://assets/models/characters/centip_ik.gd" id="3_gyd2j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5tcxr"]
@@ -11,6 +12,7 @@ alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("2_5tcxr")
 
 [node name="centip" instance=ExtResource("1_y8oio")]
+script = ExtResource("2_tjaxp")
 
 [node name="eye" parent="centip_001/Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_5tcxr")
