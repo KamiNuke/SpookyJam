@@ -1,0 +1,126 @@
+[gd_scene load_steps=5 format=3 uid="uid://djdsqmf65sus0"]
+
+[ext_resource type="PackedScene" uid="uid://gw6bbtujwdi" path="res://assets/models/characters/raw/centip.glb" id="1_y8oio"]
+[ext_resource type="Texture2D" uid="uid://lyy0qetntf68" path="res://assets/textures/centip/centip.png" id="2_5tcxr"]
+[ext_resource type="Script" uid="uid://brdnhws2fm4vn" path="res://assets/models/characters/centip_ik.gd" id="3_gyd2j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5tcxr"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_5tcxr")
+
+[node name="centip" instance=ExtResource("1_y8oio")]
+
+[node name="eye" parent="centip_001/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_5tcxr")
+
+[node name="leg_ik_r_1" type="SkeletonIK3D" parent="centip_001/Skeleton3D" index="1"]
+root_bone = &"leg_1_r"
+tip_bone = &"leg_1_r_ik"
+use_magnet = true
+target_node = NodePath("../../target_r_1")
+script = ExtResource("3_gyd2j")
+
+[node name="leg_ik_r_2" type="SkeletonIK3D" parent="centip_001/Skeleton3D" index="2"]
+root_bone = &"leg_2_r"
+tip_bone = &"leg_2_r_ik"
+use_magnet = true
+target_node = NodePath("../../target_r_2")
+script = ExtResource("3_gyd2j")
+
+[node name="leg_ik_r_3" type="SkeletonIK3D" parent="centip_001/Skeleton3D" index="3"]
+root_bone = &"leg_3_r"
+tip_bone = &"leg_3_r_ik"
+use_magnet = true
+target_node = NodePath("../../target_r_3")
+script = ExtResource("3_gyd2j")
+
+[node name="leg_ik_r_4" type="SkeletonIK3D" parent="centip_001/Skeleton3D" index="4"]
+root_bone = &"leg_4_r"
+tip_bone = &"leg_4_r_ik"
+use_magnet = true
+target_node = NodePath("../../target_r_4")
+script = ExtResource("3_gyd2j")
+
+[node name="leg_ik_r_5" type="SkeletonIK3D" parent="centip_001/Skeleton3D" index="5"]
+root_bone = &"leg_5_r"
+tip_bone = &"leg_5_r_ik"
+use_magnet = true
+target_node = NodePath("../../target_r_5")
+script = ExtResource("3_gyd2j")
+
+[node name="leg_ik_l_1" type="SkeletonIK3D" parent="centip_001/Skeleton3D" index="6"]
+root_bone = &"leg_1_l"
+tip_bone = &"leg_1_l_ik"
+use_magnet = true
+target_node = NodePath("../../target_l_1")
+script = ExtResource("3_gyd2j")
+
+[node name="leg_ik_l_2" type="SkeletonIK3D" parent="centip_001/Skeleton3D" index="7"]
+root_bone = &"leg_2_l"
+tip_bone = &"leg_2_l_ik"
+use_magnet = true
+target_node = NodePath("../../target_l_2")
+script = ExtResource("3_gyd2j")
+
+[node name="leg_ik_l_3" type="SkeletonIK3D" parent="centip_001/Skeleton3D" index="8"]
+root_bone = &"leg_3_l"
+tip_bone = &"leg_3_l_ik"
+use_magnet = true
+target_node = NodePath("../../target_l_3")
+script = ExtResource("3_gyd2j")
+
+[node name="leg_ik_l_4" type="SkeletonIK3D" parent="centip_001/Skeleton3D" index="9"]
+root_bone = &"leg_4_l"
+tip_bone = &"leg_4_l_ik"
+use_magnet = true
+target_node = NodePath("../../target_l_4")
+script = ExtResource("3_gyd2j")
+
+[node name="leg_ik_l_5" type="SkeletonIK3D" parent="centip_001/Skeleton3D" index="10"]
+root_bone = &"leg_5_l"
+tip_bone = &"leg_5_l_ik"
+use_magnet = true
+target_node = NodePath("../../target_l_5")
+script = ExtResource("3_gyd2j")
+
+[node name="target_l_5" type="Marker3D" parent="centip_001" index="1"]
+transform = Transform3D(0.08601828, 0, 0, 0, 0.08601828, 0, 0, 0, 0.08601828, -0.28957725, 0.18471418, -0.1493133)
+top_level = true
+
+[node name="target_l_4" type="Marker3D" parent="centip_001" index="2"]
+transform = Transform3D(0.08601828, 0, 0, 0, 0.08601828, 0, 0, 0, 0.08601828, -0.13388956, 0.18471418, -0.1493133)
+top_level = true
+
+[node name="target_l_3" type="Marker3D" parent="centip_001" index="3"]
+transform = Transform3D(0.08601828, 0, 0, 0, 0.08601828, 0, 0, 0, 0.08601828, 0.020478845, 0.18471418, -0.1493133)
+top_level = true
+
+[node name="target_l_2" type="Marker3D" parent="centip_001" index="4"]
+transform = Transform3D(0.08601828, 0, 0, 0, 0.08601828, 0, 0, 0, 0.08601828, 0.17616665, 0.18471418, -0.1493133)
+top_level = true
+
+[node name="target_l_1" type="Marker3D" parent="centip_001" index="5"]
+transform = Transform3D(0.08601828, 0, 0, 0, 0.08601828, 0, 0, 0, 0.08601828, 0.2935921, 0.18471418, -0.1493133)
+top_level = true
+
+[node name="target_r_5" type="Marker3D" parent="centip_001" index="6"]
+transform = Transform3D(0.08601828, 0, 0, 0, 0.08601828, 0, 0, 0, 0.08601828, -0.28957725, 0.18471418, 0.13070858)
+top_level = true
+
+[node name="target_r_4" type="Marker3D" parent="centip_001" index="7"]
+transform = Transform3D(0.08601828, 0, 0, 0, 0.08601828, 0, 0, 0, 0.08601828, -0.13388956, 0.18471418, 0.13070858)
+top_level = true
+
+[node name="target_r_3" type="Marker3D" parent="centip_001" index="8"]
+transform = Transform3D(0.08601828, 0, 0, 0, 0.08601828, 0, 0, 0, 0.08601828, 0.020478845, 0.18471418, 0.13070858)
+top_level = true
+
+[node name="target_r_2" type="Marker3D" parent="centip_001" index="9"]
+transform = Transform3D(0.08601828, 0, 0, 0, 0.08601828, 0, 0, 0, 0.08601828, 0.17616665, 0.18471418, 0.13070858)
+top_level = true
+
+[node name="target_r_1" type="Marker3D" parent="centip_001" index="10"]
+transform = Transform3D(0.08601828, 0, 0, 0, 0.08601828, 0, 0, 0, 0.08601828, 0.2935921, 0.18471418, 0.13070858)
+top_level = true

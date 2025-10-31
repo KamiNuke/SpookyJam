@@ -1440,6 +1440,12 @@ operation = 2
 size = Vector3(1.7641602, 0.39994812, 4.8726196)
 material = SubResource("StandardMaterial3D_e4vw3")
 
+[node name="CSGBox3D62" type="CSGBox3D" parent="1st_segment/front_corpus/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.6998254, -0.7143139, 0, 0.7143139, 0.6998254, 8.4462185, -1.3535601, -4.689908)
+operation = 2
+size = Vector3(1.7641602, 0.7072983, 0.3598175)
+material = SubResource("StandardMaterial3D_e4vw3")
+
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="1st_segment/front_corpus"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29742622, 1.3177805, 9.598558)
 visible = false

@@ -1,29 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmd4syhpkdst5"]
+[gd_scene load_steps=5 format=3 uid="uid://dmd4syhpkdst5"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/icon.svg" id="1_0sgnj"]
 [ext_resource type="Script" uid="uid://in1syok083pr" path="res://scenes/utilities/enemy.gd" id="1_7iqul"]
+[ext_resource type="PackedScene" uid="uid://djdsqmf65sus0" path="res://assets/models/characters/centip.tscn" id="2_hbc4p"]
 [ext_resource type="AudioStream" uid="uid://d1j2a8g3brgqv" path="res://assets/sfx/demonapproach.mp3" id="3_hbc4p"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7iqul"]
-albedo_texture = ExtResource("1_0sgnj")
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_srnsx"]
-material = SubResource("StandardMaterial3D_7iqul")
-height = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0sgnj"]
 radius = 0.23046875
-height = 1.0546875
+height = 1.0235443
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_7iqul")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45107192, 0)
-mesh = SubResource("CapsuleMesh_srnsx")
+[node name="centip" parent="." instance=ExtResource("2_hbc4p")]
+transform = Transform3D(0, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 0, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.47265625, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.19092679, -0.0121536255)
 shape = SubResource("CapsuleShape3D_0sgnj")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
