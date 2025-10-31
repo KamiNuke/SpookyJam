@@ -21,7 +21,7 @@ offset_right = -64.0
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 18
+theme_override_constants/separation = 10
 
 [node name="MenuTitleLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -32,6 +32,23 @@ text = "Settings"
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "Shadows"
+
+[node name="ResolutionContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="ResolutionLabel" type="Label" parent="VBoxContainer/ResolutionContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10
+text = "Resolution Scale"
+
+[node name="ResolutionSlider" type="HSlider" parent="VBoxContainer/ResolutionContainer"]
+layout_mode = 2
+min_value = 0.5
+max_value = 1.0
+step = 0.1
+value = 0.5
 
 [node name="SensitivityContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -67,6 +84,7 @@ layout_mode = 2
 text = "Return"
 
 [connection signal="toggled" from="VBoxContainer/ShadowsCheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="value_changed" from="VBoxContainer/ResolutionContainer/ResolutionSlider" to="." method="_on_resolution_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/SensitivityContainer/SensitivitySlider" to="." method="_on_sensitivity_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/VolumeContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="button_up" from="VBoxContainer/Button" to="." method="_on_button_button_up"]

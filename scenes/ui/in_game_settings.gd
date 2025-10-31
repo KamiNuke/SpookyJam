@@ -4,7 +4,12 @@ signal change_scene(scene: Node, next_scene_path: String)
 
 @onready var sensitivity_label: Label = $VBoxContainer/SensitivityContainer/SensitivityLabel
 @onready var sensitivity_slider: HSlider = $VBoxContainer/SensitivityContainer/SensitivitySlider
+
 @onready var shadows_check_box: CheckBox = $VBoxContainer/ShadowsCheckBox
+
+@onready var resolution_label: Label = $VBoxContainer/ResolutionContainer/ResolutionLabel
+@onready var resolution_slider: HSlider = $VBoxContainer/ResolutionContainer/ResolutionSlider
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,6 +27,8 @@ func _ready() -> void:
 	sensitivity_slider.step = 0.0001
 	
 	shadows_check_box.button_pressed = global.is_shadows_enabled
+	
+	resolution_slider.value = get_viewport().get_scaling_3d_scale()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,3 +58,7 @@ func _on_exit_button_button_up() -> void:
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
 	global.is_shadows_enabled = toggled_on
+
+
+func _on_resolution_slider_value_changed(value: float) -> void:
+	get_viewport().set_scaling_3d_scale(value)
