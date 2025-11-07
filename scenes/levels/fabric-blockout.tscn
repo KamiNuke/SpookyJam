@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cqttd845lqbw2"]
+[gd_scene load_steps=54 format=3 uid="uid://cqttd845lqbw2"]
 
 [ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="2_k3gsl"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://dqlno44iiqwpx" path="res://scenes/sound/FinalMusicPlayer.gd" id="19_jksws"]
 [ext_resource type="Texture2D" uid="uid://cefn43toaj76l" path="res://assets/textures/skybox/blood_sky.jpg" id="21_yl0if"]
 [ext_resource type="Script" uid="uid://liiintik8tvs" path="res://scenes/levels/enemy_1_spawpoints.gd" id="22_qjc2r"]
+[ext_resource type="PackedScene" uid="uid://befpqgiwho5c2" path="res://scenes/utilities/blinking_light.tscn" id="23_qqiox"]
 [ext_resource type="PackedScene" uid="uid://dnertq5vtrxr2" path="res://assets/models/underground/tunnel_block.tscn" id="24_86ch6"]
 [ext_resource type="Texture2D" uid="uid://681iguhlebt" path="res://assets/textures/floors/concrete_trash.jpg" id="25_86ch6"]
 [ext_resource type="Script" uid="uid://c76a3fukgrktb" path="res://scenes/levels/screamer_cam_3.gd" id="26_m6v5x"]
@@ -495,21 +496,21 @@ current = true
 
 [node name="light" type="Node" parent="."]
 
-[node name="spotlight1" type="SpotLight3D" parent="light"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -19.947975, 3.0921578, -13.812416)
+[node name="BlinkingLight" parent="light" instance=ExtResource("23_qqiox")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -19.948, 3.092, -13.812)
 light_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 spot_attenuation = 0.5
 spot_angle = 70.0
 spot_angle_attenuation = 0.5
+time_to_turn_off = 5
+time_to_turn_on = 0.15
 
-[node name="spotlight2" type="SpotLight3D" parent="light"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 6.3652177, -3.004148, -18.606833)
-light_color = Color(0.9999997, 0.6679775, 0.28066286, 1)
+[node name="BlinkingLight1" parent="light" instance=ExtResource("23_qqiox")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 6.365, -3.004, -18.607)
+light_color = Color(1, 0.6666667, 0.28235295, 1)
 light_energy = 3.0
 light_bake_mode = 1
-shadow_enabled = true
 spot_range = 100.0
 spot_angle = 70.0
 

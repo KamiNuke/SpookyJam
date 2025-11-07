@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://befpqgiwho5c2"]
+
+[ext_resource type="Script" uid="uid://cjdn5et1hnyrk" path="res://light_on_the_cell.gd" id="1_jbube"]
+
+[node name="BlinkingLight" type="SpotLight3D"]
+shadow_enabled = true
+script = ExtResource("1_jbube")
+
+[node name="TimerToDisable" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="TimerToEnable" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true
+
+[connection signal="timeout" from="TimerToDisable" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerToEnable" to="." method="_on_timer_to_enable_timeout"]

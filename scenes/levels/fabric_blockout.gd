@@ -3,8 +3,6 @@ extends Node3D
 signal change_scene(scene: Node, next_scene_path: String)
 
 @onready var sun: DirectionalLight3D = $Sun
-@onready var spotlight_1: SpotLight3D = $light/spotlight1
-@onready var spotlight_2: SpotLight3D = $light/spotlight2
 
 
 @onready var player: CharacterBody3D = $PlayerController
@@ -50,8 +48,6 @@ func _ready() -> void:
 
 func toggle_shadows() -> void:
 	sun.shadow_enabled = global.is_shadows_enabled
-	spotlight_1.shadow_enabled = global.is_shadows_enabled
-	spotlight_2.shadow_enabled = global.is_shadows_enabled
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

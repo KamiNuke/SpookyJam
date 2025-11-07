@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4l65c58vqxlf"]
+[gd_scene load_steps=6 format=3 uid="uid://c4l65c58vqxlf"]
 
 [ext_resource type="Script" uid="uid://6pnpgy07mf6f" path="res://scripts/jumping_screamer.gd" id="1_8hq7y"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/icon.svg" id="2_v8wfc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfh8j"]
+albedo_texture = ExtResource("2_v8wfc")
 
 [sub_resource type="SphereMesh" id="SphereMesh_8hq7y"]
+material = SubResource("StandardMaterial3D_jfh8j")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8hq7y"]
 
