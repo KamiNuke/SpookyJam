@@ -44,7 +44,8 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal_map)
 	
 	label.text = "Place {cams}/4 cameras".format({"cams" : placed_cameras})
-
+	
+	
 
 func toggle_shadows() -> void:
 	sun.shadow_enabled = global.is_shadows_enabled
@@ -94,6 +95,9 @@ func _on_place_camera() -> void:
 		#do stuff after all cameras are placed
 		pass
 
+@onready var block_door_after_pickles_dead: MeshInstance3D = $collisions/BlockDoorAfterPicklesDead
+@onready var block_door_after_pickles_dead_2: MeshInstance3D = $collisions/BlockDoorAfterPicklesDead2
+
 func _on_dialogic_signal_map(argument: String):
 	if argument == "pickle_run":
 		can_pickle_man_walk = true
@@ -103,6 +107,10 @@ func _on_dialogic_signal_map(argument: String):
 		label.text = "Run to the basement"
 		area_to_block_path.monitoring = true
 		area_to_block_path.monitorable = true
+		block_door_after_pickles_dead.process_mode = Node.PROCESS_MODE_INHERIT
+		block_door_after_pickles_dead.visible = true
+		block_door_after_pickles_dead_2.process_mode = Node.PROCESS_MODE_INHERIT
+		block_door_after_pickles_dead_2.visible = true
 
 
 func _on_final_area_3d_body_entered(body: Node3D) -> void:

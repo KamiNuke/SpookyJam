@@ -20,11 +20,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if can_move:
 		move_towards_player(delta)
+	look_at(player.global_position, Vector3.UP)
 
 func move_towards_player(delta: float) -> void:
 	var direction = (player.global_position - global_position).normalized()
 	
-	look_at(player.global_position, Vector3.UP)
 	global_translate(direction * speed * delta)
 
 
