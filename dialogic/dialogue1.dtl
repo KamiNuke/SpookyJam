@@ -1,4 +1,5 @@
+[signal arg="camera1_dialogue1"]
 homeless_next_to_bus_stop: Heeeeeeyyyyyyyyy, young man have you seen my pickle pepsi?
 player: Excuse me?
-homeless_next_to_bus_stop:  Back in my day, youngsters were more confident! Go away, kid
-[signal arg="finish_dialogue1"]
+homeless_next_to_bus_stop: Back in my day, youngsters were more confident! Go away, kid
+[signal arg="finish_dialogue"]

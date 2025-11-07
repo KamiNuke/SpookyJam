@@ -516,12 +516,6 @@ shadow_enabled = true
 shadow_opacity = 0.8
 directional_shadow_mode = 0
 
-[node name="CinematicCameras" type="Node" parent="."]
-
-[node name="cinematic1" type="Camera3D" parent="CinematicCameras"]
-transform = Transform3D(0.5218437, 0, 0.8530412, 0, 1, 0, -0.8530412, 0, 0.5218437, -16.092863, 1.7529286, -12.613608)
-current = true
-
 [node name="light" type="Node" parent="."]
 
 [node name="BlinkingLight" parent="light" instance=ExtResource("23_qqiox")]

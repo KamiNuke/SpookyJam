@@ -91,7 +91,6 @@ func _rotate_camera(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		_last_frame_was_on_floor = Engine.get_physics_frames()
-	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -123,8 +122,9 @@ func _physics_process(delta: float) -> void:
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 2.0)
 	
 	# Head bob
-	t_bob += delta * velocity.length() * float(is_on_floor())
-	camera.transform.origin = _headbob(t_bob)
+	if !global.is_dialogue_active:
+		t_bob += delta * velocity.length() * float(is_on_floor())
+		camera.transform.origin = _headbob(t_bob)
 	
 	# FOV
 	var velocity_clamped = clamp(velocity.length(), 0.5, SPRINT_SPEED * 2.0)
@@ -198,9 +198,14 @@ func _on_fabric_blockout_block_cameras() -> void:
 
 
 func _on_dialogic_signal(argument: String):
-	$head/Camera3D.current = true
-	if argument == "finish_dialogue1":
-		print("Something was activated!")
+	# Set camera to first person
+	if argument == "finish_dialogue":
+		camera.position = Vector3.ZERO
+		camera.rotation = Vector3.ZERO
+	
+	if argument == "camera1_dialogue1":
+		camera.global_position = Vector3(-16, 1.75, -12.6)
+		camera.rotation = Vector3(0, deg_to_rad(58), 0)
 
 
 func _on_camera_block_timeout() -> void:
