@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cqttd845lqbw2"]
+[gd_scene load_steps=53 format=3 uid="uid://cqttd845lqbw2"]
 
 [ext_resource type="Script" uid="uid://6v0l2fk68qyi" path="res://scenes/levels/fabric_blockout.gd" id="1_4d3ts"]
 [ext_resource type="PackedScene" uid="uid://bbck6ynukyxtp" path="res://scenes/utilities/player_controller.tscn" id="2_k3gsl"]
@@ -25,6 +25,8 @@
 [ext_resource type="Script" uid="uid://liiintik8tvs" path="res://scenes/levels/enemy_1_spawpoints.gd" id="22_qjc2r"]
 [ext_resource type="PackedScene" uid="uid://dnertq5vtrxr2" path="res://assets/models/underground/tunnel_block.tscn" id="24_86ch6"]
 [ext_resource type="Texture2D" uid="uid://681iguhlebt" path="res://assets/textures/floors/concrete_trash.jpg" id="25_86ch6"]
+[ext_resource type="Script" uid="uid://c76a3fukgrktb" path="res://scenes/levels/screamer_cam_3.gd" id="26_m6v5x"]
+[ext_resource type="PackedScene" uid="uid://c4l65c58vqxlf" path="res://scenes/utilities/jumping_screamer.tscn" id="27_ew65y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_86ch6"]
 size = Vector3(10.905624, 2.9433594, 0.9086914)
@@ -118,6 +120,9 @@ _data = {
 point_count = 5
 
 [sub_resource type="BoxMesh" id="BoxMesh_86ch6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ew65y"]
+size = Vector3(9.0479965, 1.9952393, 1.4164734)
 
 [node name="FabricBlockout" type="Node3D"]
 script = ExtResource("1_4d3ts")
@@ -590,6 +595,25 @@ mesh = SubResource("BoxMesh_86ch6")
 [node name="falling_box_timer" type="Timer" parent="falling_box_path1"]
 wait_time = 0.25
 
+[node name="ScreamerCam3" type="Node" parent="."]
+script = ExtResource("26_m6v5x")
+
+[node name="VisibileOnScreenNotifier3DScreamer" type="VisibleOnScreenNotifier3D" parent="ScreamerCam3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.7794285, 2.7587166, 4.769266)
+visible = false
+aabb = AABB(-0.15728329, -0.23894385, -0.07886939, 0.31456658, 0.4778877, 0.15773878)
+
+[node name="ToggleScreamer" type="Area3D" parent="ScreamerCam3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.7794285, 0.43412876, 10.453413)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScreamerCam3/ToggleScreamer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26171494, 0.80970025, -0.11991787)
+shape = SubResource("BoxShape3D_ew65y")
+
+[node name="JumpingScreamer" parent="ScreamerCam3" instance=ExtResource("27_ew65y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.670981, 2.9822726, 5.108453)
+visible = false
+
 [connection signal="block_cameras" from="." to="PlayerController" method="_on_fabric_blockout_block_cameras"]
 [connection signal="place_camera" from="." to="." method="_on_place_camera"]
 [connection signal="die" from="PlayerController" to="." method="_on_player_controller_die"]
@@ -600,3 +624,6 @@ wait_time = 0.25
 [connection signal="body_entered" from="final_area3d" to="." method="_on_final_area_3d_body_entered"]
 [connection signal="body_entered" from="area_to_block_path" to="." method="_on_area_to_block_path_body_entered"]
 [connection signal="timeout" from="falling_box_path1/falling_box_timer" to="." method="_on_falling_box_timer_timeout"]
+[connection signal="screen_entered" from="ScreamerCam3/VisibileOnScreenNotifier3DScreamer" to="ScreamerCam3" method="_on_visibile_on_screen_notifier_3d_screamer_screen_entered"]
+[connection signal="body_entered" from="ScreamerCam3/ToggleScreamer" to="ScreamerCam3" method="_on_toggle_screamer_body_entered"]
+[connection signal="finished" from="ScreamerCam3/JumpingScreamer" to="ScreamerCam3" method="_on_jumping_screamer_finished"]

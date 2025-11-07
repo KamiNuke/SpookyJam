@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4l65c58vqxlf"]
+
+[ext_resource type="Script" uid="uid://6pnpgy07mf6f" path="res://scripts/jumping_screamer.gd" id="1_8hq7y"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8hq7y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8hq7y"]
+
+[node name="JumpingScreamer" type="StaticBody3D"]
+script = ExtResource("1_8hq7y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_8hq7y")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_8hq7y")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
