@@ -30,6 +30,7 @@ var can_pickle_man_walk: bool = false
 
 signal place_camera
 signal block_cameras
+signal die
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,8 +45,6 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal_map)
 	
 	label.text = "Place {cams}/4 cameras".format({"cams" : placed_cameras})
-	
-	
 
 func toggle_shadows() -> void:
 	sun.shadow_enabled = global.is_shadows_enabled
@@ -98,6 +97,8 @@ func _on_place_camera() -> void:
 @onready var block_door_after_pickles_dead: MeshInstance3D = $collisions/BlockDoorAfterPicklesDead
 @onready var block_door_after_pickles_dead_2: MeshInstance3D = $collisions/BlockDoorAfterPicklesDead2
 
+const ENEMY = preload("uid://dmd4syhpkdst5")
+
 func _on_dialogic_signal_map(argument: String):
 	if argument == "pickle_run":
 		can_pickle_man_walk = true
@@ -111,6 +112,20 @@ func _on_dialogic_signal_map(argument: String):
 		block_door_after_pickles_dead.visible = true
 		block_door_after_pickles_dead_2.process_mode = Node.PROCESS_MODE_INHERIT
 		block_door_after_pickles_dead_2.visible = true
+		
+		var enemy1 = ENEMY.instantiate()
+		enemy1.speed = 1.25
+		enemy1.should_kill = true
+		enemy1.timer_left = 50
+		enemy1.position = Vector3(-4.25, 1, -2.604)
+		add_child(enemy1)
+		
+		var enemy2 = ENEMY.instantiate()
+		enemy2.speed = 1.25
+		enemy2.should_kill = true
+		enemy2.timer_left = 50
+		enemy2.position = Vector3(17.376, 1, 1.2)
+		add_child(enemy2)
 
 
 func _on_final_area_3d_body_entered(body: Node3D) -> void:

@@ -11,6 +11,8 @@ var timer_left = 5
 
 var obsctable = false
 
+var should_kill = false
+
 func _ready() -> void:
 	timer.start(timer_left)
 	on_spawn.emit()
@@ -37,9 +39,12 @@ func target_position(target):
 
 func _on_navigation_agent_3d_target_reached() -> void:
 	var map = get_parent()
-	if map != null and map.has_signal("block_cameras"):
+	
+	if map != null and map.has_signal("block_cameras") and !should_kill:
 		map.block_cameras.emit()
 		queue_free()
+	if map != null and map.has_signal("die") and should_kill:
+		map.die.emit()
 
 func _on_navigation_agent_3d_link_reached(_details: Dictionary) -> void:
 	obsctable = true
