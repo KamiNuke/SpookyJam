@@ -1,31 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbq76bxa5xt65"]
 
 [ext_resource type="AudioStream" uid="uid://mhdupr1oldv6" path="res://assets/sfx/Camera.mp3" id="1_hw25r"]
+[ext_resource type="PackedScene" uid="uid://bagisiynjdykk" path="res://assets/models/props/cam.tscn" id="2_4xi5g"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_e6a30"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_e6a30"]
-size = Vector3(1.768673, 1.9670159, 0.16149902)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_y16p4"]
+height = 1.5601196
+radius = 0.22851563
 
 [node name="PlacedCamera" type="RigidBody3D"]
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.09487113, -1.3073055, 0, 0.07332474, 1.6914556, 0, 0, 0, 0.0633284, 0.63513094, -0.5137279, 0)
-mesh = SubResource("BoxMesh_e6a30")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.09487113, 1.3073055, 0, -0.07332475, 1.6914556, 0, 0, 0, 0.0633284, -0.62516034, -0.5137279, 0)
-mesh = SubResource("BoxMesh_e6a30")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.15883368, 0, 0, 0, 0.48771706, 0, 0, 0, 0.1576843, 0.0102733895, 0.45891136, -0.013858035)
-mesh = SubResource("BoxMesh_e6a30")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09465599, -0.26731235, -0.059753418)
-shape = SubResource("BoxShape3D_e6a30")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("1_hw25r")
 volume_db = -28.394
 autoplay = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8119918, 0)
+shape = SubResource("CylinderShape3D_y16p4")
+
+[node name="cam" parent="." instance=ExtResource("2_4xi5g")]
